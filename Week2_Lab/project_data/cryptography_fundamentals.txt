@@ -1,0 +1,71 @@
+Cryptography Fundamentals in Information Security
+
+Introduction to Cryptography
+Cryptography forms the mathematical foundation of information security by providing confidentiality, integrity, authentication, and non-repudiation. Modern cryptographic systems protect communications, secure digital transactions, authenticate users, and verify data integrity across networks and storage systems. Understanding cryptographic principles is essential for implementing secure systems and identifying cryptographic vulnerabilities.
+
+Symmetric Encryption
+
+Block Ciphers
+Block ciphers encrypt fixed-size blocks of plaintext into ciphertext blocks of the same size. The Advanced Encryption Standard (AES) is the most widely used block cipher, supporting key sizes of 128, 192, and 256 bits. AES uses substitution-permutation network design with multiple rounds of transformations. Triple DES (3DES) remains in legacy systems but is being phased out due to its 64-bit block size vulnerability to birthday attacks.
+
+Block Cipher Modes of Operation
+Electronic Codebook (ECB) mode is insecure because identical plaintext blocks produce identical ciphertext blocks, revealing patterns. Cipher Block Chaining (CBC) XORs each plaintext block with the previous ciphertext block before encryption, requiring initialization vectors. Counter (CTR) mode converts block ciphers into stream ciphers by encrypting counter values. Galois/Counter Mode (GCM) provides both encryption and authentication through authenticated encryption with associated data (AEAD).
+
+Stream Ciphers
+Stream ciphers encrypt plaintext one bit or byte at a time using a keystream generated from a key and nonce. ChaCha20 is a modern stream cipher designed for performance in software implementations. RC4 is deprecated due to biases in its keystream that enable attacks. Stream ciphers are particularly suitable for applications where plaintext length varies or arrives in real-time.
+
+Asymmetric Encryption
+
+RSA Cryptosystem
+RSA (Rivest-Shamir-Adleman) relies on the computational difficulty of factoring large composite numbers. Key generation selects two large prime numbers, computes their product as the modulus, and derives public and private exponents. RSA provides both encryption and digital signatures. However, RSA requires large key sizes (at least 2048 bits) for adequate security and is slower than symmetric encryption.
+
+Elliptic Curve Cryptography (ECC)
+ECC achieves equivalent security to RSA with much smaller key sizes based on the discrete logarithm problem on elliptic curves. A 256-bit ECC key provides security comparable to a 3072-bit RSA key. Common curves include P-256, P-384, and Curve25519. ECC enables efficient encryption, signatures, and key exchange on resource-constrained devices.
+
+Diffie-Hellman Key Exchange
+The Diffie-Hellman protocol enables two parties to establish a shared secret over an insecure channel. Each party generates a private key and public key, exchanges public keys, and computes the shared secret using their private key and the other party's public key. Elliptic Curve Diffie-Hellman (ECDH) provides more efficient key exchange than traditional Diffie-Hellman.
+
+Cryptographic Hash Functions
+
+Hash Function Properties
+Cryptographic hash functions accept arbitrary-length input and produce fixed-length output (digest). They must satisfy three properties: preimage resistance (infeasible to find input producing a given hash), second preimage resistance (infeasible to find different input producing the same hash as a given input), and collision resistance (infeasible to find two different inputs producing the same hash).
+
+Common Hash Functions
+SHA-256 and SHA-3 are secure hash functions producing 256-bit digests. SHA-1 is deprecated due to practical collision attacks. MD5 is broken and should never be used for security purposes. Hash functions are used for digital signatures, password hashing, data integrity verification, and blockchain systems.
+
+Password Hashing
+Password hashing functions like bcrypt, scrypt, and Argon2 are specifically designed to be computationally expensive, making brute force attacks impractical. These algorithms include salt to prevent rainbow table attacks and configurable cost parameters to adjust computational difficulty. Unlike general cryptographic hash functions, password hashing functions intentionally consume significant CPU and memory resources.
+
+Digital Signatures
+
+Signature Schemes
+Digital signatures provide authentication and non-repudiation by proving that a message originated from a specific sender. RSA signatures use the sender's private key to sign a hash of the message; recipients verify signatures using the sender's public key. ECDSA (Elliptic Curve Digital Signature Algorithm) provides more efficient signatures than RSA. EdDSA (Edwards-curve Digital Signature Algorithm) offers improved security and performance characteristics.
+
+Message Authentication Codes (MAC)
+MACs provide authentication and integrity for messages using symmetric keys. HMAC (Hash-based Message Authentication Code) combines cryptographic hash functions with secret keys to create message authentication codes. HMAC is widely used in TLS, IPsec, and API authentication systems.
+
+Cryptographic Protocols
+
+Transport Layer Security (TLS)
+TLS secures internet communications through a handshake protocol that establishes encryption keys and authenticates servers (and optionally clients). TLS 1.3 removes insecure legacy features, uses only AEAD ciphers, and reduces handshake latency. Perfect forward secrecy ensures that compromise of long-term keys doesn't compromise past session keys.
+
+Public Key Infrastructure (PKI)
+PKI systems use certificate authorities (CAs) to issue digital certificates binding public keys to identities. X.509 certificates contain subject information, public key, issuer, validity period, and CA signature. Certificate revocation lists (CRLs) and Online Certificate Status Protocol (OCSP) enable verification that certificates haven't been revoked.
+
+Cryptographic Attacks and Vulnerabilities
+
+Mathematical Attacks
+Cryptographic algorithms can be vulnerable to mathematical attacks that exploit weaknesses in their design. Differential cryptanalysis analyzes how input differences propagate through encryption rounds. Linear cryptanalysis approximates cipher operations with linear equations. Side-channel attacks like timing attacks and power analysis exploit implementation characteristics rather than mathematical weaknesses.
+
+Protocol Attacks
+Even with strong cryptographic algorithms, protocol implementation flaws can compromise security. Padding oracle attacks exploit error messages to decrypt ciphertext. The BEAST and POODLE attacks exploited CBC mode vulnerabilities in older TLS versions. Downgrade attacks force connections to use weaker encryption or authentication methods.
+
+Quantum Computing Threats
+Quantum computers threaten current asymmetric cryptography. Shor's algorithm can factor large numbers and solve discrete logarithm problems efficiently on quantum computers, breaking RSA and ECC. Post-quantum cryptography develops algorithms resistant to quantum attacks using lattice-based, code-based, multivariate polynomial, and hash-based approaches.
+
+Cryptographic Best Practices
+
+Never implement your own cryptographic algorithms; use well-tested libraries and standards. Use authenticated encryption modes like GCM rather than encryption alone. Generate cryptographic keys using cryptographically secure random number generators. Rotate keys periodically and protect private keys with appropriate access controls. Stay informed about cryptographic vulnerabilities and update systems promptly when weaknesses are discovered.
+
+Conclusion
+Cryptography provides essential security services but must be implemented correctly to achieve its security goals. Understanding cryptographic fundamentals enables security professionals to select appropriate algorithms, implement secure systems, and identify cryptographic vulnerabilities. As computing capabilities evolve and new attacks emerge, cryptographic standards and practices must continuously adapt to maintain security guarantees.

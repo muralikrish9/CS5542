@@ -1,0 +1,75 @@
+Web Application Security Testing and Common Vulnerabilities
+
+Introduction to Web Application Security
+Web applications have become primary targets for cyber attacks due to their accessibility, business value, and complex attack surfaces. Modern web applications integrate multiple technologies including client-side frameworks, server-side logic, databases, APIs, and third-party services. Each integration point introduces potential security vulnerabilities that attackers can exploit for data theft, service disruption, or unauthorized access.
+
+OWASP Top 10 Vulnerabilities
+
+Broken Access Control
+Access control vulnerabilities occur when applications fail to properly enforce restrictions on authenticated users. Common issues include insecure direct object references (IDOR) where attackers manipulate parameters to access unauthorized resources, privilege escalation through role manipulation, and missing function-level access controls. Attackers exploit these weaknesses by modifying URLs, cookies, or API parameters to access restricted functionality.
+
+Cryptographic Failures
+Weak cryptographic implementations endanger sensitive data transmission and storage. Using outdated algorithms like MD5 or SHA1 for password hashing enables rainbow table attacks. Failure to enforce TLS for sensitive communications exposes data to interception. Hard-coded cryptographic keys in source code or configuration files allow attackers to decrypt protected information.
+
+Injection Attacks
+Injection vulnerabilities remain prevalent despite decades of awareness. SQL injection occurs when untrusted data is inserted into database queries without proper validation or parameterization. Attackers can extract sensitive data, modify database contents, or execute operating system commands through database features. Command injection exploits applications that pass user input to system shells. LDAP injection and XML injection target specific technologies with similar attack principles.
+
+Insecure Design
+Security must be integrated during the design phase rather than added afterward. Insecure design flaws include missing rate limiting that enables brute force attacks, lack of input validation frameworks, and business logic vulnerabilities. Threat modeling during design helps identify security requirements and architectural weaknesses before implementation.
+
+Security Misconfiguration
+Default configurations rarely provide adequate security. Common misconfigurations include unchanged default credentials, unnecessary features enabled, verbose error messages revealing system details, missing security headers, and outdated software components. Cloud storage buckets with public access permissions have exposed millions of sensitive records due to misconfiguration.
+
+Vulnerable and Outdated Components
+Modern web applications integrate numerous third-party libraries and frameworks. Vulnerabilities in dependencies affect applications that include them. The Log4Shell vulnerability demonstrated how a single component flaw can impact thousands of applications globally. Dependency management tools and software composition analysis help identify vulnerable components.
+
+Identification and Authentication Failures
+Weak authentication mechanisms enable unauthorized access through credential stuffing, brute force attacks, or session hijacking. Applications that permit weak passwords, lack multi-factor authentication, or improperly handle session tokens are particularly vulnerable. Session fixation attacks manipulate session identifiers to gain access to authenticated sessions.
+
+Software and Data Integrity Failures
+Applications that accept updates or data from untrusted sources without verification face integrity risks. Insecure deserialization can lead to remote code execution when applications deserialize malicious objects. CI/CD pipelines without proper security controls can be compromised to inject malicious code into production deployments.
+
+Security Logging and Monitoring Failures
+Insufficient logging prevents detection of security incidents and impairs forensic analysis. Applications should log authentication attempts, access control failures, and suspicious activities. Logs must be protected from tampering and analyzed in real-time to identify ongoing attacks. However, logs should not contain sensitive information like passwords or session tokens.
+
+Server-Side Request Forgery (SSRF)
+SSRF vulnerabilities allow attackers to make requests from the server to internal resources or external systems. Attackers exploit SSRF to bypass firewalls, access cloud metadata services, port scan internal networks, or exfiltrate data. Applications that fetch remote resources based on user input require strict validation and allowlisting.
+
+Web Application Testing Methodologies
+
+Manual Testing Techniques
+Security professionals manually test applications by manipulating requests, analyzing responses, and attempting to bypass security controls. Manual testing identifies business logic flaws and complex vulnerabilities that automated tools miss. Testing includes attempting SQL injection, XSS, CSRF, authentication bypass, and authorization flaws.
+
+Automated Vulnerability Scanning
+Tools like Burp Suite, OWASP ZAP, and commercial scanners automate discovery of common vulnerabilities. Scanners crawl applications, identify input points, and test for known vulnerability patterns. However, automated tools generate false positives and cannot detect all vulnerability types, particularly business logic flaws.
+
+Dynamic Application Security Testing (DAST)
+DAST tools test running applications by sending malicious inputs and analyzing responses. This black-box approach doesn't require source code access but can only find vulnerabilities reachable through the application interface. DAST integrates into CI/CD pipelines for continuous security validation.
+
+Static Application Security Testing (SAST)
+SAST tools analyze source code to identify security vulnerabilities before deployment. They detect issues like hard-coded credentials, SQL injection risks, and insecure cryptographic usage. SAST tools produce false positives and require tuning to balance thoroughness with actionable results.
+
+Interactive Application Security Testing (IAST)
+IAST combines SAST and DAST approaches by instrumenting applications with security sensors that monitor runtime behavior. This approach reduces false positives by confirming that vulnerabilities are exploitable in the specific application context.
+
+API Security Testing
+
+REST API Vulnerabilities
+REST APIs face unique security challenges including broken object-level authorization, broken user authentication, excessive data exposure, and lack of rate limiting. API testing requires understanding authentication mechanisms, authorization logic, and input validation for each endpoint.
+
+GraphQL Security
+GraphQL APIs can expose sensitive data through introspection queries and suffer from query complexity attacks that cause denial of service. Attackers can craft deeply nested queries that consume excessive server resources. Proper authorization at the resolver level prevents unauthorized data access.
+
+Defense Strategies
+
+Input Validation and Sanitization
+Applications should validate all inputs against strict allowlists of acceptable values, formats, and lengths. Validation must occur server-side even when client-side validation exists. Context-aware output encoding prevents injection attacks by ensuring data cannot be interpreted as code.
+
+Secure Authentication and Session Management
+Implement multi-factor authentication, enforce strong password policies, and use secure session management. Sessions should have appropriate timeouts, use cryptographically random identifiers, and be invalidated on logout. HttpOnly and Secure flags protect cookies from client-side access and transmission over insecure channels.
+
+Security Headers
+HTTP security headers provide defense-in-depth protection. Content Security Policy (CSP) mitigates XSS attacks, X-Frame-Options prevents clickjacking, and Strict-Transport-Security enforces HTTPS. Proper header configuration significantly reduces attack surface.
+
+Conclusion
+Web application security requires combining secure design principles, regular testing, and ongoing monitoring. Organizations must implement comprehensive testing programs covering manual assessment, automated scanning, and code analysis. Security must be integrated throughout the development lifecycle rather than treated as a pre-deployment checklist.

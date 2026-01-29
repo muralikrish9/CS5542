@@ -1,0 +1,76 @@
+Incident Response and Digital Forensics
+
+Introduction to Incident Response
+Security incident response is the systematic process of detecting, analyzing, containing, eradicating, and recovering from cybersecurity incidents. Effective incident response minimizes damage, reduces recovery time and costs, and enables organizations to learn from security events. Incident response teams coordinate technical remediation with business continuity, legal, communications, and executive stakeholders.
+
+Incident Response Framework
+
+Preparation Phase
+Preparation establishes the foundation for effective incident response. Organizations must develop incident response plans, establish communication procedures, deploy security monitoring tools, and train response team members. Preparation includes maintaining hardware and software inventories, creating network diagrams, documenting baseline system configurations, and establishing relationships with external resources like forensics firms and law enforcement.
+
+Detection and Analysis
+Detection identifies potential security incidents through multiple sources including intrusion detection systems, log analysis, user reports, and threat intelligence feeds. Security information and event management (SIEM) systems aggregate and correlate events from diverse sources to identify suspicious patterns. Analysts must distinguish true incidents from false positives and determine incident scope, severity, and impact.
+
+Containment Strategies
+Containment prevents incident spread and limits damage while preserving evidence for forensic analysis. Short-term containment implements immediate measures like isolating affected systems from the network or blocking malicious IP addresses. Long-term containment may involve creating clean network segments, implementing additional access controls, or temporarily disabling vulnerable services while developing permanent fixes.
+
+Eradication and Recovery
+Eradication removes the threat from the environment by deleting malware, closing unauthorized access points, and addressing exploited vulnerabilities. Recovery restores systems to normal operation through reinstallation from clean backups, applying security patches, changing compromised credentials, and strengthening security controls. Validation ensures systems are clean and functioning correctly before returning to production.
+
+Post-Incident Activities
+Post-incident activities extract lessons learned from security events. Teams document incident timelines, analyze response effectiveness, identify improvement opportunities, and update security controls. Incident reports should detail attack vectors, indicators of compromise, impact assessment, and remediation actions. This documentation supports legal proceedings, insurance claims, and regulatory reporting requirements.
+
+Digital Forensics Methodology
+
+Evidence Acquisition
+Digital forensics begins with identifying and acquiring potential evidence while maintaining its integrity. The order of volatility determines collection priority: CPU registers and cache, RAM contents, network connections, running processes, disk contents, and archived logs. Forensic imaging creates bit-for-bit copies of storage media using write-blockers to prevent modification. Chain of custody documentation records who handled evidence and when to ensure admissibility in legal proceedings.
+
+Memory Forensics
+RAM contains valuable volatile data including running processes, network connections, encryption keys, and malware artifacts. Memory acquisition tools capture live system memory for analysis. Memory forensics can reveal malicious processes, injected code, command-and-control communications, and evidence of anti-forensic techniques. Tools like Volatility enable extraction and analysis of memory structures.
+
+Disk Forensics
+Disk forensics examines file systems, deleted files, file metadata, and unallocated space for evidence. File carving recovers deleted files from raw disk sectors. Timeline analysis reconstructs event sequences using file creation, modification, and access timestamps. Analysis of Windows registry, browser history, email, and application data provides insights into user activities and system changes.
+
+Network Forensics
+Network forensics analyzes captured network traffic to identify attack methods, lateral movement, data exfiltration, and command-and-control communications. Packet capture tools record network traffic for offline analysis. Deep packet inspection examines protocol headers and payload contents. Network flow analysis aggregates traffic patterns to identify anomalies and suspicious connections.
+
+Log Analysis
+System and application logs provide crucial evidence for incident reconstruction. Windows Event Logs record authentication attempts, process creation, and security events. Web server logs show HTTP requests, authentication attempts, and access patterns. Firewall and proxy logs reveal network connections and blocked traffic. Centralized logging systems preserve logs even if attackers compromise individual systems.
+
+Malware Analysis
+
+Static Analysis
+Static analysis examines malware without executing it. Analysts use strings extraction, file hashing, portable executable analysis, and disassembly to understand malware functionality and identify indicators of compromise. Static analysis is safe but limited by code obfuscation and packing techniques that hide malware behavior.
+
+Dynamic Analysis
+Dynamic analysis executes malware in isolated sandbox environments to observe runtime behavior. Analysts monitor file system changes, registry modifications, network communications, and process activities. Dynamic analysis reveals malware capabilities but may miss behaviors triggered only under specific conditions or after extended execution time.
+
+Reverse Engineering
+Reverse engineering disassembles and decompiles malware to understand its logic and functionality. Analysts use debuggers to step through execution, identify encryption algorithms, and extract configuration data. Advanced malware employs anti-debugging and anti-analysis techniques to impede reverse engineering efforts.
+
+Incident Classification and Prioritization
+
+Severity Assessment
+Incidents are classified by impact, scope, and urgency. High-severity incidents involve data breaches, ransomware, critical system compromise, or ongoing attacks. Medium-severity incidents include malware infections, defaced websites, or denial of service affecting non-critical systems. Low-severity incidents involve policy violations, suspicious activities, or unsuccessful attack attempts.
+
+Business Impact Analysis
+Incident prioritization considers business impact beyond technical scope. Compromise of systems processing sensitive data, supporting critical operations, or containing intellectual property receives higher priority. Regulatory and contractual obligations may require specific response timelines and notification procedures.
+
+Threat Intelligence Integration
+
+Indicators of Compromise
+Indicators of compromise (IOCs) include malicious IP addresses, domain names, file hashes, registry keys, and behavioral patterns associated with threats. Threat intelligence feeds provide current IOCs from security researchers, government agencies, and industry sharing groups. Integrating IOCs into detection systems enables proactive identification of known threats.
+
+Threat Actor Profiling
+Understanding threat actor tactics, techniques, and procedures (TTPs) improves detection and response. The MITRE ATT&CK framework categorizes adversary behaviors across initial access, execution, persistence, privilege escalation, defense evasion, credential access, discovery, lateral movement, collection, command and control, exfiltration, and impact stages.
+
+Legal and Regulatory Considerations
+
+Evidence Handling
+Digital evidence must be collected and handled according to legal standards to ensure admissibility in court proceedings. Proper chain of custody, forensically sound acquisition methods, and expert testimony support legal cases. Privacy laws may restrict evidence collection and analysis, particularly for personal data.
+
+Breach Notification Requirements
+Many jurisdictions require notification when personal information is compromised. GDPR mandates notification within 72 hours of becoming aware of certain data breaches. US state laws have varying notification requirements and timelines. Organizations must coordinate incident response with legal counsel to ensure compliance.
+
+Conclusion
+Effective incident response and digital forensics require combining technical expertise, established processes, and appropriate tools. Organizations must invest in preparation to respond efficiently when incidents occur. Continuous improvement based on lessons learned from each incident strengthens security posture and resilience against evolving threats.

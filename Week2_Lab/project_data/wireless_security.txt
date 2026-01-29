@@ -1,0 +1,104 @@
+Wireless Network Security and Attack Vectors
+
+Introduction to Wireless Security
+Wireless networks have become ubiquitous in modern computing environments, providing connectivity for mobile devices, IoT systems, and enterprise networks. However, the broadcast nature of wireless communications creates unique security challenges. Unlike wired networks where physical access controls limit exposure, wireless signals extend beyond organizational boundaries, making them accessible to attackers. Understanding wireless security principles is essential for protecting sensitive communications and preventing unauthorized network access.
+
+Wireless Networking Standards
+
+IEEE 802.11 Evolution
+The 802.11 standard family defines wireless local area networking protocols. 802.11a and 802.11b introduced early wireless capabilities with limited security. 802.11g improved throughput while maintaining backward compatibility. 802.11n introduced MIMO technology for enhanced performance. 802.11ac and 802.11ax (Wi-Fi 6) provide gigabit wireless speeds and improved efficiency. Each generation brought security enhancements addressing vulnerabilities in predecessor standards.
+
+Wireless Security Protocols
+Wired Equivalent Privacy (WEP) was the original wireless encryption standard but suffered from fundamental cryptographic weaknesses enabling attacks within minutes. Wi-Fi Protected Access (WPA) improved security with TKIP encryption but remained vulnerable. WPA2 with AES encryption became the standard for secure wireless networks. WPA3 addresses WPA2 weaknesses including KRACK vulnerabilities and enhances password-based authentication.
+
+Bluetooth Security
+Bluetooth provides short-range wireless connectivity for peripherals, audio devices, and data transfer. Bluetooth security modes include encryption, authentication, and authorization. Common vulnerabilities include unauthorized pairing, eavesdropping, and man-in-the-middle attacks. Bluetooth Low Energy (BLE) introduces additional security considerations for IoT devices.
+
+Wireless Attack Vectors
+
+Passive Reconnaissance
+Attackers use passive scanning to identify wireless networks without transmitting signals. War driving involves mobile scanning to map wireless network locations and characteristics. Passive packet capture intercepts wireless traffic for analysis. Information gathered includes SSIDs, MAC addresses, encryption types, and client lists.
+
+Deauthentication Attacks
+Wireless deauthentication frames disconnect clients from access points. Attackers send spoofed deauthentication frames causing denial of service or forcing clients to reconnect, enabling capture of authentication handshakes. This attack works against all 802.11 networks regardless of encryption. WPA3 introduces protected management frames mitigating deauthentication attacks.
+
+Evil Twin Access Points
+Attackers deploy rogue access points mimicking legitimate networks. Unsuspecting users connect to evil twins, allowing attackers to intercept credentials and traffic. Evil twin attacks are particularly effective in public locations where users expect open wireless networks. Stronger network authentication helps prevent evil twin attacks.
+
+WPA/WPA2 Cracking
+Four-way WPA handshake captures enable offline password cracking. Attackers capture handshakes through passive monitoring or forced deauthentication. Dictionary and brute force attacks attempt to crack captured handshakes. Weak passwords succumb quickly to optimized cracking tools. GPU acceleration dramatically increases cracking speeds.
+
+WEP Exploitation
+WEP's RC4 implementation suffers from key reuse and weak initialization vectors. Attacks collect sufficient encrypted packets, then use statistical analysis to recover encryption keys. Automated tools crack WEP keys within minutes using readily available wireless cards. No organization should use WEP for any security-sensitive application.
+
+Wireless Attack Tools
+
+Aircrack-ng Suite
+The Aircrack-ng suite provides comprehensive wireless security testing tools. Airmon-ng enables monitor mode on wireless adapters. Airodump-ng captures wireless traffic and handshakes. Aireplay-ng generates deauthentication frames and injects packets. Aircrack-ng cracks WEP and WPA/WPA2 encryption using captured data.
+
+Wireshark
+Wireshark captures and analyzes wireless network traffic at packet level. It decodes 802.11 frames, displays protocol information, and supports wireless decryption with known keys. Wireless analysis requires monitor mode capable adapters and appropriate drivers.
+
+Kismet
+Kismet detects wireless networks, hidden SSIDs, and connected clients through passive monitoring. It identifies rogue access points and unusual network behaviors. Kismet supports multiple wireless cards simultaneously and logs comprehensive network data.
+
+Reaver and Pixie Dust
+Reaver exploits WPS (Wi-Fi Protected Setup) PIN vulnerability to recover WPA/WPA2 passwords. The WPS protocol implementation weakness allows brute forcing the PIN in hours. Pixie Dust attacks exploit WPS offline PIN generation vulnerabilities on some devices.
+
+Enterprise Wireless Security
+
+802.1X Authentication
+Enterprise wireless networks implement 802.1X port-based authentication providing per-user access control. RADIUS servers authenticate users and devices before granting network access. EAP protocols including EAP-TLS, PEAP, and EAP-TTLS provide various authentication methods balancing security and usability.
+
+Certificate-Based Authentication
+EAP-TLS requires client certificates for strongest authentication. Certificate-based authentication prevents credential theft and man-in-the-middle attacks. However, certificate deployment and management add operational complexity. Machine and user certificates provide layered authentication.
+
+Network Access Control
+NAC systems enforce security policies before granting network access. Pre-admission checks verify device compliance including antivirus status, patch levels, and configuration. NAC integrates with RADIUS servers to enforce wireless access policies. Post-admission monitoring detects compromised devices after connection.
+
+Wireless Intrusion Detection
+
+Wireless IDS/IPS
+Wireless intrusion detection systems monitor RF spectrum for suspicious activities including rogue access points, deauthentication attacks, and unauthorized clients. Distributed sensors provide comprehensive coverage. Automated responses can contain threats by deauthenticating malicious clients.
+
+Rogue Access Point Detection
+Rogue APs connected to wired networks bypass security controls. Detection combines wireless scanning with wired network analysis to identify unauthorized devices. Legitimate access points should be inventoried and whitelist for accurate rogue detection.
+
+Client Isolation and VLANs
+Client isolation prevents wireless clients from communicating directly, reducing lateral movement risk. VLAN segmentation separates wireless traffic from sensitive wired networks. Dynamic VLAN assignment based on user identity or device type provides flexible security policies.
+
+Bluetooth Security Issues
+
+Bluejacking and Bluesnarfing
+Bluejacking sends unsolicited messages to Bluetooth devices. Bluesnarfing exploits vulnerabilities to access device data without authorization. These attacks target older Bluetooth implementations with weak security.
+
+Bluetooth Pairing Attacks
+Weak pairing mechanisms enable man-in-the-middle attacks. Legacy pairing uses easily guessable PINs. Secure Simple Pairing improves security but remains vulnerable without proper user verification. Bluetooth 5 introduces enhanced pairing security.
+
+BLE Security Considerations
+Bluetooth Low Energy devices often have limited security due to resource constraints. Many BLE devices use default or weak authentication. BLE packet sniffing is straightforward with specialized hardware. IoT security requires careful BLE security implementation.
+
+Wireless Security Best Practices
+
+Strong Encryption Configuration
+Organizations should mandate WPA2 or WPA3 with strong passwords. Disable WEP and WPA-TKIP. Use AES-CCMP encryption mode. Regularly audit wireless encryption configurations and enforce security baselines.
+
+Hidden SSIDs and MAC Filtering
+Hiding SSIDs provides security through obscurity but determined attackers easily discover hidden networks. MAC address filtering can be bypassed through spoofing. These measures add minimal security but create usability challenges.
+
+Guest Network Isolation
+Separate guest networks prevent visitor devices from accessing internal resources. Guest networks should have internet-only access through isolated VLANs and firewall rules. Captive portals provide access control and legal agreements.
+
+Regular Security Audits
+Periodic wireless security assessments identify vulnerabilities and rogue devices. Penetration testing validates security controls effectiveness. Continuous monitoring detects new threats and configuration drift.
+
+Emerging Wireless Technologies
+
+Wi-Fi 6 and Wi-Fi 6E
+Wi-Fi 6 (802.11ax) introduces enhanced security features including mandatory WPA3 support. Wi-Fi 6E operates in 6GHz spectrum providing additional capacity. Organizations must ensure devices and infrastructure support modern security standards.
+
+5G Private Networks
+Private 5G networks provide enterprise wireless with cellular technologies. These deployments require understanding 5G security architecture including network slicing and core network security. 5G introduces new attack surfaces requiring specialized security expertise.
+
+Conclusion
+Wireless network security requires understanding unique attack vectors and implementing comprehensive defensive strategies. Organizations must balance usability with security while addressing legacy device support. As wireless technologies evolve, security controls must adapt to new threats while maintaining protection against established attack methods. Regular assessment, monitoring, and updates are essential for maintaining secure wireless environments.
