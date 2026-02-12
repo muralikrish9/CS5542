@@ -9,6 +9,9 @@ It allows users to search across the "Attention Is All You Need" and "BERT" rese
 - **Evaluation**: Automatically calculates Precision@5 and Recall@10 for predefined queries.
 - **Logging**: Logs all interactions to `logs/query_metrics.csv`.
 
+## Demo
+![Application Demo](img/demo.png)
+
 ## Setup
 
 1. **Install Dependencies**:
