@@ -1,0 +1,8 @@
+streamlit
+pymupdf
+scikit-learn
+sentence-transformers
+pillow
+pandas
+numpy
+requests
