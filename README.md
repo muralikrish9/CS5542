@@ -62,9 +62,20 @@ streamlit run app.py
 
 ---
 
+## Week 5 — Snowflake Integration (Cloud Data Pipeline)
+
+Implements an end-to-end cloud analytics workflow on a representative project subset with Snowflake ingestion, SQL transformations, Streamlit dashboard integration, and pipeline monitoring logs.
+
+**Key concepts:** Snowflake staging/COPY INTO, schema design, query layer, app integration, observability
+
+📁 [`Week5_Lab/`](Week5_Lab/)
+
+---
+
 ## Tech Stack
 
 - Python, Jupyter, Streamlit
 - Sentence-Transformers, FAISS, BM25
 - PyMuPDF, Transformers, Cross-Encoders
+- Snowflake (warehouse, SQL, staging)
 - Streamlit Cloud (deployment)
