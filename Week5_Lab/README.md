@@ -89,8 +89,9 @@ The dashboard supports:
 3. **Derived analytics path** via join query for role/category behavior.
 
 ## Demo Video
-- Pending upload (add unlisted YouTube/Drive link before Canvas submission).
+- https://youtu.be/ZInB_jDfea0
 
 ## Individual contribution document (Canvas)
 A draft 1-page individual README is available at:
 - `../academic/cs5542-lab5-individual-contribution-draft.md`
+
