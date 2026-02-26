@@ -1,43 +1,43 @@
 # CONTRIBUTIONS.md — Lab 5
 
 ## Team Name
-Team Promptocalypse
+Team Promptocalypse (Solo submission)
 
 ## Project Title
 AI Security Analytics Pipeline (Snowflake Integration)
 
 ---
 
-## Member: Murali Ediga (Solo)
+## Member: Murali Ediga (Solo — all components)
+
 ### Responsibilities
-- Set up Snowflake environment (warehouse, database, schema, file format, internal stage).
-- Designed and implemented ingestion pipeline (`PUT` to stage + `COPY INTO` with CSV format).
-- Created schema DDL for EVENTS and USERS tables.
-- Implemented 3 analytics/transformation queries (aggregation, time-filter, multi-table join).
-- Built Streamlit dashboard with parameterized filters, query selection, chart output, and runtime logging.
-- Pipeline monitoring via `logs/pipeline_logs.csv` with latency, row counts, and error capture.
-- Created pipeline architecture diagram.
-- Documentation (README, this file).
+- Designed and implemented the full end-to-end Snowflake pipeline (solo submission)
+- Snowflake environment setup: database, schema, warehouse, role configuration
+- Data ingestion: schema design, staging, and `COPY INTO` loading for `events.csv` and `users.csv`
+- Query & transformation layer: 3 analytics queries (aggregation, time-filtered, multi-table join)
+- Application integration: Streamlit in Snowflake native app with parameterized filters, query selector, and Altair charts
+- Monitoring & logging: `PIPELINE_LOGS` table in Snowflake capturing timestamp, team, user, query, latency, row count, and errors
+- Extensions: enhanced monitoring fields, interactive dashboard controls, derived role × category join analytics
+- Pipeline diagram, README, and submission documentation
 
-### Evidence (commits / PRs)
-- Commit: `fc36d6d` — Finish CS5542 Week 5 lab package and submission docs
-- Supporting commits:
-  - `b9b7f54` — README cleanup and week summaries
-  - `e7ca359` — root README and screenshot updates
-- PRs: N/A (direct push workflow).
+### Commit Evidence
+- `eb14f73` — add pipeline_logs.csv with real Snowflake query execution results
+- `03e2d7d` — upgrade streamlit app with PAT auth, charts, sidebar controls
+- `34d2faa` — fix requirements.txt for deployment
+- `84a46f7` — Streamlit in Snowflake native app with PIPELINE_LOGS table
+- `fc36d6d` — Finish CS5542 Week 5 lab package and submission docs
 
-### Components implemented and tested
-- `sql/01_create_schema.sql` — DB + table DDL
-- `sql/02_stage_and_load.sql` — warehouse, file format, stage creation
+### Components Implemented and Tested
+- `sql/01_create_schema.sql` — database, schema, EVENTS + USERS tables
+- `sql/02_stage_and_load.sql` — internal stage + COPY INTO loading
 - `sql/03_queries.sql` — 3 analytics queries
-- `scripts/sf_connect.py` — Snowflake connector (supports password, OAuth, PAT, externalbrowser)
-- `scripts/load_local_csv_to_stage.py` — CSV → stage → COPY INTO loader
-- `app/streamlit_app.py` — interactive query dashboard
-- `logs/pipeline_logs.csv` — pipeline execution log
-- `pipeline_diagram.png` — architecture diagram
+- `sql/04_create_streamlit.sql` — Streamlit in Snowflake deployment
+- `scripts/sf_connect.py` — Snowflake connector with PAT/OAuth support
+- `scripts/load_local_csv_to_stage.py` — Python ingestion script
+- `app/streamlit_app.py` — Snowflake-native Streamlit dashboard
+- `logs/pipeline_logs.csv` — pipeline execution log (real Snowflake runs)
+- `pipeline_diagram.png` — end-to-end pipeline diagram
+- `PIPELINE_LOGS` table in Snowflake — live monitoring log
 
-### Live execution results
-- Database `CS5542_WEEK5` created, tables `EVENTS` (5 rows) and `USERS` (4 rows) loaded.
-- All 3 queries executed successfully against live Snowflake warehouse.
-- Ingestion latency: ~1.1s per CSV (XSMALL warehouse, cold start).
-- Q2 returns 0 rows by design (event timestamps are historical, 24h filter is relative).
+### Live Dashboard
+Streamlit in Snowflake: https://app.snowflake.com/streamlit/sfedu02/dcb73175/#/apps/wjwddq3xfqomayzpws35

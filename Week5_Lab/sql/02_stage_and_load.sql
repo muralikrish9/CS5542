@@ -1,10 +1,5 @@
 -- 02_stage_and_load.sql
-
--- Warehouse
-CREATE OR REPLACE WAREHOUSE COMPUTE_WH
-  WAREHOUSE_SIZE = 'XSMALL'
-  AUTO_SUSPEND = 60
-  AUTO_RESUME = TRUE;
+-- Multi-Agent AI Attack Swarm Detection — Data Loading
 
 USE WAREHOUSE COMPUTE_WH;
 USE DATABASE CS5542_WEEK5;
@@ -17,11 +12,20 @@ CREATE OR REPLACE FILE FORMAT CS5542_CSV_FMT
   FIELD_OPTIONALLY_ENCLOSED_BY = '"'
   NULL_IF = ('', 'NULL', 'null');
 
--- Stage (internal)
+-- Internal stage
 CREATE OR REPLACE STAGE CS5542_STAGE
   FILE_FORMAT = CS5542_CSV_FMT;
 
--- After a file is uploaded to @CS5542_STAGE (e.g., events.csv), load it:
--- COPY INTO EVENTS
--- FROM @CS5542_STAGE/events.csv
--- ON_ERROR = 'CONTINUE';
+-- Upload CSVs to stage (run via SnowSQL or Python):
+--   PUT file://data/sessions.csv @CS5542_STAGE;
+--   PUT file://data/commands.csv @CS5542_STAGE;
+
+-- Load sessions (1,619 honeypot sessions: AI swarm, human, scripted bot)
+COPY INTO SESSIONS
+FROM @CS5542_STAGE/sessions.csv
+ON_ERROR = 'CONTINUE';
+
+-- Load commands (8,315 individual commands across all sessions)
+COPY INTO COMMANDS
+FROM @CS5542_STAGE/commands.csv
+ON_ERROR = 'CONTINUE';

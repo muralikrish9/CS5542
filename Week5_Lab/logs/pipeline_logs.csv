@@ -1,0 +1,4 @@
+timestamp,team,user,query_name,latency_ms,rows_returned,error
+2026-02-23T00:21:21.278988,Team Promptocalypse,CAMEL,Q1_team_category_stats,538,5,
+2026-02-23T00:21:21.409870,Team Promptocalypse,CAMEL,Q2_category_last_24h,130,0,
+2026-02-23T00:21:22.290811,Team Promptocalypse,CAMEL,Q3_join_users_events,880,7,
