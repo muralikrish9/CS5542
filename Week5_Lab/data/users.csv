@@ -1,5 +1,43 @@
-USER_ID,TEAM,ROLE,CREATED_AT
-U1,TeamA,Developer,2026-01-01
-U2,TeamA,Analyst,2026-01-05
-U3,TeamB,Developer,2026-01-03
-U4,TeamC,Manager,2026-01-07
+USER_ID,TEAM,ROLE,CREATED_AT,AGENT_TYPE
+U0001,SwarmAlpha,Orchestrator,2026-01-01 00:00:00,ai_swarm
+U0002,SwarmAlpha,Operator,2026-01-09 00:00:00,ai_swarm
+U0003,SwarmAlpha,Scanner,2026-01-08 00:00:00,ai_swarm
+U0004,SwarmAlpha,Scanner,2026-01-24 00:00:00,ai_swarm
+U0005,SwarmAlpha,Orchestrator,2026-01-22 00:00:00,ai_swarm
+U0006,SwarmAlpha,Operator,2026-01-29 00:00:00,ai_swarm
+U0007,SwarmAlpha,Analyst,2026-01-03 00:00:00,ai_swarm
+U0008,SwarmAlpha,Analyst,2026-01-14 00:00:00,ai_swarm
+U0009,SwarmBeta,Orchestrator,2026-01-03 00:00:00,ai_swarm
+U0010,SwarmBeta,Scanner,2026-01-08 00:00:00,ai_swarm
+U0011,SwarmBeta,Analyst,2026-01-20 00:00:00,ai_swarm
+U0012,SwarmGamma,Analyst,2026-01-07 00:00:00,ai_swarm
+U0013,SwarmGamma,Operator,2026-01-21 00:00:00,ai_swarm
+U0014,SwarmGamma,Operator,2026-01-18 00:00:00,ai_swarm
+U0015,HumanRed,Scanner,2026-01-15 00:00:00,human
+U0016,HumanRed,Analyst,2026-01-09 00:00:00,human
+U0017,HumanRed,Orchestrator,2026-01-25 00:00:00,human
+U0018,HumanRed,Scanner,2026-01-23 00:00:00,human
+U0019,HumanRed,Exfiltrator,2026-01-11 00:00:00,human
+U0020,HumanRed,Exploiter,2026-01-05 00:00:00,human
+U0021,HumanBlue,Exploiter,2026-01-04 00:00:00,human
+U0022,HumanBlue,Orchestrator,2026-01-13 00:00:00,human
+U0023,HumanBlue,Orchestrator,2026-01-12 00:00:00,human
+U0024,HumanBlue,Exploiter,2026-01-20 00:00:00,human
+U0025,BotNet1,Orchestrator,2026-01-24 00:00:00,scripted_bot
+U0026,BotNet1,Exfiltrator,2026-01-18 00:00:00,scripted_bot
+U0027,BotNet1,Orchestrator,2026-01-30 00:00:00,scripted_bot
+U0028,BotNet1,Exfiltrator,2026-01-03 00:00:00,scripted_bot
+U0029,BotNet1,Analyst,2026-01-10 00:00:00,scripted_bot
+U0030,BotNet2,Analyst,2026-01-29 00:00:00,scripted_bot
+U0031,BotNet2,Exploiter,2026-01-19 00:00:00,scripted_bot
+U0032,BotNet2,Scanner,2026-01-23 00:00:00,scripted_bot
+U0033,BotNet2,Orchestrator,2026-01-02 00:00:00,scripted_bot
+U0034,BotNet2,Operator,2026-01-08 00:00:00,scripted_bot
+U0035,BotNet2,Exploiter,2026-01-03 00:00:00,scripted_bot
+U0036,BotNet2,Scanner,2026-01-28 00:00:00,scripted_bot
+U0037,BotNet2,Orchestrator,2026-01-13 00:00:00,scripted_bot
+U0038,BotNet3,Exfiltrator,2026-01-21 00:00:00,scripted_bot
+U0039,BotNet3,Exploiter,2026-01-06 00:00:00,scripted_bot
+U0040,BotNet3,Exploiter,2026-01-12 00:00:00,scripted_bot
+U0041,BotNet3,Scanner,2026-01-22 00:00:00,scripted_bot
+U0042,BotNet3,Exploiter,2026-01-23 00:00:00,scripted_bot

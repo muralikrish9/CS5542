@@ -1,0 +1,35 @@
+# CS 5542 Project Assignment 2 — Dependencies
+# Python 3.10 required
+
+# Core ML / NLP
+sentence-transformers==2.7.0
+torch==2.2.2
+scikit-learn==1.4.2
+numpy==1.26.4
+
+# PDF processing
+pymupdf==1.24.5
+reportlab==4.2.0
+
+# Retrieval / Embeddings
+faiss-cpu==1.8.0
+rank-bm25==0.2.2
+
+# Application
+streamlit==1.38.0
+requests==2.32.3
+
+# Snowflake
+snowflake-connector-python==3.10.1
+snowflake-sqlalchemy==1.6.1
+
+# Visualization / Diagram
+matplotlib==3.9.0
+pillow==10.4.0
+
+# Data
+pandas==2.2.2
+
+# Logging / Utils
+python-dotenv==1.0.1
+tqdm==4.66.4
