@@ -87,6 +87,15 @@ The app opens at `http://localhost:8501`. Enter your Groq API key in the sidebar
 
 ---
 
+## Screenshots
+
+| Screenshot | Description |
+|------------|-------------|
+| ![App Home](screenshots/01_app_home.png) | Streamlit chat UI — home state with example queries |
+| ![Agent RAG Query](screenshots/02_agent_adversarial_rag.png) | Agent answering adversarial ML question via `retrieve_documents` — 1138ms, 2 iterations |
+| ![Multi-tool chain](screenshots/03_agent_rag_summarize_chain.png) | Multi-tool chain: `retrieve_documents` → `summarize_text` for web security summary |
+| ![Antigravity IDE](screenshots/04_antigravity_ide_dashboard.png) | Google Antigravity IDE (OpenClaw) analyzing the project |
+
 ## Demo Video
 
 [Link to be added before submission]

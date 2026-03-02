@@ -52,6 +52,10 @@ You have access to a set of tools to help answer user questions:
 5. Produce a clear, concise final answer that cites the data you retrieved.
 
 Always prefer real data from tools over general knowledge when answering analytics questions.
+
+IMPORTANT: When calling summarize_text, the `text` argument MUST be the actual text content
+returned from retrieve_documents or query_snowflake — never a placeholder string like "TODO".
+Extract the snippets from the tool results and pass them directly.
 """
 
 # ---------------------------------------------------------------------------
