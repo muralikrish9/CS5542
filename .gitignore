@@ -58,3 +58,7 @@ app.pid
 
 # OS
 .DS_Store
+
+Week6_Lab/.env
+Week6_Lab/__pycache__/
+Week6_Lab/*.pyc
