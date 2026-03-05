@@ -1,0 +1,36 @@
+# CS 5542 - Week 7 Lab: Reproducibility Config
+# All runtime parameters are driven from this file.
+# Override individual values via environment variables (see .env.example).
+
+agent:
+  model: "llama-3.3-70b-versatile"
+  max_iterations: 6
+  temperature: 0.0          # deterministic; do not change without documenting
+  seed: 42
+
+snowflake:
+  warehouse: "COMPUTE_WH"
+  database: "CS5542_WEEK5"
+  schema: "PUBLIC"
+  role: "ACCOUNTADMIN"
+  mock_mode: false           # set true (or SNOWFLAKE_MOCK=true env) for offline runs
+
+logging:
+  level: "INFO"
+  dir: "logs"
+  filename: "pipeline.log"
+
+artifacts:
+  dir: "artifacts"
+  save_results: true
+  save_trace: true           # full agent step trace saved as JSON
+
+rag:
+  tfidf_max_features: 5000
+  tfidf_ngram_range: [1, 2]
+  top_k: 3
+
+reflection:                  # Part B: Reflexion improvement (Shinn et al., NeurIPS 2023)
+  enabled: true
+  max_reflections: 2         # how many self-critique passes before final answer
+  reflection_threshold: 0.6  # confidence below which reflection is triggered
