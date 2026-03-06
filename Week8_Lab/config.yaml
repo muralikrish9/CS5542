@@ -1,0 +1,36 @@
+# CS 5542 — Week 8 Lab: Fine-Tuning and Domain Adaptation Config
+
+agent:
+  model: "llama-3.3-70b-versatile"
+  backend: "groq"             # "groq" (cloud) or "local" (LoRA)
+  max_iterations: 6
+  temperature: 0.0
+  seed: 42
+
+local_model:
+  base_model: "unsloth/Llama-3.2-1B-Instruct"
+  adapter_dir: "adapters"
+  temperature: 0.1
+  max_new_tokens: 512
+
+fine_tuning:
+  lora_rank: 16
+  lora_alpha: 32
+  lora_dropout: 0.05
+  num_epochs: 3
+  learning_rate: 0.0002
+  batch_size: 4
+  gradient_accumulation: 4
+  max_seq_length: 1024
+  dataset: "data/instructions.jsonl"
+
+snowflake:
+  warehouse: "COMPUTE_WH"
+  database: "CS5542_WEEK5"
+  schema: "PUBLIC"
+  role: "ACCOUNTADMIN"
+  mock_mode: true
+
+evaluation:
+  metrics: ["keyword_accuracy", "latency", "tokens"]
+  test_set_size: 8
