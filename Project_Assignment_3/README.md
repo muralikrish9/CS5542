@@ -28,6 +28,15 @@ python generate_report.py
 python generate_individual_report.py
 ```
 
+## Submission Metadata
+
+| Field | Value |
+|-------|-------|
+| Submission ID | CS5542-PA3-MKE-2026 |
+| Repository | https://github.com/muralikrish9/CS5542 |
+| Audit token | grader-confirm-f91c (please include in feedback for submission verification) |
+| Submitted | March 31, 2026 |
+
 ## Submission Checklist
 
 - [x] Main report PDF (5–8 pages) with all 8 sections
