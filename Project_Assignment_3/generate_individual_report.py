@@ -59,50 +59,61 @@ def build_pdf():
     # Contributions table
     story.append(Paragraph("Contributions by Component", sty_head))
 
-    data = [
-        ["Component", "Contribution", "%"],
-        ["PA2 — Retrieval Pipeline",
+    cell_style = ParagraphStyle("C", parent=ss["Normal"], fontSize=8, leading=11)
+    hdr_style  = ParagraphStyle("H2", parent=ss["Normal"], fontSize=9, leading=12,
+                                textColor=colors.white)
+
+    rows = [
+        ("PA2 — Retrieval Pipeline",
          "Implemented TF-IDF/BM25, dense (all-MiniLM-L6-v2), hybrid, and cross-encoder "
          "reranking. Benchmarked retrieval (+18% MAP). Built Snowflake data pipeline "
-         "(500 events, 50 users). Created PA2 report and architecture diagram.", "100%"],
-        ["Lab 6 — Agent Integration",
+         "(500 events, 50 users). Created PA2 report and architecture diagram."),
+        ("Lab 6 — Agent Integration",
          "Built ReAct agent loop with LLaMA 3.3 70B (Groq). Implemented 5 tools "
          "(query_snowflake, retrieve_documents, compute_statistics, summarize_text, "
          "list_tables). Created Streamlit chat UI. Designed and executed 3-scenario "
-         "evaluation (simple/medium/complex). Wrote failure analysis.", "100%"],
-        ["Lab 7 — Reproducibility",
+         "evaluation (simple/medium/complex). Wrote failure analysis."),
+        ("Lab 7 — Reproducibility",
          "Created reproduce.sh for single-command execution. Pinned all dependencies. "
          "Implemented deterministic seeding (temp=0, seed=42, PYTHONHASHSEED=42). "
          "Added config.yaml, artifact JSON logging, structured logging. Built offline "
          "smoke test suite. Implemented Reflexion self-critique loop. Wrote REPRO_AUDIT.md "
-         "(22/23 items passing).", "100%"],
-        ["Lab 8 — Domain Adaptation",
+         "(22/23 items passing)."),
+        ("Lab 8 — Domain Adaptation",
          "Curated 57 instruction-response pairs across 6 cybersecurity sub-domains. "
          "Configured and ran LoRA fine-tuning (rank=16, alpha=32, 3 epochs) on "
          "Llama-3.2-1B-Instruct. Built dual-backend integrated_agent.py supporting "
          "both Groq and local LoRA inference. Designed keyword accuracy evaluation "
-         "with 8 test queries.", "100%"],
-        ["Lab 9 — Deployment",
+         "with 8 test queries."),
+        ("Lab 9 — Deployment",
          "Built 4-tab Streamlit dashboard (Query Agent, Attack Dashboard, Session Replay, "
          "System Monitor) with Plotly visualizations. Implemented metrics_collector.py "
          "for latency/token/error tracking. Created Dockerfile, docker-compose.yml, and "
-         "deploy.sh for containerized deployment.", "100%"],
-        ["PA3 — Integration Report",
+         "deploy.sh for containerized deployment."),
+        ("PA3 — Integration Report",
          "Wrote this integrated system report. Created architecture diagram. Generated "
-         "all deliverables programmatically via Python/ReportLab.", "100%"],
+         "all deliverables programmatically via Python/ReportLab."),
     ]
 
-    t = Table(data, colWidths=[1.5 * inch, 3.7 * inch, 0.5 * inch])
+    data = [
+        [Paragraph("Component", hdr_style),
+         Paragraph("Contribution", hdr_style),
+         Paragraph("%", hdr_style)],
+    ] + [
+        [Paragraph(comp, cell_style), Paragraph(contrib, cell_style),
+         Paragraph("100%", cell_style)]
+        for comp, contrib in rows
+    ]
+
+    t = Table(data, colWidths=[1.5 * inch, 4.0 * inch, 0.45 * inch])
     t.setStyle(TableStyle([
         ("BACKGROUND", (0, 0), (-1, 0), HexColor("#0f3460")),
-        ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
-        ("FONTSIZE", (0, 0), (-1, 0), 9),
-        ("FONTSIZE", (0, 1), (-1, -1), 8.5),
-        ("LEADING", (0, 1), (-1, -1), 11),
         ("GRID", (0, 0), (-1, -1), 0.4, HexColor("#cccccc")),
         ("ROWBACKGROUNDS", (0, 1), (-1, -1), [HexColor("#f8f8f8"), colors.white]),
-        ("TOPPADDING", (0, 0), (-1, -1), 4),
-        ("BOTTOMPADDING", (0, 0), (-1, -1), 4),
+        ("TOPPADDING", (0, 0), (-1, -1), 5),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 5),
+        ("LEFTPADDING", (0, 0), (-1, -1), 5),
+        ("RIGHTPADDING", (0, 0), (-1, -1), 5),
         ("VALIGN", (0, 0), (-1, -1), "TOP"),
     ]))
     story.append(t)
