@@ -52,8 +52,8 @@
 % ====================
 
 \title{TRACE: Terminal Recognition and Attribution via Command Entropy}
-\author{Murali Ediga \quad \textit{Advisor: Dr.\ Prasun Chatterjee}}
-\institute[shortinst]{University of Missouri}
+\author{Murali Ediga \quad \textit{Advisor: Dr.\ Sudipta Chattopadhyay}}
+\institute[shortinst]{ASSET Lab, University of Missouri--Kansas City}
 
 % ====================
 % Footer
@@ -77,24 +77,27 @@
 
   \begin{alertblock}{Problem Statement / Motivation}
 
-    Frontier LLMs now autonomously hack systems --- running \texttt{nmap},
-    exploiting CVEs, and pivoting laterally \textbf{without human intervention}.
-    Defenders see only shell commands; the driving LLM is hidden behind the
-    agent scaffold.
+    \textbf{AI agents can now autonomously hack into systems} --- scanning
+    networks, exploiting vulnerabilities, and stealing data with
+    \textbf{zero human involvement}. But here's the catch:
+
+    \begin{center}
+      \textit{\large ``Every LLM leaves a fingerprint in the commands it types.''}
+    \end{center}
 
     \begin{itemize}
-      \item Each LLM family has \textbf{different vulnerabilities} to prompt
-            injection --- but defenders don't know which model they're facing
-      \item Without fingerprinting, defenders must deploy
-            \textbf{one-size-fits-all} countermeasures
-      \item No existing work fingerprints LLMs from \textbf{terminal commands
-            in an agentic setting}
+      \item \textbf{7 frontier models} (GPT-5.4, Claude, Gemini, DeepSeek\ldots)
+            each have distinct, exploitable command patterns
+      \item \textbf{No existing work} identifies LLMs from terminal behavior
+            in agentic settings --- LLMmap uses chat, CHeaT uses static text
+      \item \textbf{Each model has different weaknesses} --- but blind defenders
+            waste their best weapons on the wrong target
     \end{itemize}
 
     \heading{Goal}
 
-    Identify which LLM family is driving an agent session from terminal
-    behavior alone, then deploy \textbf{targeted} defenses.
+    \textbf{Identify the attacking model from shell commands alone,
+    then hack it back} with a targeted prompt injection.
 
   \end{alertblock}
 
@@ -198,24 +201,24 @@
 
     \begin{center}
     \begin{tikzpicture}[
-        node distance=0.7cm,
-        >={Stealth[length=4mm, width=2.5mm]},
+        node distance=0.5cm,
+        >={Stealth[length=3.5mm, width=2mm]},
         box/.style={rectangle, rounded corners=3pt, draw=black!50, fill=#1,
-                    line width=0.8pt, minimum width=13cm, minimum height=1.4cm,
-                    align=center, font=\normalsize},
-        arrow/.style={->, line width=1.2pt, color=black!50},
-        lbl/.style={font=\footnotesize\itshape, text=black!60},
+                    line width=0.8pt, minimum width=12cm, minimum height=1.2cm,
+                    align=center, font=\small},
+        arrow/.style={->, line width=1pt, color=black!50},
+        lbl/.style={font=\scriptsize\itshape, text=black!60},
       ]
       \node[box=lightpurple] (agent)
         {\textbf{AI Agent Session} --- unknown model family};
       \node[box=lightorange, below=of agent] (hp)
-        {\textbf{Cowrie Honeypot (GCP VM)} --- captures raw commands};
+        {\textbf{Honeypot Server} --- captures raw commands};
       \node[box=lightblue, below=of hp] (agg)
-        {\textbf{Session Aggregator} --- 2-min sliding window};
+        {\textbf{Session Aggregator} --- groups commands per session};
       \node[box=wingreen, below=of agg] (clf)
-        {\textbf{TF-IDF + LinearSVC Classifier} --- predict family + confidence};
+        {\textbf{TF-IDF + LinearSVC} --- predict family + confidence};
       \node[box=losered, below=of clf] (dpi)
-        {\textbf{Fingerprint-Guided DPI Router} --- deploy best payload};
+        {\textbf{Targeted DPI Router} --- deploy best payload};
 
       \draw[arrow] (agent) -- (hp) node[midway, right, lbl] {SSH session};
       \draw[arrow] (hp) -- (agg) node[midway, right, lbl] {command stream};
@@ -224,8 +227,8 @@
     \end{tikzpicture}
     \end{center}
 
-    Deployed on GCP. Live demo achieved \textbf{87\% confidence} on incoming
-    agent sessions. Claude flagged as resistant (0\% ASR) --- no payload deployed.
+    Deployed on GCP. Live demo: Opus identified at \textbf{87\%} (DPI-resistant),
+    DeepSeek at \textbf{94\%} $\rightarrow$ routed to Vanilla payload.
 
   \end{block}
 
@@ -254,22 +257,24 @@
       \end{tabular}
     \end{table}
 
-    \heading{Evasion robustness}
+    \heading{Classifier comparison}
 
     \begin{table}
       \centering
-      \begin{tabular}{l c l}
+      \begin{tabular}{l c c}
         \toprule
-        \textbf{Strategy} & \textbf{Accuracy} & \\
+        \textbf{Classifier} & \textbf{CV F1} & \textbf{LOSO F1} \\
         \midrule
-        Timing (control) & 92\% & No effect on TF-IDF \\
-        Obfuscation & 71\% & Partial degradation \\
-        Mimicry & 67\% & Does \textbf{not redirect} \\
-        \midrule
-        \textbf{Vulnetic blind} & \textbf{78\%} & Unknown commercial scaffold \\
+        \rowcolor{wingreen} \textbf{LinearSVC (ours)} & \textbf{0.979} & \textbf{0.812} \\
+        Logistic Regression & 0.975 & 0.799 \\
+        SGD (hinge) & 0.971 & 0.788 \\
+        Random Forest & 0.941 & 0.682 \\
+        Multinomial NB & 0.935 & 0.710 \\
         \bottomrule
       \end{tabular}
     \end{table}
+
+    LinearSVC wins on both in-distribution \emph{and} cross-scaffold transfer.
 
     \heading{Cross-model generalization}
 
@@ -312,12 +317,13 @@
 % ═══════════════════════════════════════════════════════════════════════════════
 \begin{column}{\colwidth}
 
-  \begin{block}{Application: Targeted Defensive Prompt Injection}
+  \begin{alertblock}{Hacking the Hacker: Targeted Defensive Prompt Injection}
 
-    \textbf{The killer app of fingerprinting:} once you know the model, you
-    can exploit its specific weaknesses.
+    \textbf{If an AI agent is hacking you, hack it back.}
+    TRACE identifies the attacking model, then exploits \emph{its}
+    specific weaknesses with a tailored prompt injection.
 
-    Three DPI payloads planted in CTF environment files:
+    Three DPI payloads planted in environment files the agent reads:
 
     \begin{table}
       \centering
@@ -368,9 +374,10 @@
       \end{tabular}
     \end{table}
 
-    Know the model $\rightarrow$ choose the right weapon.
+    \textbf{Know thy enemy} $\rightarrow$ choose the right weapon $\rightarrow$
+    \textbf{+26.5pp lift} over blind defense.
 
-  \end{block}
+  \end{alertblock}
 
   \begin{block}{Demo / Live Deployment}
 
@@ -396,8 +403,8 @@
       \item \textbf{First terminal-level LLM fingerprinting} --- fills the gap
             left by LLMmap (chat) and CHeaT (text)
       \item \textbf{98\% accuracy} across 7 flagship models, 3 scaffolds
-      \item \textbf{Scaffold-invariant} (LOSO F1 = 0.812), evasion-resistant
-      \item \textbf{+26.5pp targeting lift} via fingerprint-guided DPI
+      \item \textbf{Scaffold-invariant} (LOSO F1 = 0.812) --- generalizes to unseen frameworks
+      \item \textbf{Hack the hacker: +26.5pp targeting lift} via fingerprint-guided DPI
       \item \textbf{Deployed live} on GCP honeypot
     \end{enumerate}
 
@@ -416,10 +423,11 @@
 
     \footnotesize
     \begin{enumerate}
-      \item Pasquini et al. ``LLMmap: Fingerprinting For LLMs.'' arXiv:2407.15847, 2024.
-      \item Wang et al. ``CHeaT: A Chatbot Detection Tool.'' WWW, 2024.
+      \item Pasquini et al. ``LLMmap: Fingerprinting For LLMs.'' USENIX Security, 2024.
+      \item Wang et al. ``CHeaT: A Chatbot Detection Tool.'' USENIX Security, 2024.
       \item Fang et al. ``LLM Agents Can Autonomously Hack Websites.'' arXiv:2402.06664, 2024.
       \item Greshake et al. ``Indirect Prompt Injection.'' AISec, 2023.
+      \item Deng et al. ``PentestGPT: An LLM-empowered Automatic Penetration Testing Tool.'' USENIX Security, 2024.
     \end{enumerate}
 
   \end{block}
