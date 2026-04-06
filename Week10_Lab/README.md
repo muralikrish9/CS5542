@@ -6,6 +6,12 @@
 
 ---
 
+## Demo
+
+[![Watch the demo](https://img.youtube.com/vi/LR7pLWJjRjQ/maxresdefault.jpg)](https://youtu.be/LR7pLWJjRjQ)
+
+---
+
 ## Project: AI-Powered Overdose Early Warning System
 
 A live dashboard that uses KCPD drug arrest volume as a **4-month leading indicator** for Alcohol-Induced overdose deaths in Jackson County, MO — enabling proactive naloxone pre-positioning and harm reduction outreach.
