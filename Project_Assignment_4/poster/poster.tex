@@ -1,13 +1,25 @@
 % TRACE Research Poster — CS 5542 Research-A-Thon 2026
-% Based on University of Lethbridge Poster Template (Gemini theme)
-% Compile with LuaLaTeX
+% Self-contained: uses only built-in beamer themes (no extra .sty files needed)
+% Compile with pdfLaTeX or LuaLaTeX
 \documentclass[final]{beamer}
 
 % ==== Poster size: 36 x 48 inches (portrait) ====
 \usepackage[size=custom,width=91.44,height=121.92,scale=1.15]{beamerposter}
 
-\usetheme{gemini}
-\usecolortheme{gemini}
+\usetheme{Madrid}
+\usecolortheme{whale}
+
+% Clean up beamer chrome for poster
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{headline}{}
+\setbeamertemplate{footline}{}
+\setbeamertemplate{caption}[numbered]
+\setbeamerfont{block title}{size=\large,series=\bfseries}
+\setbeamerfont{block body}{size=\normalsize}
+\setbeamercolor{block title}{bg=structure.fg!85!black, fg=white}
+\setbeamercolor{block body}{bg=structure.fg!5!white, fg=black}
+\setbeamercolor{block title alerted}{bg=red!70!black, fg=white}
+\setbeamercolor{block body alerted}{bg=red!5!white, fg=black}
 
 % ==== Packages ====
 \usepackage{graphicx}
@@ -18,6 +30,7 @@
 \pgfplotsset{compat=1.18}
 \usepackage{colortbl}
 \usepackage{xcolor}
+\usepackage{caption}
 
 % ==== Custom colors ====
 \definecolor{traceblue}{HTML}{1565C0}
@@ -44,15 +57,32 @@
 \author{Murali Ediga \quad \textit{Advisor: Dr.\ Chatterjee}}
 \institute{Department of Computer Science, University of Missouri}
 
-% ==== Footer ====
-\footercontent{
-  CS 5542 Big Data Analytics \& Management --- Research-A-Thon 2026 \hfill
-  \texttt{github.com/muralikrish9/CS5542}
+% ==== Footer (manual) ====
+\setbeamertemplate{footline}{
+  \leavevmode\hbox{%
+    \begin{beamercolorbox}[wd=\paperwidth,ht=3ex,dp=1.5ex]{structure.fg}
+      \hspace{2em}{\small CS 5542 Big Data Analytics \& Management --- Research-A-Thon 2026}
+      \hfill
+      {\small\texttt{github.com/muralikrish9/CS5542}}\hspace{2em}
+    \end{beamercolorbox}
+  }
 }
 
 \begin{document}
 
 \begin{frame}[t]
+
+% ── Title banner ──────────────────────────────────────────────────────────────
+\begin{beamercolorbox}[wd=\paperwidth, center, sep=1.2em]{title}
+  {\Huge\bfseries TRACE: Terminal Recognition and Attribution\\[0.3em] via Command Entropy\par}
+  \vspace{0.6em}
+  {\Large Murali Ediga \quad \textit{Advisor: Dr.\ Chatterjee}\par}
+  \vspace{0.3em}
+  {\large Department of Computer Science, University of Missouri\par}
+\end{beamercolorbox}
+
+\vspace{0.8em}
+
 \begin{columns}[t]
 
 \separatorcolumn
