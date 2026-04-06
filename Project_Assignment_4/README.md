@@ -2,6 +2,12 @@
 
 **CS 5542 -- Big Data Analytics and Management | Research-A-Thon 2026**
 
+## Demo Video
+
+[![YouTube Demo](https://img.shields.io/badge/YouTube-Demo%20Video-red?logo=youtube)](https://youtu.be/rBpGjsBFiyI)
+
+Watch the full project walkthrough: **https://youtu.be/rBpGjsBFiyI**
+
 ## Project Description
 
 TRACE is a machine learning system that identifies which Large Language Model (LLM) is driving an autonomous AI agent by analyzing the shell commands it executes on a target system. Using TF-IDF bigram features and LinearSVC classification, TRACE achieves high cross-validated accuracy across 7 model families and demonstrates scaffold-invariant generalization to unseen agent frameworks.
