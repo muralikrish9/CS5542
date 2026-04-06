@@ -1,0 +1,11 @@
+requests
+pandas
+numpy
+matplotlib
+scipy
+scikit-learn
+streamlit
+plotly
+folium
+streamlit-folium
+dtaidistance

@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KC Drug Market Temporal Signatures — CS5542 NSF NRT</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;600;700;800&family=Work+Sans:wght@300;400;500;600&family=Domine:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Material Symbols Outlined -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">tailwind.config = {darkMode:"class",theme:{extend:{colors:{"surface-dim":"#1b090a",tertiary:"#7dfbff",error:"#ff716c","surface-container-highest":"#3e1b1e","on-primary-fixed":"#4a1425","primary-container":"#fea9bd","on-error-container":"#ff9993",background:"#1b090a","tertiary-container":"#65eef2","inverse-on-surface":"#694e4f","surface-variant":"#3e1b1e","secondary-container":"#10292c","on-background":"#ffdede","surface-bright":"#472024",surface:"#1b090a","on-surface-variant":"#d39da0","error-container":"#8a1a1e","inverse-surface":"#fff8f7","on-error":"#490006","surface-tint":"#ffbdcb",secondary:"#b1cbce","primary-fixed":"#fea9bd","on-primary-container":"#64293a","surface-container-low":"#230d0f","on-tertiary":"#005f61","on-primary":"#6f3143","inverse-primary":"#8e4a5c","on-secondary":"#2c4447","on-secondary-container":"#8ea9ab","primary":"#ffbdcb","surface-container":"#2c1214","on-surface":"#ffdede"},borderRadius:{DEFAULT:"1rem",lg:"2rem",xl:"3rem",full:"9999px"},fontFamily:{headline:["Epilogue","sans-serif"],body:["Domine","serif"],label:["Work Sans","sans-serif"],display:["Epilogue","sans-serif"]}}}}</script>
+
+  <!-- ApexCharts -->
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts@3.49.0/dist/apexcharts.min.js"></script>
+
+  <!-- marked.js -->
+  <script src="https://cdn.jsdelivr.net/npm/marked@12.0.0/marked.min.js"></script>
+
+  <style>
+    /* ── Neon utilities ─────────────────────────────────────────────────────── */
+    .neon-text-pink { text-shadow: 0 0 8px #ff2d78; }
+    .neon-text-cyan { text-shadow: 0 0 8px #00ffcc; }
+    .neon-border-pink { border: 1px solid rgba(255,45,120,0.3); box-shadow: inset 0 0 12px rgba(255,45,120,0.05); }
+    .neon-border-cyan { border: 1px solid rgba(0,255,204,0.3); box-shadow: inset 0 0 12px rgba(0,255,204,0.05); }
+    .glass-panel { background: rgba(20,20,34,0.7); backdrop-filter: blur(12px); }
+    .scanline { background: linear-gradient(to bottom, transparent 50%, rgba(0,255,204,0.02) 50%); background-size: 100% 4px; pointer-events: none; }
+
+    /* ── Active nav ─────────────────────────────────────────────────────────── */
+    .nav-item-active {
+      border-left: 4px solid #ff2d78;
+      background: rgba(255,45,120,0.10);
+      color: #ff2d78;
+      text-shadow: 0 0 8px #ff2d78;
+    }
+
+    /* ── Calendar ────────────────────────────────────────────────────────────── */
+    .cal-cell { width: 26px; height: 26px; border-radius: 6px; cursor: pointer; transition: transform 0.12s, box-shadow 0.12s; flex-shrink: 0; }
+    .cal-cell:hover { transform: scale(1.35); }
+    .cal-cell.tier-0 { background: rgba(255,255,255,0.04); }
+    .cal-cell.tier-1 { background: rgba(0,255,204,0.12); }
+    .cal-cell.tier-2 { background: rgba(0,255,204,0.3); }
+    .cal-cell.tier-3 { background: rgba(0,255,204,0.6); box-shadow: 0 0 8px rgba(0,255,204,0.4); }
+    .cal-cell.tier-4 { background: #00ffcc; box-shadow: 0 0 14px rgba(0,255,204,0.8), 0 0 4px #fff; }
+    .cal-cell.tier-4:hover { box-shadow: 0 0 22px rgba(0,255,204,1), 0 0 6px #fff; }
+    .cal-cell.anomaly-ring { outline: 2px solid #ff2d78; outline-offset: 2px; }
+
+    /* ── Calendar tooltip ────────────────────────────────────────────────────── */
+    #cal-tooltip { position: fixed; pointer-events: none; z-index: 9999; display: none; min-width: 180px; }
+
+    /* ── Scrollbar ───────────────────────────────────────────────────────────── */
+    ::-webkit-scrollbar { width: 5px; height: 5px; }
+    ::-webkit-scrollbar-thumb { background: rgba(255,45,120,0.3); border-radius: 3px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+
+    /* ── Carbon fibre bg ────────────────────────────────────────────────────── */
+    .carbon-bg {
+      background-color: #0a0a12;
+      background-image:
+        linear-gradient(rgba(255,45,120,0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,45,120,0.015) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+
+    /* ── Filter tabs ─────────────────────────────────────────────────────────── */
+    .filter-tab {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 9999px;
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #9e8a8b;
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .filter-tab:hover { color: #ffdede; border-color: rgba(255,255,255,0.25); }
+    .filter-tab.active {
+      background: rgba(255,45,120,0.15);
+      border-color: rgba(255,45,120,0.5);
+      color: #ff2d78;
+      text-shadow: 0 0 8px #ff2d78;
+    }
+    .filter-tab.active-cyan {
+      background: rgba(0,255,204,0.12);
+      border-color: rgba(0,255,204,0.4);
+      color: #00ffcc;
+      text-shadow: 0 0 8px #00ffcc;
+    }
+
+    /* ── Chat streaming cursor ──────────────────────────────────────────────── */
+    .typing-cursor::after {
+      content: '▋';
+      display: inline-block;
+      animation: blink 0.85s step-end infinite;
+      color: #00ffcc;
+      margin-left: 2px;
+    }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    /* ── Responsive layout ──────────────────────────────────────────────────── */
+    #sidebar {
+      transition: transform 0.25s cubic-bezier(0.4,0,0.2,1);
+    }
+    #sidebar-overlay {
+      display: none;
+      position: fixed; inset: 0; z-index: 39;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(2px);
+    }
+    #sidebar-overlay.show { display: block; }
+
+    /* Fluid KPI grid: 4-col on wide, auto-wrap below */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    /* Charts section: 2-col on ≥1024px, stack below */
+    .charts-row {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 28px;
+    }
+
+    /* Analysis 2-col */
+    .analysis-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    @media (max-width: 1280px) {
+      .charts-row { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 1024px) {
+      #sidebar { transform: translateX(-260px); }
+      #sidebar.open { transform: translateX(0); }
+      #sidebar-overlay.show { display: block; }
+      #main-content { margin-left: 0 !important; width: 100% !important; }
+      #hamburger { display: flex !important; }
+      .analysis-row { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .kpi-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+      #main-content { padding: 80px 16px 32px !important; gap: 20px !important; }
+    }
+    @media (max-width: 480px) {
+      .kpi-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Calendar cells scale down on small screens */
+    @media (max-width: 600px) {
+      .cal-cell { width: 18px !important; height: 18px !important; }
+    }
+
+    /* ── Anomaly items ──────────────────────────────────────────────────────── */
+    .anomaly-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border-radius: 0.75rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.05);
+      margin-bottom: 6px;
+    }
+    .anomaly-dot {
+      width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+    }
+    .anomaly-dot.spike { background: #ff2d78; box-shadow: 0 0 6px #ff2d78; }
+    .anomaly-dot.drop  { background: #00ffcc; box-shadow: 0 0 6px #00ffcc; }
+    .anomaly-source { font-size: 12px; font-weight: 500; color: #ffdede; font-family: 'Work Sans', sans-serif; }
+    .anomaly-date   { font-size: 11px; color: #9e8a8b; font-family: 'Work Sans', sans-serif; margin-top: 2px; }
+    .anomaly-z { font-family: 'Work Sans', monospace; font-size: 12px; font-weight: 700; margin-left: auto; }
+    .anomaly-z.high { color: #ff2d78; text-shadow: 0 0 6px #ff2d78; }
+    .anomaly-z.med  { color: #ffab00; }
+    .anomaly-z.low  { color: #9e8a8b; }
+
+    /* ── Xcorr table ─────────────────────────────────────────────────────────── */
+    .xcorr-table { width: 100%; border-collapse: separate; border-spacing: 0 4px; font-size: 12px; }
+    .xcorr-table th { font-family: 'Work Sans', sans-serif; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #9e8a8b; padding: 6px 10px; font-weight: 600; }
+    .xcorr-table td { padding: 6px 10px; color: #ffdede; vertical-align: middle; }
+    .xcorr-table tr td:first-child { border-radius: 0.5rem 0 0 0.5rem; }
+    .xcorr-table tr td:last-child  { border-radius: 0 0.5rem 0.5rem 0; }
+    .xcorr-table tbody tr { background: rgba(255,255,255,0.03); }
+    .xcorr-table tbody tr:hover { background: rgba(0,255,204,0.05); }
+    .sig-pill { display: inline-block; font-size: 10px; font-family: 'Work Sans', sans-serif; font-weight: 600; letter-spacing: 0.05em; padding: 2px 8px; border-radius: 9999px; }
+    .sig-pill.yes { background: rgba(0,255,204,0.15); color: #00ffcc; border: 1px solid rgba(0,255,204,0.3); }
+    .sig-pill.no  { background: rgba(255,255,255,0.05); color: #9e8a8b; border: 1px solid rgba(255,255,255,0.1); }
+
+    /* ── Chat bubbles ────────────────────────────────────────────────────────── */
+    .message-row { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 16px; }
+    .message-row.user { flex-direction: row-reverse; }
+    .msg-avatar {
+      width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 18px; flex-shrink: 0;
+    }
+    .msg-avatar.user-av {
+      background: rgba(255,45,120,0.15);
+      border: 1px solid rgba(255,45,120,0.4);
+      color: #ff2d78;
+      text-shadow: 0 0 8px #ff2d78;
+    }
+    .msg-avatar.assist-av {
+      background: rgba(0,255,204,0.10);
+      border: 1px solid rgba(0,255,204,0.3);
+      color: #00ffcc;
+      text-shadow: 0 0 8px #00ffcc;
+    }
+    .msg-bubble {
+      max-width: 78%;
+      padding: 12px 16px;
+      border-radius: 1rem;
+      font-family: 'Domine', serif;
+      font-size: 13.5px;
+      line-height: 1.65;
+      color: #ffdede;
+    }
+    .message-row.user .msg-bubble {
+      background: rgba(255,45,120,0.15);
+      border: 1px solid rgba(255,45,120,0.35);
+    }
+    .message-row.assistant .msg-bubble {
+      background: rgba(20,20,34,0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(0,255,204,0.3);
+      box-shadow: inset 0 0 12px rgba(0,255,204,0.05);
+    }
+    .msg-bubble p { margin: 0 0 0.6em 0; }
+    .msg-bubble p:last-child { margin-bottom: 0; }
+    .msg-bubble code { background: rgba(0,255,204,0.08); border-radius: 4px; padding: 1px 5px; font-size: 12px; color: #00ffcc; font-family: monospace; }
+    .msg-bubble pre { background: rgba(0,0,0,0.4); border-radius: 8px; padding: 10px 14px; overflow-x: auto; margin: 8px 0; }
+    .msg-bubble pre code { background: transparent; padding: 0; color: #7dfbff; }
+    .msg-bubble strong { color: #fff; }
+    .msg-bubble table { border-collapse: collapse; width: 100%; margin: 8px 0; font-size: 12px; }
+    .msg-bubble th { border-bottom: 1px solid rgba(0,255,204,0.25); padding: 4px 8px; color: #00ffcc; text-align: left; font-family: 'Work Sans', sans-serif; font-size: 11px; text-transform: uppercase; }
+    .msg-bubble td { padding: 4px 8px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .msg-bubble ul, .msg-bubble ol { padding-left: 1.3em; margin: 4px 0; }
+    .msg-bubble li { margin-bottom: 3px; }
+
+    /* ── Nav item hover ─────────────────────────────────────────────────────── */
+    .nav-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 9px 16px;
+      border-radius: 0.75rem;
+      font-family: 'Work Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: #9e8a8b;
+      cursor: pointer;
+      transition: all 0.15s;
+      margin: 1px 8px;
+      text-decoration: none;
+      border-left: 4px solid transparent;
+    }
+    .nav-item:hover { background: rgba(255,255,255,0.04); color: #ffdede; }
+    .nav-item.active {
+      border-left-color: #ff2d78;
+      background: rgba(255,45,120,0.10);
+      color: #ff2d78;
+      text-shadow: 0 0 8px #ff2d78;
+    }
+    .nav-item .material-symbols-outlined { font-size: 20px; }
+
+    /* ── Sidebar nav group label ────────────────────────────────────────────── */
+    .nav-group-label {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #9e8a8b;
+      padding: 18px 20px 6px;
+      opacity: 0.7;
+    }
+
+    /* ── Progress bar ────────────────────────────────────────────────────────── */
+    .progress-bar-wrap { height: 4px; background: rgba(255,255,255,0.06); border-radius: 9999px; overflow: hidden; margin-top: 8px; }
+    .progress-bar-fill { height: 100%; border-radius: 9999px; transition: width 0.8s ease; }
+
+    /* ── Live badge ──────────────────────────────────────────────────────────── */
+    .live-dot {
+      display: inline-block; width: 7px; height: 7px; border-radius: 50%;
+      background: #00ffcc; box-shadow: 0 0 6px #00ffcc;
+      animation: pulse-live 2s ease-in-out infinite;
+    }
+    @keyframes pulse-live {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.75); }
+    }
+
+    /* ── NEW badge ───────────────────────────────────────────────────────────── */
+    .badge-new {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 9px; font-weight: 700; letter-spacing: 0.06em;
+      padding: 1px 6px; border-radius: 9999px;
+      background: rgba(255,45,120,0.2);
+      color: #ff2d78;
+      border: 1px solid rgba(255,45,120,0.4);
+      text-transform: uppercase;
+      margin-left: 4px;
+    }
+    .badge-synth {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 10px; font-weight: 600; letter-spacing: 0.05em;
+      padding: 2px 10px; border-radius: 9999px;
+      background: rgba(255,171,0,0.15);
+      color: #ffab00;
+      border: 1px solid rgba(255,171,0,0.35);
+      display: none;
+    }
+    .badge-synth.show { display: inline-block; }
+
+    /* ── Full-width sections ────────────────────────────────────────────────── */
+    #main-content > section,
+    #main-content > section > div {
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .charts-row, .analysis-row, .kpi-grid {
+      width: 100%;
+    }
+
+    /* ── Section header line ─────────────────────────────────────────────────── */
+    .section-eyebrow {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #9e8a8b;
+    }
+    .section-title {
+      font-family: 'Epilogue', sans-serif;
+      font-weight: 700;
+    }
+
+    /* ── Chat empty state ────────────────────────────────────────────────────── */
+    .chat-empty-wrap {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      height: 100%; gap: 12px; opacity: 0.5;
+      font-family: 'Domine', serif;
+    }
+    .chat-empty-wrap .material-symbols-outlined { font-size: 42px; color: #00ffcc; }
+    .chat-empty-wrap p { font-size: 13px; color: #9e8a8b; text-align: center; max-width: 360px; line-height: 1.6; }
+  </style>
+</head>
+
+<body class="bg-[#0a0a12] text-on-surface font-body min-h-screen">
+
+  <!-- Sidebar overlay for mobile -->
+  <div id="sidebar-overlay" onclick="closeSidebar()"></div>
+
+  <!-- Global calendar tooltip -->
+  <div id="cal-tooltip" class="glass-panel neon-border-cyan rounded-xl px-4 py-3">
+    <div id="cal-tt-date" class="font-headline font-bold text-sm text-[#00ffcc] mb-1"></div>
+    <div id="cal-tt-val" class="font-label text-xs uppercase tracking-wider text-on-surface mb-1"></div>
+    <div id="cal-tt-avg" class="font-label text-[10px] text-slate-400"></div>
+    <div id="cal-tt-anomaly" class="font-label text-[10px] text-[#ff2d78] mt-1 hidden"></div>
+  </div>
+
+  <!-- ── Header ─────────────────────────────────────────────────────────────── -->
+  <header class="fixed top-0 left-0 right-0 h-16 z-50 flex items-center justify-between px-6"
+          style="background: rgba(10,10,18,0.9); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,45,120,0.3);">
+    <div class="flex items-center gap-3">
+      <!-- Hamburger — hidden on desktop, shown on ≤1024px -->
+      <button id="hamburger" onclick="toggleSidebar()"
+              style="display:none; align-items:center; justify-content:center; width:36px; height:36px; border-radius:8px; background:rgba(255,45,120,0.1); border:1px solid rgba(255,45,120,0.3); color:#ff2d78; cursor:pointer;">
+        <span class="material-symbols-outlined" style="font-size:20px;">menu</span>
+      </button>
+      <span class="font-headline font-bold text-lg neon-text-pink" style="color:#ff2d78; letter-spacing:-0.02em;">KC DRUG MARKET</span>
+      <span class="font-label text-xs text-slate-500 uppercase tracking-widest hidden md:block">Temporal Signatures</span>
+      <span id="synth-badge" class="badge-synth">Synthetic Data</span>
+    </div>
+    <div class="flex items-center gap-4">
+      <span id="data-range-badge" class="font-label text-xs text-slate-400 hidden md:block">Loading...</span>
+      <button onclick="refreshData()" class="flex items-center gap-2 px-4 py-2 rounded-full font-label text-xs font-semibold uppercase tracking-wider text-[#00ffcc] neon-border-cyan transition-all hover:bg-[#00ffcc]/10" style="font-size:11px; letter-spacing:0.07em;">
+        <span class="material-symbols-outlined" style="font-size:16px;">refresh</span>
+        Refresh
+      </button>
+    </div>
+  </header>
+
+  <div style="display:flex; width:100%; min-height:100vh;">
+    <!-- ── Sidebar ─────────────────────────────────────────────────────────── -->
+    <aside id="sidebar" class="fixed left-0 top-0 h-screen overflow-y-auto z-40 flex flex-col pt-16"
+           style="width:260px; background:#0a0a12; border-right:1px solid rgba(0,255,204,0.20);">
+
+      <!-- Logo block -->
+      <div class="px-5 py-5 border-b" style="border-color:rgba(255,45,120,0.2);">
+        <div class="font-headline font-extrabold text-base neon-text-pink" style="color:#ff2d78; letter-spacing:0.06em;">JACKSON CO.</div>
+        <div class="font-label text-xs mt-1 neon-text-cyan" style="color:#00ffcc; letter-spacing:0.04em;">MO Analytical Dashboard</div>
+      </div>
+
+      <!-- Nav groups -->
+      <nav class="flex-1 py-2">
+        <div class="nav-group-label">Dashboard</div>
+
+        <a class="nav-item active" href="#section-kpis" onclick="setActive(this)">
+          <span class="material-symbols-outlined">dashboard</span>
+          Overview
+        </a>
+        <a class="nav-item" href="#section-deaths" onclick="setActive(this)">
+          <span class="material-symbols-outlined">show_chart</span>
+          Death Trends
+        </a>
+        <a class="nav-item" href="#section-arrests" onclick="setActive(this)">
+          <span class="material-symbols-outlined">local_police</span>
+          Arrest Patterns
+        </a>
+
+        <div class="nav-group-label">Analysis</div>
+
+        <a class="nav-item" href="#section-forecast" onclick="setActive(this)">
+          <span class="material-symbols-outlined">online_prediction</span>
+          Early Warning
+          <span style="margin-left:auto; font-size:9px; font-family:'Work Sans',sans-serif; font-weight:700; letter-spacing:0.05em; padding:1px 6px; border-radius:9999px; background:rgba(255,45,120,0.2); color:#ff2d78; border:1px solid rgba(255,45,120,0.4);" id="nav-alert-dot">—</span>
+        </a>
+        <a class="nav-item" href="#section-calendar" onclick="setActive(this)">
+          <span class="material-symbols-outlined">calendar_month</span>
+          Calendar View
+        </a>
+        <a class="nav-item" href="#section-overlay" onclick="setActive(this)">
+          <span class="material-symbols-outlined">sync_alt</span>
+          Cross-Correlation
+        </a>
+        <a class="nav-item" href="#section-anomaly" onclick="setActive(this)">
+          <span class="material-symbols-outlined">warning_amber</span>
+          Anomaly Detection
+        </a>
+        <a class="nav-item" href="#section-dtw" onclick="setActive(this)">
+          <span class="material-symbols-outlined">hub</span>
+          Signature Clustering
+        </a>
+
+        <div class="nav-group-label">Research</div>
+
+        <a class="nav-item" href="#section-chat" onclick="setActive(this)">
+          <span class="material-symbols-outlined">smart_toy</span>
+          AI Analysis Chat
+          <span class="badge-new">NEW</span>
+        </a>
+      </nav>
+
+      <!-- Footer -->
+      <div class="px-5 py-4 border-t" style="border-color:rgba(255,255,255,0.06);">
+        <div class="font-label text-[10px] text-slate-500 uppercase tracking-wider mb-2">CS5542 · NSF NRT</div>
+        <div class="flex gap-3">
+          <button class="text-slate-500 hover:text-[#00ffcc] transition-colors" title="Settings">
+            <span class="material-symbols-outlined" style="font-size:18px;">settings</span>
+          </button>
+          <button class="text-slate-500 hover:text-[#00ffcc] transition-colors" title="Help">
+            <span class="material-symbols-outlined" style="font-size:18px;">help_outline</span>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ── Main content ──────────────────────────────────────────────────────── -->
+    <main id="main-content" class="carbon-bg" style="flex:1; min-width:0; width:0; margin-left:260px; padding:96px 32px 48px; display:flex; flex-direction:column; gap:32px; box-sizing:border-box;">
+
+      <!-- ── 1. KPI Grid ─────────────────────────────────────────────────────── -->
+      <section id="section-kpis">
+        <div class="section-eyebrow mb-4">Overview</div>
+        <div class="kpi-grid">
+
+          <!-- Deaths -->
+          <div class="glass-panel neon-border-pink rounded-lg p-5">
+            <div class="flex items-start justify-between mb-3">
+              <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background:rgba(255,45,120,0.12);">
+                <span class="material-symbols-outlined neon-text-pink" style="color:#ff2d78; font-size:22px;">monitor_heart</span>
+              </div>
+              <span class="font-label text-[10px] uppercase tracking-widest text-slate-500">Total</span>
+            </div>
+            <div id="kpi-deaths" class="font-headline font-bold text-3xl neon-text-pink" style="color:#ff2d78;">—</div>
+            <div class="font-label text-xs text-slate-400 mt-1 uppercase tracking-wider">Drug Deaths</div>
+            <div class="progress-bar-wrap mt-3">
+              <div class="progress-bar-fill" style="width:82%; background:linear-gradient(90deg,#ff2d78,#ff716c);"></div>
+            </div>
+          </div>
+
+          <!-- Arrests -->
+          <div class="glass-panel neon-border-cyan rounded-lg p-5">
+            <div class="flex items-start justify-between mb-3">
+              <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background:rgba(0,255,204,0.10);">
+                <span class="material-symbols-outlined neon-text-cyan" style="color:#00ffcc; font-size:22px;">gavel</span>
+              </div>
+              <span class="font-label text-[10px] uppercase tracking-widest text-slate-500">KCPD</span>
+            </div>
+            <div id="kpi-arrests" class="font-headline font-bold text-3xl neon-text-cyan" style="color:#00ffcc;">—</div>
+            <div class="font-label text-xs text-slate-400 mt-1 uppercase tracking-wider">Drug Arrests</div>
+            <div class="progress-bar-wrap mt-3">
+              <div class="progress-bar-fill" style="width:61%; background:linear-gradient(90deg,#00ffcc,#7dfbff);"></div>
+            </div>
+          </div>
+
+          <!-- Significant correlations -->
+          <div class="glass-panel rounded-lg p-5" style="border:1px solid rgba(125,251,255,0.25); box-shadow:inset 0 0 12px rgba(125,251,255,0.04);">
+            <div class="flex items-start justify-between mb-3">
+              <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background:rgba(125,251,255,0.10);">
+                <span class="material-symbols-outlined" style="color:#7dfbff; font-size:22px; text-shadow:0 0 8px #7dfbff;">analytics</span>
+              </div>
+              <span class="font-label text-[10px] uppercase tracking-widest text-slate-500">p&lt;0.05</span>
+            </div>
+            <div id="kpi-sig" class="font-headline font-bold text-3xl" style="color:#7dfbff; text-shadow:0 0 8px #7dfbff;">—</div>
+            <div class="font-label text-xs text-slate-400 mt-1 uppercase tracking-wider">Sig. Correlations</div>
+            <div class="progress-bar-wrap mt-3">
+              <div class="progress-bar-fill" style="width:45%; background:linear-gradient(90deg,#7dfbff,#00ffcc);"></div>
+            </div>
+          </div>
+
+          <!-- Anomalies -->
+          <div class="glass-panel rounded-lg p-5" style="border:1px solid rgba(255,113,108,0.25); box-shadow:inset 0 0 12px rgba(255,113,108,0.04);">
+            <div class="flex items-start justify-between mb-3">
+              <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background:rgba(255,113,108,0.10);">
+                <span class="material-symbols-outlined" style="color:#ff716c; font-size:22px; text-shadow:0 0 8px #ff716c;">crisis_alert</span>
+              </div>
+              <span class="font-label text-[10px] uppercase tracking-widest text-slate-500">z≥2.0</span>
+            </div>
+            <div id="kpi-anomalies" class="font-headline font-bold text-3xl" style="color:#ff716c; text-shadow:0 0 8px #ff716c;">—</div>
+            <div class="font-label text-xs text-slate-400 mt-1 uppercase tracking-wider">Anomaly Events</div>
+            <div class="font-label text-[11px] mt-3" id="kpi-range" style="color:#9e8a8b; font-family:'Work Sans',sans-serif;">—</div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── 2. Early Warning Alert Banner + Forecast ─────────────────────────── -->
+      <section id="section-forecast">
+
+        <!-- Alert banner -->
+        <div id="alert-banner" class="rounded-xl p-5 mb-5 flex items-start gap-5" style="background:rgba(255,45,120,0.08); border:1px solid rgba(255,45,120,0.35); display:none;">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(255,45,120,0.15);">
+            <span id="alert-icon" class="material-symbols-outlined text-2xl" style="color:#ff2d78; text-shadow:0 0 12px #ff2d78;">crisis_alert</span>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-3 mb-1">
+              <span class="font-headline font-bold text-sm uppercase tracking-wider" id="alert-level-label" style="color:#ff2d78;">ELEVATED RISK</span>
+              <span class="font-label text-[10px] text-slate-400 uppercase tracking-widest">Early Warning System · 4-Month Lead</span>
+            </div>
+            <div id="alert-rec" class="font-body text-sm" style="color:#ffdede; line-height:1.6;"></div>
+          </div>
+          <div class="text-right flex-shrink-0">
+            <div class="font-label text-[10px] text-slate-500 uppercase mb-1">Next Quarter</div>
+            <div id="alert-next-q" class="font-headline font-bold text-2xl" style="color:#ff2d78;">—</div>
+            <div class="font-label text-[10px] text-slate-400">predicted deaths</div>
+          </div>
+        </div>
+
+        <!-- Forecast chart row -->
+        <div class="charts-row">
+
+          <!-- Forecast line chart -->
+          <div class="glass-panel neon-border-pink rounded-lg p-6">
+            <div class="flex items-center justify-between mb-1">
+              <div>
+                <div class="section-eyebrow">Predictive Model</div>
+                <div class="section-title mt-1">OD Death Forecast — 4-Month Lead Window</div>
+              </div>
+              <div class="font-label text-[10px] text-slate-500 text-right uppercase tracking-wider">
+                Arrests at t → Deaths at t+4mo<br/>
+                <span id="fc-r2-badge" style="color:#00ffcc;"></span>
+              </div>
+            </div>
+            <div id="chart-forecast" style="margin-top:8px;"></div>
+          </div>
+
+          <!-- Forecast stats panel -->
+          <div class="glass-panel neon-border-cyan rounded-lg p-6 flex flex-col gap-5">
+            <div>
+              <div class="section-eyebrow">Model Output</div>
+              <div class="section-title mt-1">Next 4 Months</div>
+            </div>
+
+            <!-- Monthly predictions -->
+            <div id="fc-monthly-list" class="flex flex-col gap-3"></div>
+
+            <!-- Model stats -->
+            <div class="pt-4 border-t" style="border-color:rgba(255,255,255,0.07);">
+              <div class="font-label text-[10px] uppercase tracking-wider text-slate-500 mb-3">Model Diagnostics</div>
+              <div class="grid grid-cols-2 gap-3">
+                <div>
+                  <div class="font-label text-[10px] text-slate-500">R² fit</div>
+                  <div id="fc-r2" class="font-headline font-bold text-base" style="color:#00ffcc;">—</div>
+                </div>
+                <div>
+                  <div class="font-label text-[10px] text-slate-500">Residual std</div>
+                  <div id="fc-std" class="font-headline font-bold text-base" style="color:#00ffcc;">—</div>
+                </div>
+                <div>
+                  <div class="font-label text-[10px] text-slate-500">Hist. avg</div>
+                  <div id="fc-hmean" class="font-headline font-bold text-base" style="color:#7dfbff;">—</div>
+                </div>
+                <div>
+                  <div class="font-label text-[10px] text-slate-500">Lead lag</div>
+                  <div class="font-headline font-bold text-base" style="color:#7dfbff;">+4 months</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- How it works -->
+            <div class="rounded-lg p-3" style="background:rgba(0,255,204,0.05); border:1px solid rgba(0,255,204,0.15);">
+              <div class="font-label text-[10px] text-[#00ffcc] uppercase tracking-wider mb-2">How it works</div>
+              <div class="font-body text-xs text-slate-400 leading-relaxed">
+                KCPD drug arrests today predict overdose deaths <strong style="color:#ffdede;">4 months from now</strong>.
+                Enforcement disrupts supply → unknown potency → accidental ODs.
+                The 4-month window gives harm reduction orgs time to pre-position naloxone.
+              </div>
+            </div>
+
+            <!-- Validation panel -->
+            <div id="validation-panel" style="display:none;">
+              <div class="font-label text-[10px] uppercase tracking-wider mb-2" style="color:#ffab00;">
+                ✓ Retrospective Validation — Jan–Apr 2025 Actuals
+              </div>
+              <div id="validation-body" class="flex flex-col gap-2"></div>
+              <div class="mt-2 font-body text-[10px] text-slate-500">
+                Source: CDC VSRR Provisional County Drug Overdose Deaths · Jackson County, MO · <span id="vsrr-as-of"></span>
+              </div>
+              <div class="mt-1 font-body text-[10px] text-slate-600">
+                Note: VSRR tracks all-cause OD deaths (rolling 12-month YoY delta). Model predicts Alcohol-Induced specifically.
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── 3. Calendar Heatmap ─────────────────────────────────────────────── -->
+      <section id="section-calendar">
+        <div class="glass-panel neon-border-cyan rounded-lg p-6">
+          <div class="flex items-center justify-between mb-5">
+            <div>
+              <div class="section-eyebrow">Temporal Density</div>
+              <div class="section-title text-lg text-on-surface mt-1">TEMPORAL DENSITY MAP</div>
+              <div id="cal-label" class="font-label text-xs text-slate-400 mt-1">Total drug-induced deaths per month · Jackson County, MO</div>
+            </div>
+            <div id="calendar-filter" class="flex gap-2">
+              <button class="filter-tab active-cyan" data-cal="deaths" onclick="calTabClick(this,'deaths')">Deaths</button>
+              <button class="filter-tab" data-cal="arrests" onclick="calTabClick(this,'arrests')">Arrests</button>
+            </div>
+          </div>
+
+          <!-- Calendar grid container -->
+          <div id="cal-grid-wrap" class="overflow-x-auto pb-2">
+            <div id="cal-grid"></div>
+          </div>
+
+          <!-- Legend -->
+          <div class="flex items-center gap-4 mt-5">
+            <span class="font-label text-[10px] text-slate-500 uppercase tracking-wider">Less</span>
+            <div class="flex gap-1">
+              <div class="cal-cell tier-0" style="cursor:default;"></div>
+              <div class="cal-cell tier-1" style="cursor:default;"></div>
+              <div class="cal-cell tier-2" style="cursor:default;"></div>
+              <div class="cal-cell tier-3" style="cursor:default;"></div>
+              <div class="cal-cell tier-4" style="cursor:default;"></div>
+            </div>
+            <span class="font-label text-[10px] text-slate-500 uppercase tracking-wider">More</span>
+            <div class="flex items-center gap-2 ml-4">
+              <div class="cal-cell tier-2 anomaly-ring" style="cursor:default;"></div>
+              <span class="font-label text-[10px] text-[#ff2d78]">Anomaly month</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── 3. Main Charts Row ──────────────────────────────────────────────── -->
+      <section id="section-deaths" class="charts-row">
+
+        <!-- Death Trends area chart -->
+        <div class="glass-panel neon-border-pink rounded-lg p-6">
+          <div class="flex items-center justify-between mb-4">
+            <div>
+              <div class="section-eyebrow">Cause-specific</div>
+              <div class="section-title text-base text-on-surface mt-1">Drug-Induced Deaths Timeline</div>
+            </div>
+            <div id="deaths-filter" class="flex gap-2">
+              <button class="filter-tab active" data-mode="all" onclick="deathsTabClick(this,'all')">All</button>
+              <button class="filter-tab" data-mode="od" onclick="deathsTabClick(this,'od')">OD Focus</button>
+            </div>
+          </div>
+          <div id="chart-deaths"></div>
+        </div>
+
+        <!-- Arrests bar chart -->
+        <div id="section-arrests" class="glass-panel neon-border-cyan rounded-lg p-6">
+          <div class="mb-4">
+            <div class="section-eyebrow">KCPD</div>
+            <div class="section-title text-base text-on-surface mt-1">Drug Arrests / Month</div>
+          </div>
+          <div id="chart-arrests"></div>
+        </div>
+
+      </section>
+
+      <!-- ── 4. Dual-axis overlay ────────────────────────────────────────────── -->
+      <section id="section-overlay">
+        <div class="glass-panel neon-border-pink rounded-lg p-6">
+          <div class="mb-4">
+            <div class="section-eyebrow">Overlay</div>
+            <div class="section-title text-base text-on-surface mt-1">Deaths vs Arrests — Dual Axis</div>
+          </div>
+          <div id="chart-overlay"></div>
+        </div>
+      </section>
+
+      <!-- ── 5. Analysis Row ─────────────────────────────────────────────────── -->
+      <section class="analysis-row">
+
+        <!-- Cross-correlation -->
+        <div id="section-xcorr" class="glass-panel neon-border-cyan rounded-lg p-6">
+          <div class="mb-4">
+            <div class="section-eyebrow">Statistical</div>
+            <div class="section-title text-base text-on-surface mt-1">Cross-Correlation: Arrests → Deaths</div>
+          </div>
+          <div id="chart-xcorr"></div>
+          <div class="mt-4 overflow-x-auto" style="max-height:220px; overflow-y:auto;">
+            <table class="xcorr-table">
+              <thead>
+                <tr>
+                  <th>Drug Category</th>
+                  <th>Lag</th>
+                  <th>r</th>
+                  <th>p-value</th>
+                  <th>Sig.</th>
+                </tr>
+              </thead>
+              <tbody id="xcorr-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Anomaly detection -->
+        <div id="section-anomaly" class="glass-panel neon-border-pink rounded-lg p-6">
+          <div class="mb-4">
+            <div class="section-eyebrow">z-score ≥ 2.0</div>
+            <div class="section-title text-base text-on-surface mt-1">Anomaly Detection</div>
+          </div>
+          <div id="chart-anomaly"></div>
+          <div id="anomaly-list" class="mt-4" style="max-height:200px; overflow-y:auto;"></div>
+        </div>
+
+      </section>
+
+      <!-- ── 6. Signature Clustering ─────────────────────────────────────────── -->
+      <section id="section-dtw">
+        <div class="glass-panel neon-border-cyan rounded-lg p-6">
+          <div class="mb-4">
+            <div class="section-eyebrow">DTW Distance Matrix</div>
+            <div class="section-title text-base text-on-surface mt-1">Temporal Signature Clustering</div>
+          </div>
+          <div id="chart-dtw"></div>
+        </div>
+      </section>
+
+      <!-- ── 7. AI Research Chat ─────────────────────────────────────────────── -->
+      <section id="section-chat">
+        <div class="glass-panel neon-border-cyan rounded-lg relative overflow-hidden" style="height:620px; display:flex; flex-direction:column;">
+
+          <!-- Scanline overlay -->
+          <div class="scanline absolute inset-0 z-0" aria-hidden="true"></div>
+
+          <!-- Chat header -->
+          <div class="relative z-10 flex items-center justify-between px-6 py-4 border-b" style="border-color:rgba(0,255,204,0.2); flex-shrink:0;">
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined neon-text-cyan" style="color:#00ffcc; font-size:22px;">smart_toy</span>
+              <div>
+                <div class="font-headline font-bold text-sm text-on-surface">AI Research Assistant</div>
+                <div class="flex items-center gap-2 mt-0.5">
+                  <span class="live-dot"></span>
+                  <span class="font-label text-[10px] text-slate-400 uppercase tracking-wider">Live · Jackson County Dataset</span>
+                </div>
+              </div>
+            </div>
+            <button onclick="clearChat()" class="flex items-center gap-1 px-3 py-1.5 rounded-full font-label text-xs text-slate-400 hover:text-[#ff2d78] hover:bg-[#ff2d78]/10 transition-all" style="font-size:11px; border:1px solid rgba(255,255,255,0.08);">
+              <span class="material-symbols-outlined" style="font-size:15px;">delete_sweep</span>
+              Clear
+            </button>
+          </div>
+
+          <!-- Suggestion chips -->
+          <div id="chat-suggestions" class="relative z-10 flex flex-wrap gap-2 px-6 pt-3 pb-2" style="flex-shrink:0;">
+            <button class="suggestion-chip px-3 py-1.5 rounded-full font-label text-xs" onclick="askSuggestion(this)"
+                    style="background:rgba(0,255,204,0.08); border:1px solid rgba(0,255,204,0.25); color:#00ffcc; cursor:pointer; transition:all 0.15s; font-size:11px;"
+                    onmouseover="this.style.background='rgba(0,255,204,0.18)'" onmouseout="this.style.background='rgba(0,255,204,0.08)'">
+              Where should we deploy naloxone next month?
+            </button>
+            <button class="suggestion-chip px-3 py-1.5 rounded-full font-label text-xs" onclick="askSuggestion(this)"
+                    style="background:rgba(0,255,204,0.08); border:1px solid rgba(0,255,204,0.25); color:#00ffcc; cursor:pointer; transition:all 0.15s; font-size:11px;"
+                    onmouseover="this.style.background='rgba(0,255,204,0.18)'" onmouseout="this.style.background='rgba(0,255,204,0.08)'">
+              What does the forecast mean for March 2025?
+            </button>
+            <button class="suggestion-chip px-3 py-1.5 rounded-full font-label text-xs" onclick="askSuggestion(this)"
+                    style="background:rgba(0,255,204,0.08); border:1px solid rgba(0,255,204,0.25); color:#00ffcc; cursor:pointer; transition:all 0.15s; font-size:11px;"
+                    onmouseover="this.style.background='rgba(0,255,204,0.18)'" onmouseout="this.style.background='rgba(0,255,204,0.08)'">
+              Which neighborhoods need outreach now?
+            </button>
+            <button class="suggestion-chip px-3 py-1.5 rounded-full font-label text-xs" onclick="askSuggestion(this)"
+                    style="background:rgba(0,255,204,0.08); border:1px solid rgba(0,255,204,0.25); color:#00ffcc; cursor:pointer; transition:all 0.15s; font-size:11px;"
+                    onmouseover="this.style.background='rgba(0,255,204,0.18)'" onmouseout="this.style.background='rgba(0,255,204,0.08)'">
+              How did COVID-19 disrupt the overdose trend?
+            </button>
+          </div>
+
+          <!-- Messages area -->
+          <div id="chat-messages" class="relative z-10 flex-1 overflow-y-auto px-6 py-2" style="min-height:0;">
+            <div class="chat-empty-wrap" id="chat-empty">
+              <span class="material-symbols-outlined">chat_bubble_outline</span>
+              <p>Ask any question about the KC drug market data. The assistant has access to actual dataset values, cross-correlations, and anomaly events.</p>
+            </div>
+          </div>
+
+          <!-- Input area -->
+          <div class="relative z-10 px-6 pb-5 pt-3 flex items-end gap-3" style="flex-shrink:0; border-top:1px solid rgba(0,255,204,0.12);">
+            <textarea id="chat-input" rows="1" placeholder="Ask about the dataset, trends, correlations..."
+              class="flex-1 resize-none rounded-xl px-4 py-3 font-body text-sm text-on-surface placeholder-slate-500 outline-none"
+              style="background:rgba(255,255,255,0.04); border:1px solid rgba(0,255,204,0.2); min-height:44px; max-height:100px; font-family:'Domine',serif; font-size:13px; line-height:1.5; transition:border-color 0.15s;"
+              onfocus="this.style.borderColor='rgba(0,255,204,0.5)'"
+              onblur="this.style.borderColor='rgba(0,255,204,0.2)'"></textarea>
+            <button id="btn-send" onclick="sendMessage()"
+              class="flex items-center justify-center w-11 h-11 rounded-xl transition-all flex-shrink-0"
+              style="background:rgba(0,255,204,0.15); border:1px solid rgba(0,255,204,0.4); color:#00ffcc;"
+              onmouseover="this.style.background='rgba(0,255,204,0.28)'" onmouseout="this.style.background='rgba(0,255,204,0.15)'">
+              <span class="material-symbols-outlined" style="font-size:20px;">send</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="/static/app.js"></script>
+  <script>
+    function toggleSidebar() {
+      const s = document.getElementById('sidebar');
+      const o = document.getElementById('sidebar-overlay');
+      s.classList.toggle('open');
+      o.classList.toggle('show');
+    }
+    function closeSidebar() {
+      document.getElementById('sidebar').classList.remove('open');
+      document.getElementById('sidebar-overlay').classList.remove('show');
+    }
+    // Close sidebar on nav click (mobile)
+    document.querySelectorAll('.nav-item').forEach(a => {
+      a.addEventListener('click', () => {
+        if (window.innerWidth <= 1024) closeSidebar();
+      });
+    });
+  </script>
+</body>
+</html>

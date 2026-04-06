@@ -72,10 +72,22 @@ Implements an end-to-end cloud analytics workflow on a representative project su
 
 ---
 
+## Week 10 — NSF NRT AI Challenge: Overdose Early Warning System
+
+AI-driven system predicting Alcohol-Induced OD deaths in Jackson County, MO from KCPD drug arrest signals. Uses lagged linear regression with a confirmed 4-month lead-lag (r=0.309, p=0.021). Live Flask dashboard with AI analyst (Claude Haiku 4.5). Retrospectively validated against 2025 CDC VSRR actuals.
+
+**Key finding:** Drug arrests lead overdose deaths by 4 months — enabling proactive naloxone pre-positioning.
+
+📁 [`researchathon/`](researchathon/) · [`Week10_Lab/`](Week10_Lab/)
+
+---
+
 ## Tech Stack
 
 - Python, Jupyter, Streamlit
 - Sentence-Transformers, FAISS, BM25
 - PyMuPDF, Transformers, Cross-Encoders
 - Snowflake (warehouse, SQL, staging)
+- Flask, ApexCharts, Tailwind CSS
+- scikit-learn, scipy, pandas
 - Streamlit Cloud (deployment)

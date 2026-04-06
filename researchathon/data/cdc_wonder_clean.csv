@@ -1,0 +1,324 @@
+Notes,County,County Code,Year,Year Code,Month,Month Code,MCD_Drug_Cause,MCD - Drug/Alcohol Induced Cause Code,Deaths,Population,Crude Rate,Crude Rate Lower 95% Confidence Interval,Crude Rate Upper 95% Confidence Interval,Month_Date
+,"Jackson County, MO",29095.0,2018,2018.0,1,2018/01,All other drug-induced causes,D9,133.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2018-01-01
+,"Jackson County, MO",29095.0,2018,2018.0,1,2018/01,All other alcohol-induced causes,A9,14.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2018-01-01
+,"Jackson County, MO",29095.0,2018,2018.0,1,2018/01,All other non-drug and non-alcohol causes,O9,633.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2018-01-01
+,"Jackson County, MO",29095.0,2018,2018.0,2,2018/02,Drug poisonings (overdose) Unintentional (X40-X44),D1,12.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2018-02-01
+,"Jackson County, MO",29095.0,2018,2018.0,2,2018/02,All other drug-induced causes,D9,105.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2018-02-01
+,"Jackson County, MO",29095.0,2018,2018.0,2,2018/02,All other alcohol-induced causes,A9,12.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2018-02-01
+,"Jackson County, MO",29095.0,2018,2018.0,2,2018/02,All other non-drug and non-alcohol causes,O9,565.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2018-02-01
+,"Jackson County, MO",29095.0,2018,2018.0,3,2018/03,Drug poisonings (overdose) Unintentional (X40-X44),D1,11.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2018-03-01
+,"Jackson County, MO",29095.0,2018,2018.0,3,2018/03,All other drug-induced causes,D9,96.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2018-03-01
+,"Jackson County, MO",29095.0,2018,2018.0,3,2018/03,All other non-drug and non-alcohol causes,O9,560.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2018-03-01
+,"Jackson County, MO",29095.0,2018,2018.0,4,2018/04,Drug poisonings (overdose) Unintentional (X40-X44),D1,11.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2018-04-01
+,"Jackson County, MO",29095.0,2018,2018.0,4,2018/04,All other drug-induced causes,D9,91.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2018-04-01
+,"Jackson County, MO",29095.0,2018,2018.0,4,2018/04,All other alcohol-induced causes,A9,18.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2018-04-01
+,"Jackson County, MO",29095.0,2018,2018.0,4,2018/04,All other non-drug and non-alcohol causes,O9,501.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2018-04-01
+,"Jackson County, MO",29095.0,2018,2018.0,5,2018/05,Drug poisonings (overdose) Unintentional (X40-X44),D1,12.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2018-05-01
+,"Jackson County, MO",29095.0,2018,2018.0,5,2018/05,All other drug-induced causes,D9,88.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2018-05-01
+,"Jackson County, MO",29095.0,2018,2018.0,5,2018/05,All other non-drug and non-alcohol causes,O9,494.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2018-05-01
+,"Jackson County, MO",29095.0,2018,2018.0,6,2018/06,Drug poisonings (overdose) Unintentional (X40-X44),D1,16.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2018-06-01
+,"Jackson County, MO",29095.0,2018,2018.0,6,2018/06,All other drug-induced causes,D9,83.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2018-06-01
+,"Jackson County, MO",29095.0,2018,2018.0,6,2018/06,All other alcohol-induced causes,A9,12.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2018-06-01
+,"Jackson County, MO",29095.0,2018,2018.0,6,2018/06,All other non-drug and non-alcohol causes,O9,481.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2018-06-01
+,"Jackson County, MO",29095.0,2018,2018.0,7,2018/07,Drug poisonings (overdose) Unintentional (X40-X44),D1,11.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2018-07-01
+,"Jackson County, MO",29095.0,2018,2018.0,7,2018/07,All other drug-induced causes,D9,78.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2018-07-01
+,"Jackson County, MO",29095.0,2018,2018.0,7,2018/07,All other alcohol-induced causes,A9,11.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2018-07-01
+,"Jackson County, MO",29095.0,2018,2018.0,7,2018/07,All other non-drug and non-alcohol causes,O9,457.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2018-07-01
+,"Jackson County, MO",29095.0,2018,2018.0,8,2018/08,Drug poisonings (overdose) Unintentional (X40-X44),D1,10.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2018-08-01
+,"Jackson County, MO",29095.0,2018,2018.0,8,2018/08,All other drug-induced causes,D9,95.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2018-08-01
+,"Jackson County, MO",29095.0,2018,2018.0,8,2018/08,All other alcohol-induced causes,A9,11.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2018-08-01
+,"Jackson County, MO",29095.0,2018,2018.0,8,2018/08,All other non-drug and non-alcohol causes,O9,545.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2018-08-01
+,"Jackson County, MO",29095.0,2018,2018.0,9,2018/09,Drug poisonings (overdose) Unintentional (X40-X44),D1,16.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2018-09-01
+,"Jackson County, MO",29095.0,2018,2018.0,9,2018/09,All other drug-induced causes,D9,86.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2018-09-01
+,"Jackson County, MO",29095.0,2018,2018.0,9,2018/09,All other alcohol-induced causes,A9,14.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2018-09-01
+,"Jackson County, MO",29095.0,2018,2018.0,9,2018/09,All other non-drug and non-alcohol causes,O9,486.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2018-09-01
+,"Jackson County, MO",29095.0,2018,2018.0,10,2018/10,Drug poisonings (overdose) Unintentional (X40-X44),D1,13.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2018-10-01
+,"Jackson County, MO",29095.0,2018,2018.0,10,2018/10,All other drug-induced causes,D9,92.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2018-10-01
+,"Jackson County, MO",29095.0,2018,2018.0,10,2018/10,All other alcohol-induced causes,A9,13.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2018-10-01
+,"Jackson County, MO",29095.0,2018,2018.0,10,2018/10,All other non-drug and non-alcohol causes,O9,525.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2018-10-01
+,"Jackson County, MO",29095.0,2018,2018.0,11,2018/11,Drug poisonings (overdose) Unintentional (X40-X44),D1,14.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2018-11-01
+,"Jackson County, MO",29095.0,2018,2018.0,11,2018/11,All other drug-induced causes,D9,96.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2018-11-01
+,"Jackson County, MO",29095.0,2018,2018.0,11,2018/11,All other alcohol-induced causes,A9,14.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2018-11-01
+,"Jackson County, MO",29095.0,2018,2018.0,11,2018/11,All other non-drug and non-alcohol causes,O9,536.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2018-11-01
+,"Jackson County, MO",29095.0,2018,2018.0,12,2018/12,All other drug-induced causes,D9,93.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2018-12-01
+,"Jackson County, MO",29095.0,2018,2018.0,12,2018/12,All other alcohol-induced causes,A9,16.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2018-12-01
+,"Jackson County, MO",29095.0,2018,2018.0,12,2018/12,All other non-drug and non-alcohol causes,O9,552.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2018-12-01
+,"Jackson County, MO",29095.0,2019,2019.0,1,2019/01,Drug poisonings (overdose) Unintentional (X40-X44),D1,14.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2019-01-01
+,"Jackson County, MO",29095.0,2019,2019.0,1,2019/01,All other drug-induced causes,D9,95.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2019-01-01
+,"Jackson County, MO",29095.0,2019,2019.0,1,2019/01,All other non-drug and non-alcohol causes,O9,585.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2019-01-01
+,"Jackson County, MO",29095.0,2019,2019.0,2,2019/02,Drug poisonings (overdose) Unintentional (X40-X44),D1,14.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2019-02-01
+,"Jackson County, MO",29095.0,2019,2019.0,2,2019/02,All other drug-induced causes,D9,72.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2019-02-01
+,"Jackson County, MO",29095.0,2019,2019.0,2,2019/02,All other non-drug and non-alcohol causes,O9,510.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2019-02-01
+,"Jackson County, MO",29095.0,2019,2019.0,3,2019/03,Drug poisonings (overdose) Unintentional (X40-X44),D1,20.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2019-03-01
+,"Jackson County, MO",29095.0,2019,2019.0,3,2019/03,All other drug-induced causes,D9,104.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2019-03-01
+,"Jackson County, MO",29095.0,2019,2019.0,3,2019/03,All other alcohol-induced causes,A9,16.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2019-03-01
+,"Jackson County, MO",29095.0,2019,2019.0,3,2019/03,All other non-drug and non-alcohol causes,O9,597.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2019-03-01
+,"Jackson County, MO",29095.0,2019,2019.0,4,2019/04,Drug poisonings (overdose) Unintentional (X40-X44),D1,15.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2019-04-01
+,"Jackson County, MO",29095.0,2019,2019.0,4,2019/04,All other drug-induced causes,D9,74.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2019-04-01
+,"Jackson County, MO",29095.0,2019,2019.0,4,2019/04,All other alcohol-induced causes,A9,10.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2019-04-01
+,"Jackson County, MO",29095.0,2019,2019.0,4,2019/04,All other non-drug and non-alcohol causes,O9,524.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2019-04-01
+,"Jackson County, MO",29095.0,2019,2019.0,5,2019/05,All other drug-induced causes,D9,75.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2019-05-01
+,"Jackson County, MO",29095.0,2019,2019.0,5,2019/05,All other alcohol-induced causes,A9,12.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2019-05-01
+,"Jackson County, MO",29095.0,2019,2019.0,5,2019/05,All other non-drug and non-alcohol causes,O9,526.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2019-05-01
+,"Jackson County, MO",29095.0,2019,2019.0,6,2019/06,All other drug-induced causes,D9,80.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2019-06-01
+,"Jackson County, MO",29095.0,2019,2019.0,6,2019/06,All other alcohol-induced causes,A9,16.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2019-06-01
+,"Jackson County, MO",29095.0,2019,2019.0,6,2019/06,All other non-drug and non-alcohol causes,O9,490.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2019-06-01
+,"Jackson County, MO",29095.0,2019,2019.0,7,2019/07,All other drug-induced causes,D9,66.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2019-07-01
+,"Jackson County, MO",29095.0,2019,2019.0,7,2019/07,All other alcohol-induced causes,A9,11.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2019-07-01
+,"Jackson County, MO",29095.0,2019,2019.0,7,2019/07,All other non-drug and non-alcohol causes,O9,527.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2019-07-01
+,"Jackson County, MO",29095.0,2019,2019.0,8,2019/08,All other drug-induced causes,D9,79.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2019-08-01
+,"Jackson County, MO",29095.0,2019,2019.0,8,2019/08,All other non-drug and non-alcohol causes,O9,510.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2019-08-01
+,"Jackson County, MO",29095.0,2019,2019.0,9,2019/09,Drug poisonings (overdose) Unintentional (X40-X44),D1,14.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2019-09-01
+,"Jackson County, MO",29095.0,2019,2019.0,9,2019/09,All other drug-induced causes,D9,88.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2019-09-01
+,"Jackson County, MO",29095.0,2019,2019.0,9,2019/09,All other alcohol-induced causes,A9,13.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2019-09-01
+,"Jackson County, MO",29095.0,2019,2019.0,9,2019/09,All other non-drug and non-alcohol causes,O9,506.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2019-09-01
+,"Jackson County, MO",29095.0,2019,2019.0,10,2019/10,Drug poisonings (overdose) Unintentional (X40-X44),D1,14.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2019-10-01
+,"Jackson County, MO",29095.0,2019,2019.0,10,2019/10,All other drug-induced causes,D9,73.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2019-10-01
+,"Jackson County, MO",29095.0,2019,2019.0,10,2019/10,All other alcohol-induced causes,A9,15.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2019-10-01
+,"Jackson County, MO",29095.0,2019,2019.0,10,2019/10,All other non-drug and non-alcohol causes,O9,503.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2019-10-01
+,"Jackson County, MO",29095.0,2019,2019.0,11,2019/11,Drug poisonings (overdose) Unintentional (X40-X44),D1,15.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2019-11-01
+,"Jackson County, MO",29095.0,2019,2019.0,11,2019/11,All other drug-induced causes,D9,93.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2019-11-01
+,"Jackson County, MO",29095.0,2019,2019.0,11,2019/11,All other alcohol-induced causes,A9,10.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2019-11-01
+,"Jackson County, MO",29095.0,2019,2019.0,11,2019/11,All other non-drug and non-alcohol causes,O9,600.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2019-11-01
+,"Jackson County, MO",29095.0,2019,2019.0,12,2019/12,All other drug-induced causes,D9,87.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2019-12-01
+,"Jackson County, MO",29095.0,2019,2019.0,12,2019/12,All other alcohol-induced causes,A9,18.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2019-12-01
+,"Jackson County, MO",29095.0,2019,2019.0,12,2019/12,All other non-drug and non-alcohol causes,O9,578.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2019-12-01
+,"Jackson County, MO",29095.0,2020,2020.0,1,2020/01,All other drug-induced causes,D9,96.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2020-01-01
+,"Jackson County, MO",29095.0,2020,2020.0,1,2020/01,All other alcohol-induced causes,A9,19.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2020-01-01
+,"Jackson County, MO",29095.0,2020,2020.0,1,2020/01,All other non-drug and non-alcohol causes,O9,624.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2020-01-01
+,"Jackson County, MO",29095.0,2020,2020.0,2,2020/02,Drug poisonings (overdose) Unintentional (X40-X44),D1,16.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2020-02-01
+,"Jackson County, MO",29095.0,2020,2020.0,2,2020/02,All other drug-induced causes,D9,89.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2020-02-01
+,"Jackson County, MO",29095.0,2020,2020.0,2,2020/02,All other non-drug and non-alcohol causes,O9,560.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2020-02-01
+,"Jackson County, MO",29095.0,2020,2020.0,3,2020/03,Drug poisonings (overdose) Unintentional (X40-X44),D1,17.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2020-03-01
+,"Jackson County, MO",29095.0,2020,2020.0,3,2020/03,All other drug-induced causes,D9,110.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2020-03-01
+,"Jackson County, MO",29095.0,2020,2020.0,3,2020/03,All other alcohol-induced causes,A9,16.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2020-03-01
+,"Jackson County, MO",29095.0,2020,2020.0,3,2020/03,All other non-drug and non-alcohol causes,O9,589.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2020-03-01
+,"Jackson County, MO",29095.0,2020,2020.0,4,2020/04,Drug poisonings (overdose) Unintentional (X40-X44),D1,15.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2020-04-01
+,"Jackson County, MO",29095.0,2020,2020.0,4,2020/04,All other drug-induced causes,D9,110.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2020-04-01
+,"Jackson County, MO",29095.0,2020,2020.0,4,2020/04,All other alcohol-induced causes,A9,17.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2020-04-01
+,"Jackson County, MO",29095.0,2020,2020.0,4,2020/04,All other non-drug and non-alcohol causes,O9,641.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2020-04-01
+,"Jackson County, MO",29095.0,2020,2020.0,5,2020/05,Drug poisonings (overdose) Unintentional (X40-X44),D1,19.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2020-05-01
+,"Jackson County, MO",29095.0,2020,2020.0,5,2020/05,All other drug-induced causes,D9,94.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2020-05-01
+,"Jackson County, MO",29095.0,2020,2020.0,5,2020/05,All other alcohol-induced causes,A9,15.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2020-05-01
+,"Jackson County, MO",29095.0,2020,2020.0,5,2020/05,All other non-drug and non-alcohol causes,O9,603.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2020-05-01
+,"Jackson County, MO",29095.0,2020,2020.0,6,2020/06,Drug poisonings (overdose) Unintentional (X40-X44),D1,14.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2020-06-01
+,"Jackson County, MO",29095.0,2020,2020.0,6,2020/06,All other drug-induced causes,D9,80.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2020-06-01
+,"Jackson County, MO",29095.0,2020,2020.0,6,2020/06,All other alcohol-induced causes,A9,22.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2020-06-01
+,"Jackson County, MO",29095.0,2020,2020.0,6,2020/06,All other non-drug and non-alcohol causes,O9,562.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2020-06-01
+,"Jackson County, MO",29095.0,2020,2020.0,7,2020/07,Drug poisonings (overdose) Unintentional (X40-X44),D1,20.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2020-07-01
+,"Jackson County, MO",29095.0,2020,2020.0,7,2020/07,All other drug-induced causes,D9,89.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2020-07-01
+,"Jackson County, MO",29095.0,2020,2020.0,7,2020/07,All other alcohol-induced causes,A9,22.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2020-07-01
+,"Jackson County, MO",29095.0,2020,2020.0,7,2020/07,All other non-drug and non-alcohol causes,O9,611.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2020-07-01
+,"Jackson County, MO",29095.0,2020,2020.0,8,2020/08,Drug poisonings (overdose) Unintentional (X40-X44),D1,14.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2020-08-01
+,"Jackson County, MO",29095.0,2020,2020.0,8,2020/08,All other drug-induced causes,D9,94.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2020-08-01
+,"Jackson County, MO",29095.0,2020,2020.0,8,2020/08,All other alcohol-induced causes,A9,16.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2020-08-01
+,"Jackson County, MO",29095.0,2020,2020.0,8,2020/08,All other non-drug and non-alcohol causes,O9,656.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2020-08-01
+,"Jackson County, MO",29095.0,2020,2020.0,9,2020/09,Drug poisonings (overdose) Unintentional (X40-X44),D1,10.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2020-09-01
+,"Jackson County, MO",29095.0,2020,2020.0,9,2020/09,All other drug-induced causes,D9,94.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2020-09-01
+,"Jackson County, MO",29095.0,2020,2020.0,9,2020/09,All other alcohol-induced causes,A9,29.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2020-09-01
+,"Jackson County, MO",29095.0,2020,2020.0,9,2020/09,All other non-drug and non-alcohol causes,O9,551.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2020-09-01
+,"Jackson County, MO",29095.0,2020,2020.0,10,2020/10,Drug poisonings (overdose) Unintentional (X40-X44),D1,20.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2020-10-01
+,"Jackson County, MO",29095.0,2020,2020.0,10,2020/10,All other drug-induced causes,D9,96.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2020-10-01
+,"Jackson County, MO",29095.0,2020,2020.0,10,2020/10,All other alcohol-induced causes,A9,18.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2020-10-01
+,"Jackson County, MO",29095.0,2020,2020.0,10,2020/10,All other non-drug and non-alcohol causes,O9,650.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2020-10-01
+,"Jackson County, MO",29095.0,2020,2020.0,11,2020/11,Drug poisonings (overdose) Unintentional (X40-X44),D1,15.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2020-11-01
+,"Jackson County, MO",29095.0,2020,2020.0,11,2020/11,All other drug-induced causes,D9,94.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2020-11-01
+,"Jackson County, MO",29095.0,2020,2020.0,11,2020/11,All other alcohol-induced causes,A9,25.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2020-11-01
+,"Jackson County, MO",29095.0,2020,2020.0,11,2020/11,All other non-drug and non-alcohol causes,O9,705.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2020-11-01
+,"Jackson County, MO",29095.0,2020,2020.0,12,2020/12,Drug poisonings (overdose) Unintentional (X40-X44),D1,13.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2020-12-01
+,"Jackson County, MO",29095.0,2020,2020.0,12,2020/12,All other drug-induced causes,D9,96.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2020-12-01
+,"Jackson County, MO",29095.0,2020,2020.0,12,2020/12,All other alcohol-induced causes,A9,29.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2020-12-01
+,"Jackson County, MO",29095.0,2020,2020.0,12,2020/12,All other non-drug and non-alcohol causes,O9,741.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2020-12-01
+,"Jackson County, MO",29095.0,2021,2021.0,1,2021/01,Drug poisonings (overdose) Unintentional (X40-X44),D1,22.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2021-01-01
+,"Jackson County, MO",29095.0,2021,2021.0,1,2021/01,All other drug-induced causes,D9,98.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2021-01-01
+,"Jackson County, MO",29095.0,2021,2021.0,1,2021/01,All other alcohol-induced causes,A9,30.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2021-01-01
+,"Jackson County, MO",29095.0,2021,2021.0,1,2021/01,All other non-drug and non-alcohol causes,O9,765.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2021-01-01
+,"Jackson County, MO",29095.0,2021,2021.0,2,2021/02,Drug poisonings (overdose) Unintentional (X40-X44),D1,17.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2021-02-01
+,"Jackson County, MO",29095.0,2021,2021.0,2,2021/02,All other drug-induced causes,D9,93.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2021-02-01
+,"Jackson County, MO",29095.0,2021,2021.0,2,2021/02,All other alcohol-induced causes,A9,18.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2021-02-01
+,"Jackson County, MO",29095.0,2021,2021.0,2,2021/02,All other non-drug and non-alcohol causes,O9,615.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2021-02-01
+,"Jackson County, MO",29095.0,2021,2021.0,3,2021/03,Drug poisonings (overdose) Unintentional (X40-X44),D1,26.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2021-03-01
+,"Jackson County, MO",29095.0,2021,2021.0,3,2021/03,All other drug-induced causes,D9,92.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2021-03-01
+,"Jackson County, MO",29095.0,2021,2021.0,3,2021/03,All other alcohol-induced causes,A9,23.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2021-03-01
+,"Jackson County, MO",29095.0,2021,2021.0,3,2021/03,All other non-drug and non-alcohol causes,O9,598.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2021-03-01
+,"Jackson County, MO",29095.0,2021,2021.0,4,2021/04,Drug poisonings (overdose) Unintentional (X40-X44),D1,30.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2021-04-01
+,"Jackson County, MO",29095.0,2021,2021.0,4,2021/04,All other drug-induced causes,D9,77.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2021-04-01
+,"Jackson County, MO",29095.0,2021,2021.0,4,2021/04,"Alcohol poisonings (overdose) (X45, X65, Y15)",A1,10.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2021-04-01
+,"Jackson County, MO",29095.0,2021,2021.0,4,2021/04,All other alcohol-induced causes,A9,30.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2021-04-01
+,"Jackson County, MO",29095.0,2021,2021.0,4,2021/04,All other non-drug and non-alcohol causes,O9,580.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2021-04-01
+,"Jackson County, MO",29095.0,2021,2021.0,5,2021/05,Drug poisonings (overdose) Unintentional (X40-X44),D1,19.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2021-05-01
+,"Jackson County, MO",29095.0,2021,2021.0,5,2021/05,All other drug-induced causes,D9,85.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2021-05-01
+,"Jackson County, MO",29095.0,2021,2021.0,5,2021/05,All other alcohol-induced causes,A9,26.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2021-05-01
+,"Jackson County, MO",29095.0,2021,2021.0,5,2021/05,All other non-drug and non-alcohol causes,O9,582.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2021-05-01
+,"Jackson County, MO",29095.0,2021,2021.0,6,2021/06,Drug poisonings (overdose) Unintentional (X40-X44),D1,23.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2021-06-01
+,"Jackson County, MO",29095.0,2021,2021.0,6,2021/06,All other drug-induced causes,D9,89.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2021-06-01
+,"Jackson County, MO",29095.0,2021,2021.0,6,2021/06,All other alcohol-induced causes,A9,18.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2021-06-01
+,"Jackson County, MO",29095.0,2021,2021.0,6,2021/06,All other non-drug and non-alcohol causes,O9,546.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2021-06-01
+,"Jackson County, MO",29095.0,2021,2021.0,7,2021/07,Drug poisonings (overdose) Unintentional (X40-X44),D1,18.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2021-07-01
+,"Jackson County, MO",29095.0,2021,2021.0,7,2021/07,All other drug-induced causes,D9,97.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2021-07-01
+,"Jackson County, MO",29095.0,2021,2021.0,7,2021/07,All other alcohol-induced causes,A9,16.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2021-07-01
+,"Jackson County, MO",29095.0,2021,2021.0,7,2021/07,All other non-drug and non-alcohol causes,O9,598.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2021-07-01
+,"Jackson County, MO",29095.0,2021,2021.0,8,2021/08,Drug poisonings (overdose) Unintentional (X40-X44),D1,22.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2021-08-01
+,"Jackson County, MO",29095.0,2021,2021.0,8,2021/08,All other drug-induced causes,D9,110.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2021-08-01
+,"Jackson County, MO",29095.0,2021,2021.0,8,2021/08,All other alcohol-induced causes,A9,28.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2021-08-01
+,"Jackson County, MO",29095.0,2021,2021.0,8,2021/08,All other non-drug and non-alcohol causes,O9,785.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2021-08-01
+,"Jackson County, MO",29095.0,2021,2021.0,9,2021/09,Drug poisonings (overdose) Unintentional (X40-X44),D1,23.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2021-09-01
+,"Jackson County, MO",29095.0,2021,2021.0,9,2021/09,All other drug-induced causes,D9,101.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2021-09-01
+,"Jackson County, MO",29095.0,2021,2021.0,9,2021/09,All other alcohol-induced causes,A9,20.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2021-09-01
+,"Jackson County, MO",29095.0,2021,2021.0,9,2021/09,All other non-drug and non-alcohol causes,O9,723.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2021-09-01
+,"Jackson County, MO",29095.0,2021,2021.0,10,2021/10,Drug poisonings (overdose) Unintentional (X40-X44),D1,23.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2021-10-01
+,"Jackson County, MO",29095.0,2021,2021.0,10,2021/10,All other drug-induced causes,D9,101.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2021-10-01
+,"Jackson County, MO",29095.0,2021,2021.0,10,2021/10,All other alcohol-induced causes,A9,22.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2021-10-01
+,"Jackson County, MO",29095.0,2021,2021.0,10,2021/10,All other non-drug and non-alcohol causes,O9,647.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2021-10-01
+,"Jackson County, MO",29095.0,2021,2021.0,11,2021/11,Drug poisonings (overdose) Unintentional (X40-X44),D1,21.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2021-11-01
+,"Jackson County, MO",29095.0,2021,2021.0,11,2021/11,All other drug-induced causes,D9,75.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2021-11-01
+,"Jackson County, MO",29095.0,2021,2021.0,11,2021/11,All other alcohol-induced causes,A9,24.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2021-11-01
+,"Jackson County, MO",29095.0,2021,2021.0,11,2021/11,All other non-drug and non-alcohol causes,O9,593.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2021-11-01
+,"Jackson County, MO",29095.0,2021,2021.0,12,2021/12,Drug poisonings (overdose) Unintentional (X40-X44),D1,17.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2021-12-01
+,"Jackson County, MO",29095.0,2021,2021.0,12,2021/12,All other drug-induced causes,D9,106.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2021-12-01
+,"Jackson County, MO",29095.0,2021,2021.0,12,2021/12,All other alcohol-induced causes,A9,17.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2021-12-01
+,"Jackson County, MO",29095.0,2021,2021.0,12,2021/12,All other non-drug and non-alcohol causes,O9,781.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2021-12-01
+,"Jackson County, MO",29095.0,2022,2022.0,1,2022/01,Drug poisonings (overdose) Unintentional (X40-X44),D1,22.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2022-01-01
+,"Jackson County, MO",29095.0,2022,2022.0,1,2022/01,All other drug-induced causes,D9,113.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2022-01-01
+,"Jackson County, MO",29095.0,2022,2022.0,1,2022/01,All other alcohol-induced causes,A9,20.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2022-01-01
+,"Jackson County, MO",29095.0,2022,2022.0,1,2022/01,All other non-drug and non-alcohol causes,O9,949.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2022-01-01
+,"Jackson County, MO",29095.0,2022,2022.0,2,2022/02,Drug poisonings (overdose) Unintentional (X40-X44),D1,24.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2022-02-01
+,"Jackson County, MO",29095.0,2022,2022.0,2,2022/02,All other drug-induced causes,D9,118.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2022-02-01
+,"Jackson County, MO",29095.0,2022,2022.0,2,2022/02,All other alcohol-induced causes,A9,28.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2022-02-01
+,"Jackson County, MO",29095.0,2022,2022.0,2,2022/02,All other non-drug and non-alcohol causes,O9,685.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2022-02-01
+,"Jackson County, MO",29095.0,2022,2022.0,3,2022/03,Drug poisonings (overdose) Unintentional (X40-X44),D1,25.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2022-03-01
+,"Jackson County, MO",29095.0,2022,2022.0,3,2022/03,All other drug-induced causes,D9,95.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2022-03-01
+,"Jackson County, MO",29095.0,2022,2022.0,3,2022/03,All other alcohol-induced causes,A9,22.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2022-03-01
+,"Jackson County, MO",29095.0,2022,2022.0,3,2022/03,All other non-drug and non-alcohol causes,O9,623.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2022-03-01
+,"Jackson County, MO",29095.0,2022,2022.0,4,2022/04,Drug poisonings (overdose) Unintentional (X40-X44),D1,17.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2022-04-01
+,"Jackson County, MO",29095.0,2022,2022.0,4,2022/04,All other drug-induced causes,D9,89.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2022-04-01
+,"Jackson County, MO",29095.0,2022,2022.0,4,2022/04,All other alcohol-induced causes,A9,18.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2022-04-01
+,"Jackson County, MO",29095.0,2022,2022.0,4,2022/04,All other non-drug and non-alcohol causes,O9,572.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2022-04-01
+,"Jackson County, MO",29095.0,2022,2022.0,5,2022/05,Drug poisonings (overdose) Unintentional (X40-X44),D1,24.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2022-05-01
+,"Jackson County, MO",29095.0,2022,2022.0,5,2022/05,All other drug-induced causes,D9,89.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2022-05-01
+,"Jackson County, MO",29095.0,2022,2022.0,5,2022/05,All other alcohol-induced causes,A9,25.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2022-05-01
+,"Jackson County, MO",29095.0,2022,2022.0,5,2022/05,All other non-drug and non-alcohol causes,O9,574.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2022-05-01
+,"Jackson County, MO",29095.0,2022,2022.0,6,2022/06,Drug poisonings (overdose) Unintentional (X40-X44),D1,25.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2022-06-01
+,"Jackson County, MO",29095.0,2022,2022.0,6,2022/06,All other drug-induced causes,D9,96.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2022-06-01
+,"Jackson County, MO",29095.0,2022,2022.0,6,2022/06,All other alcohol-induced causes,A9,20.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2022-06-01
+,"Jackson County, MO",29095.0,2022,2022.0,6,2022/06,All other non-drug and non-alcohol causes,O9,578.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2022-06-01
+,"Jackson County, MO",29095.0,2022,2022.0,7,2022/07,Drug poisonings (overdose) Unintentional (X40-X44),D1,16.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2022-07-01
+,"Jackson County, MO",29095.0,2022,2022.0,7,2022/07,All other drug-induced causes,D9,81.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2022-07-01
+,"Jackson County, MO",29095.0,2022,2022.0,7,2022/07,All other alcohol-induced causes,A9,17.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2022-07-01
+,"Jackson County, MO",29095.0,2022,2022.0,7,2022/07,All other non-drug and non-alcohol causes,O9,550.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2022-07-01
+,"Jackson County, MO",29095.0,2022,2022.0,8,2022/08,Drug poisonings (overdose) Unintentional (X40-X44),D1,32.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2022-08-01
+,"Jackson County, MO",29095.0,2022,2022.0,8,2022/08,All other drug-induced causes,D9,110.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2022-08-01
+,"Jackson County, MO",29095.0,2022,2022.0,8,2022/08,All other alcohol-induced causes,A9,26.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2022-08-01
+,"Jackson County, MO",29095.0,2022,2022.0,8,2022/08,All other non-drug and non-alcohol causes,O9,586.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2022-08-01
+,"Jackson County, MO",29095.0,2022,2022.0,9,2022/09,Drug poisonings (overdose) Unintentional (X40-X44),D1,35.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2022-09-01
+,"Jackson County, MO",29095.0,2022,2022.0,9,2022/09,All other drug-induced causes,D9,123.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2022-09-01
+,"Jackson County, MO",29095.0,2022,2022.0,9,2022/09,All other alcohol-induced causes,A9,27.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2022-09-01
+,"Jackson County, MO",29095.0,2022,2022.0,9,2022/09,All other non-drug and non-alcohol causes,O9,626.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2022-09-01
+,"Jackson County, MO",29095.0,2022,2022.0,10,2022/10,Drug poisonings (overdose) Unintentional (X40-X44),D1,31.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2022-10-01
+,"Jackson County, MO",29095.0,2022,2022.0,10,2022/10,All other drug-induced causes,D9,98.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2022-10-01
+,"Jackson County, MO",29095.0,2022,2022.0,10,2022/10,All other alcohol-induced causes,A9,19.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2022-10-01
+,"Jackson County, MO",29095.0,2022,2022.0,10,2022/10,All other non-drug and non-alcohol causes,O9,606.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2022-10-01
+,"Jackson County, MO",29095.0,2022,2022.0,11,2022/11,Drug poisonings (overdose) Unintentional (X40-X44),D1,25.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2022-11-01
+,"Jackson County, MO",29095.0,2022,2022.0,11,2022/11,All other drug-induced causes,D9,113.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2022-11-01
+,"Jackson County, MO",29095.0,2022,2022.0,11,2022/11,All other alcohol-induced causes,A9,13.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2022-11-01
+,"Jackson County, MO",29095.0,2022,2022.0,11,2022/11,All other non-drug and non-alcohol causes,O9,612.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2022-11-01
+,"Jackson County, MO",29095.0,2022,2022.0,12,2022/12,Drug poisonings (overdose) Unintentional (X40-X44),D1,26.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2022-12-01
+,"Jackson County, MO",29095.0,2022,2022.0,12,2022/12,All other drug-induced causes,D9,97.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2022-12-01
+,"Jackson County, MO",29095.0,2022,2022.0,12,2022/12,All other alcohol-induced causes,A9,21.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2022-12-01
+,"Jackson County, MO",29095.0,2022,2022.0,12,2022/12,All other non-drug and non-alcohol causes,O9,659.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2022-12-01
+,"Jackson County, MO",29095.0,2023,2023.0,1,2023/01,Drug poisonings (overdose) Unintentional (X40-X44),D1,25.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2023-01-01
+,"Jackson County, MO",29095.0,2023,2023.0,1,2023/01,All other drug-induced causes,D9,111.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2023-01-01
+,"Jackson County, MO",29095.0,2023,2023.0,1,2023/01,All other alcohol-induced causes,A9,17.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2023-01-01
+,"Jackson County, MO",29095.0,2023,2023.0,1,2023/01,All other non-drug and non-alcohol causes,O9,617.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2023-01-01
+,"Jackson County, MO",29095.0,2023,2023.0,2,2023/02,Drug poisonings (overdose) Unintentional (X40-X44),D1,31.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2023-02-01
+,"Jackson County, MO",29095.0,2023,2023.0,2,2023/02,All other drug-induced causes,D9,112.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2023-02-01
+,"Jackson County, MO",29095.0,2023,2023.0,2,2023/02,All other alcohol-induced causes,A9,20.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2023-02-01
+,"Jackson County, MO",29095.0,2023,2023.0,2,2023/02,All other non-drug and non-alcohol causes,O9,594.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2023-02-01
+,"Jackson County, MO",29095.0,2023,2023.0,3,2023/03,Drug poisonings (overdose) Unintentional (X40-X44),D1,26.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2023-03-01
+,"Jackson County, MO",29095.0,2023,2023.0,3,2023/03,All other drug-induced causes,D9,82.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2023-03-01
+,"Jackson County, MO",29095.0,2023,2023.0,3,2023/03,All other alcohol-induced causes,A9,19.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2023-03-01
+,"Jackson County, MO",29095.0,2023,2023.0,3,2023/03,All other non-drug and non-alcohol causes,O9,589.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2023-03-01
+,"Jackson County, MO",29095.0,2023,2023.0,4,2023/04,Drug poisonings (overdose) Unintentional (X40-X44),D1,28.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2023-04-01
+,"Jackson County, MO",29095.0,2023,2023.0,4,2023/04,All other drug-induced causes,D9,106.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2023-04-01
+,"Jackson County, MO",29095.0,2023,2023.0,4,2023/04,All other alcohol-induced causes,A9,17.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2023-04-01
+,"Jackson County, MO",29095.0,2023,2023.0,4,2023/04,All other non-drug and non-alcohol causes,O9,599.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2023-04-01
+,"Jackson County, MO",29095.0,2023,2023.0,5,2023/05,Drug poisonings (overdose) Unintentional (X40-X44),D1,17.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2023-05-01
+,"Jackson County, MO",29095.0,2023,2023.0,5,2023/05,All other drug-induced causes,D9,91.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2023-05-01
+,"Jackson County, MO",29095.0,2023,2023.0,5,2023/05,All other alcohol-induced causes,A9,19.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2023-05-01
+,"Jackson County, MO",29095.0,2023,2023.0,5,2023/05,All other non-drug and non-alcohol causes,O9,523.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2023-05-01
+,"Jackson County, MO",29095.0,2023,2023.0,6,2023/06,Drug poisonings (overdose) Unintentional (X40-X44),D1,19.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2023-06-01
+,"Jackson County, MO",29095.0,2023,2023.0,6,2023/06,All other drug-induced causes,D9,93.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2023-06-01
+,"Jackson County, MO",29095.0,2023,2023.0,6,2023/06,All other alcohol-induced causes,A9,16.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2023-06-01
+,"Jackson County, MO",29095.0,2023,2023.0,6,2023/06,All other non-drug and non-alcohol causes,O9,565.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2023-06-01
+,"Jackson County, MO",29095.0,2023,2023.0,7,2023/07,Drug poisonings (overdose) Unintentional (X40-X44),D1,30.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2023-07-01
+,"Jackson County, MO",29095.0,2023,2023.0,7,2023/07,All other drug-induced causes,D9,97.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2023-07-01
+,"Jackson County, MO",29095.0,2023,2023.0,7,2023/07,All other alcohol-induced causes,A9,14.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2023-07-01
+,"Jackson County, MO",29095.0,2023,2023.0,7,2023/07,All other non-drug and non-alcohol causes,O9,529.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2023-07-01
+,"Jackson County, MO",29095.0,2023,2023.0,8,2023/08,Drug poisonings (overdose) Unintentional (X40-X44),D1,30.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2023-08-01
+,"Jackson County, MO",29095.0,2023,2023.0,8,2023/08,All other drug-induced causes,D9,98.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2023-08-01
+,"Jackson County, MO",29095.0,2023,2023.0,8,2023/08,All other alcohol-induced causes,A9,21.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2023-08-01
+,"Jackson County, MO",29095.0,2023,2023.0,8,2023/08,All other non-drug and non-alcohol causes,O9,586.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2023-08-01
+,"Jackson County, MO",29095.0,2023,2023.0,9,2023/09,Drug poisonings (overdose) Unintentional (X40-X44),D1,23.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2023-09-01
+,"Jackson County, MO",29095.0,2023,2023.0,9,2023/09,All other drug-induced causes,D9,86.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2023-09-01
+,"Jackson County, MO",29095.0,2023,2023.0,9,2023/09,All other alcohol-induced causes,A9,19.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2023-09-01
+,"Jackson County, MO",29095.0,2023,2023.0,9,2023/09,All other non-drug and non-alcohol causes,O9,551.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2023-09-01
+,"Jackson County, MO",29095.0,2023,2023.0,10,2023/10,Drug poisonings (overdose) Unintentional (X40-X44),D1,26.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2023-10-01
+,"Jackson County, MO",29095.0,2023,2023.0,10,2023/10,All other drug-induced causes,D9,98.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2023-10-01
+,"Jackson County, MO",29095.0,2023,2023.0,10,2023/10,All other alcohol-induced causes,A9,19.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2023-10-01
+,"Jackson County, MO",29095.0,2023,2023.0,10,2023/10,All other non-drug and non-alcohol causes,O9,592.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2023-10-01
+,"Jackson County, MO",29095.0,2023,2023.0,11,2023/11,Drug poisonings (overdose) Unintentional (X40-X44),D1,25.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2023-11-01
+,"Jackson County, MO",29095.0,2023,2023.0,11,2023/11,All other drug-induced causes,D9,90.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2023-11-01
+,"Jackson County, MO",29095.0,2023,2023.0,11,2023/11,All other alcohol-induced causes,A9,15.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2023-11-01
+,"Jackson County, MO",29095.0,2023,2023.0,11,2023/11,All other non-drug and non-alcohol causes,O9,562.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2023-11-01
+,"Jackson County, MO",29095.0,2023,2023.0,12,2023/12,Drug poisonings (overdose) Unintentional (X40-X44),D1,23.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2023-12-01
+,"Jackson County, MO",29095.0,2023,2023.0,12,2023/12,All other drug-induced causes,D9,121.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2023-12-01
+,"Jackson County, MO",29095.0,2023,2023.0,12,2023/12,All other alcohol-induced causes,A9,19.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2023-12-01
+,"Jackson County, MO",29095.0,2023,2023.0,12,2023/12,All other non-drug and non-alcohol causes,O9,656.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2023-12-01
+,"Jackson County, MO",29095.0,2024,2024.0,1,2024/01,Drug poisonings (overdose) Unintentional (X40-X44),D1,18.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2024-01-01
+,"Jackson County, MO",29095.0,2024,2024.0,1,2024/01,All other drug-induced causes,D9,106.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2024-01-01
+,"Jackson County, MO",29095.0,2024,2024.0,1,2024/01,All other alcohol-induced causes,A9,20.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2024-01-01
+,"Jackson County, MO",29095.0,2024,2024.0,1,2024/01,All other non-drug and non-alcohol causes,O9,663.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2024-01-01
+,"Jackson County, MO",29095.0,2024,2024.0,2,2024/02,Drug poisonings (overdose) Unintentional (X40-X44),D1,33.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2024-02-01
+,"Jackson County, MO",29095.0,2024,2024.0,2,2024/02,All other drug-induced causes,D9,118.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2024-02-01
+,"Jackson County, MO",29095.0,2024,2024.0,2,2024/02,All other alcohol-induced causes,A9,14.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2024-02-01
+,"Jackson County, MO",29095.0,2024,2024.0,2,2024/02,All other non-drug and non-alcohol causes,O9,613.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2024-02-01
+,"Jackson County, MO",29095.0,2024,2024.0,3,2024/03,Drug poisonings (overdose) Unintentional (X40-X44),D1,21.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2024-03-01
+,"Jackson County, MO",29095.0,2024,2024.0,3,2024/03,All other drug-induced causes,D9,82.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2024-03-01
+,"Jackson County, MO",29095.0,2024,2024.0,3,2024/03,All other alcohol-induced causes,A9,19.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2024-03-01
+,"Jackson County, MO",29095.0,2024,2024.0,3,2024/03,All other non-drug and non-alcohol causes,O9,587.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2024-03-01
+,"Jackson County, MO",29095.0,2024,2024.0,4,2024/04,Drug poisonings (overdose) Unintentional (X40-X44),D1,24.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2024-04-01
+,"Jackson County, MO",29095.0,2024,2024.0,4,2024/04,All other drug-induced causes,D9,103.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2024-04-01
+,"Jackson County, MO",29095.0,2024,2024.0,4,2024/04,All other alcohol-induced causes,A9,22.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2024-04-01
+,"Jackson County, MO",29095.0,2024,2024.0,4,2024/04,All other non-drug and non-alcohol causes,O9,553.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2024-04-01
+,"Jackson County, MO",29095.0,2024,2024.0,5,2024/05,Drug poisonings (overdose) Unintentional (X40-X44),D1,28.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2024-05-01
+,"Jackson County, MO",29095.0,2024,2024.0,5,2024/05,All other drug-induced causes,D9,99.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2024-05-01
+,"Jackson County, MO",29095.0,2024,2024.0,5,2024/05,All other alcohol-induced causes,A9,16.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2024-05-01
+,"Jackson County, MO",29095.0,2024,2024.0,5,2024/05,All other non-drug and non-alcohol causes,O9,572.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2024-05-01
+,"Jackson County, MO",29095.0,2024,2024.0,6,2024/06,Drug poisonings (overdose) Unintentional (X40-X44),D1,18.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2024-06-01
+,"Jackson County, MO",29095.0,2024,2024.0,6,2024/06,All other drug-induced causes,D9,87.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2024-06-01
+,"Jackson County, MO",29095.0,2024,2024.0,6,2024/06,All other alcohol-induced causes,A9,17.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2024-06-01
+,"Jackson County, MO",29095.0,2024,2024.0,6,2024/06,All other non-drug and non-alcohol causes,O9,557.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2024-06-01
+,"Jackson County, MO",29095.0,2024,2024.0,7,2024/07,Drug poisonings (overdose) Unintentional (X40-X44),D1,24.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2024-07-01
+,"Jackson County, MO",29095.0,2024,2024.0,7,2024/07,All other drug-induced causes,D9,100.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2024-07-01
+,"Jackson County, MO",29095.0,2024,2024.0,7,2024/07,All other alcohol-induced causes,A9,24.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2024-07-01
+,"Jackson County, MO",29095.0,2024,2024.0,7,2024/07,All other non-drug and non-alcohol causes,O9,599.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2024-07-01
+,"Jackson County, MO",29095.0,2024,2024.0,8,2024/08,Drug poisonings (overdose) Unintentional (X40-X44),D1,18.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2024-08-01
+,"Jackson County, MO",29095.0,2024,2024.0,8,2024/08,All other drug-induced causes,D9,88.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2024-08-01
+,"Jackson County, MO",29095.0,2024,2024.0,8,2024/08,All other alcohol-induced causes,A9,22.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2024-08-01
+,"Jackson County, MO",29095.0,2024,2024.0,8,2024/08,All other non-drug and non-alcohol causes,O9,576.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2024-08-01
+,"Jackson County, MO",29095.0,2024,2024.0,9,2024/09,Drug poisonings (overdose) Unintentional (X40-X44),D1,13.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2024-09-01
+,"Jackson County, MO",29095.0,2024,2024.0,9,2024/09,All other drug-induced causes,D9,93.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2024-09-01
+,"Jackson County, MO",29095.0,2024,2024.0,9,2024/09,All other alcohol-induced causes,A9,20.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2024-09-01
+,"Jackson County, MO",29095.0,2024,2024.0,9,2024/09,All other non-drug and non-alcohol causes,O9,581.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2024-09-01
+,"Jackson County, MO",29095.0,2024,2024.0,10,2024/10,Drug poisonings (overdose) Unintentional (X40-X44),D1,22.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2024-10-01
+,"Jackson County, MO",29095.0,2024,2024.0,10,2024/10,All other drug-induced causes,D9,109.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2024-10-01
+,"Jackson County, MO",29095.0,2024,2024.0,10,2024/10,All other alcohol-induced causes,A9,24.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2024-10-01
+,"Jackson County, MO",29095.0,2024,2024.0,10,2024/10,All other non-drug and non-alcohol causes,O9,583.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2024-10-01
+,"Jackson County, MO",29095.0,2024,2024.0,11,2024/11,Drug poisonings (overdose) Unintentional (X40-X44),D1,21.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2024-11-01
+,"Jackson County, MO",29095.0,2024,2024.0,11,2024/11,All other drug-induced causes,D9,101.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2024-11-01
+,"Jackson County, MO",29095.0,2024,2024.0,11,2024/11,All other alcohol-induced causes,A9,23.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2024-11-01
+,"Jackson County, MO",29095.0,2024,2024.0,11,2024/11,All other non-drug and non-alcohol causes,O9,522.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2024-11-01
+,"Jackson County, MO",29095.0,2024,2024.0,12,2024/12,Drug poisonings (overdose) Unintentional (X40-X44),D1,22.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2024-12-01
+,"Jackson County, MO",29095.0,2024,2024.0,12,2024/12,All other drug-induced causes,D9,114.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2024-12-01
+,"Jackson County, MO",29095.0,2024,2024.0,12,2024/12,All other alcohol-induced causes,A9,16.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2024-12-01
+,"Jackson County, MO",29095.0,2024,2024.0,12,2024/12,All other non-drug and non-alcohol causes,O9,595.0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,2024-12-01
