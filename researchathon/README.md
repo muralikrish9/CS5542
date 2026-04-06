@@ -5,6 +5,12 @@ Murali Ediga · University of Missouri–Kansas City · Spring 2026
 
 ---
 
+## Demo
+
+[![Watch the demo](https://img.youtube.com/vi/LR7pLWJjRjQ/maxresdefault.jpg)](https://youtu.be/LR7pLWJjRjQ)
+
+---
+
 ## Overview
 
 This project predicts **Alcohol-Induced overdose deaths in Jackson County, MO** using KCPD drug arrest volume as a leading indicator — 4 months in advance.
