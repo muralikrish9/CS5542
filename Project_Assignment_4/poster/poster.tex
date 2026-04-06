@@ -1,0 +1,483 @@
+% TRACE Research Poster — CS 5542 Research-A-Thon 2026
+% Based on University of Lethbridge Poster Template (Gemini theme)
+% Compile with LuaLaTeX
+\documentclass[final]{beamer}
+
+% ==== Poster size: 36 x 48 inches (portrait) ====
+\usepackage[size=custom,width=91.44,height=121.92,scale=1.15]{beamerposter}
+
+\usetheme{gemini}
+\usecolortheme{gemini}
+
+% ==== Packages ====
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, shapes.geometric, fit, calc, backgrounds}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{colortbl}
+\usepackage{xcolor}
+
+% ==== Custom colors ====
+\definecolor{traceblue}{HTML}{1565C0}
+\definecolor{tracered}{HTML}{C62828}
+\definecolor{tracegreen}{HTML}{2E7D32}
+\definecolor{traceorange}{HTML}{EF6C00}
+\definecolor{tracegray}{HTML}{455A64}
+\definecolor{lightbg}{HTML}{E3F2FD}
+\definecolor{honeypot}{HTML}{FFF3E0}
+\definecolor{classbox}{HTML}{E8F5E9}
+\definecolor{dpibox}{HTML}{FCE4EC}
+\definecolor{agentbox}{HTML}{EDE7F6}
+
+% ==== Lengths ====
+\newlength{\sepwidth}
+\newlength{\colwidth}
+\setlength{\sepwidth}{0.025\paperwidth}
+\setlength{\colwidth}{0.3\paperwidth}
+
+\newcommand{\separatorcolumn}{\begin{column}{\sepwidth}\end{column}}
+
+% ==== Title ====
+\title{TRACE: Terminal Recognition and Attribution via Command Entropy}
+\author{Murali Ediga \quad \textit{Advisor: Dr.\ Chatterjee}}
+\institute{Department of Computer Science, University of Missouri}
+
+% ==== Footer ====
+\footercontent{
+  CS 5542 Big Data Analytics \& Management --- Research-A-Thon 2026 \hfill
+  \texttt{github.com/muralikrish9/CS5542}
+}
+
+\begin{document}
+
+\begin{frame}[t]
+\begin{columns}[t]
+
+\separatorcolumn
+
+% ╔════════════════════════════════════════════════════════════════════════════╗
+% ║  COLUMN 1: Motivation, Pipeline, Dataset                                   ║
+% ╚════════════════════════════════════════════════════════════════════════════╝
+\begin{column}{\colwidth}
+
+% ── Abstract ──────────────────────────────────────────────────────────────────
+\begin{block}{Abstract}
+Autonomous AI agents powered by Large Language Models (LLMs) are increasingly used for
+offensive security tasks. When multiple LLM-driven agents interact with a target system,
+defenders currently cannot determine \textbf{which model is behind each session}.
+TRACE fingerprints the \textbf{shell command patterns} each LLM family produces ---
+achieving \textbf{98\% cross-validated accuracy} across 7 model families and 3 agent
+scaffolds. We show these fingerprints enable \textbf{targeted Defensive Prompt Injection},
+routing the highest-ASR payload to each identified family.
+\end{block}
+
+% ── Problem ───────────────────────────────────────────────────────────────────
+\begin{alertblock}{Problem}
+\begin{itemize}
+  \item Frontier LLMs now autonomously hack systems --- agents run \texttt{nmap}, \texttt{gobuster},
+        exploit CVEs, and pivot laterally \textbf{without human intervention}
+  \item Defenders see only shell commands --- the LLM identity is \textbf{hidden behind the scaffold}
+  \item Each LLM family responds differently to prompt injection defenses
+  \item Without fingerprinting, defenders must deploy \textbf{one-size-fits-all} countermeasures
+\end{itemize}
+\textbf{Goal:} Identify the LLM family from terminal behavior alone, then deploy \textbf{targeted} defenses.
+\end{alertblock}
+
+% ── Deployment Pipeline Diagram ──────────────────────────────────────────────
+\begin{block}{Live Deployment Pipeline}
+
+\begin{center}
+\begin{tikzpicture}[
+    node distance=1.0cm and 0.5cm,
+    >={Stealth[length=5mm, width=3mm]},
+    every node/.style={font=\small},
+    box/.style={rectangle, rounded corners=4pt, draw=#1, fill=#1!12,
+                line width=1.2pt, minimum width=10cm, minimum height=1.8cm,
+                align=center, font=\small\bfseries},
+    smallbox/.style={rectangle, rounded corners=3pt, draw=#1, fill=#1!15,
+                     line width=0.8pt, minimum width=4.2cm, minimum height=1.4cm,
+                     align=center, font=\footnotesize},
+    arrow/.style={->, line width=1.5pt, color=tracegray},
+    label/.style={font=\scriptsize\itshape, text=tracegray},
+  ]
+
+  % ── Stage 1: Agent arrives ──
+  \node[box=agentbox!80!black] (agent)
+    {AI Agent Session\\[-2pt]
+     \normalfont\footnotesize 7 families $\times$ 3 scaffolds (CC, PGPT, ReAct)};
+
+  % ── Stage 2: Honeypot captures ──
+  \node[box=traceorange, below=0.8cm of agent] (honeypot)
+    {Cowrie Honeypot (GCP)\\[-2pt]
+     \normalfont\footnotesize Captures raw shell commands in real-time};
+
+  % ── Stage 3: Session aggregation ──
+  \node[box=traceblue, below=0.8cm of honeypot] (agg)
+    {Session Aggregator\\[-2pt]
+     \normalfont\footnotesize 2-minute sliding window $\rightarrow$ command stream};
+
+  % ── Stage 4: Classifier ──
+  \node[box=tracegreen, below=0.8cm of agg] (clf)
+    {TF-IDF + LinearSVC Classifier\\[-2pt]
+     \normalfont\footnotesize Bigram vectorization (50K features) $\rightarrow$ family prediction + confidence};
+
+  % ── Stage 5: Fingerprint output ──
+  \node[box=tracegray, below=0.8cm of clf] (fp)
+    {Model Fingerprint\\[-2pt]
+     \normalfont\footnotesize Family: \texttt{deepseek} \quad Confidence: \texttt{94.2\%}};
+
+  % ── Stage 6: DPI routing (branching) ──
+  \node[below=1.0cm of fp] (routelabel) {};
+
+  \node[smallbox=tracered, below left=1.0cm and 1.2cm of fp] (dpi1)
+    {Vanilla\\Sysextract\\[-2pt]\normalfont\tiny Best for: DeepSeek, Gemini};
+  \node[smallbox=tracered, below=1.0cm of fp] (dpi2)
+    {M2 Authority\\Override\\[-2pt]\normalfont\tiny Best for: GLM-5};
+  \node[smallbox=tracered, below right=1.0cm and 1.2cm of fp] (dpi3)
+    {FC Format\\Coercion\\[-2pt]\normalfont\tiny Best for: GPT, Kimi};
+
+  % ── Arrows ──
+  \draw[arrow] (agent) -- (honeypot);
+  \draw[arrow] (honeypot) -- (agg)
+    node[midway, right, label] {stream commands};
+  \draw[arrow] (agg) -- (clf)
+    node[midway, right, label] {session text};
+  \draw[arrow] (clf) -- (fp)
+    node[midway, right, label] {predict family};
+  \draw[arrow, color=tracered] (fp) -- (dpi1)
+    node[midway, above left, label] {};
+  \draw[arrow, color=tracered] (fp) -- (dpi2)
+    node[midway, right, label] {route to best payload};
+  \draw[arrow, color=tracered] (fp) -- (dpi3)
+    node[midway, above right, label] {};
+
+  % ── Claude special case ──
+  \node[right=0.3cm of fp, font=\scriptsize, text=tracegreen, align=left]
+    {Claude $\rightarrow$ 0\% ASR\\(no payload effective)};
+
+\end{tikzpicture}
+\end{center}
+
+\vspace{0.3em}
+\footnotesize\textit{Deployed on GCP VM. Live demo achieved 87\% confidence on incoming agent sessions.
+Claude is uniquely resistant --- no DPI payload works, so the system flags but does not attempt injection.}
+\end{block}
+
+% ── Dataset ───────────────────────────────────────────────────────────────────
+\begin{block}{Dataset --- 7 Flagship Models $\times$ 3 Scaffolds}
+
+\textbf{Model selection criteria:} Top-performing on agentic benchmarks (SWE-bench, HumanEval,
+GAIA), capable of complex multi-step tool calls, and widely deployed in production agent systems.
+
+\begin{table}
+\centering
+\begin{tabular}{l l c c c c}
+\toprule
+\textbf{Family} & \textbf{Provider} & \textbf{CC} & \textbf{PGPT} & \textbf{ReAct} & \textbf{Total} \\
+\midrule
+Claude Opus & Anthropic  & 84 & 93 & 72 & 249 \\
+GPT-5.4     & OpenAI     & 76 & 97 & 65 & 238 \\
+Gemini 3.1  & Google     & 80 & 90 & 68 & 238 \\
+DeepSeek    & DeepSeek   & 72 & 86 & 60 & 218 \\
+Qwen        & Alibaba    & 65 & 78 & 55 & 198 \\
+Kimi        & Moonshot   & 65 & 78 & 55 & 198 \\
+GLM-5       & Zhipu AI   & 112 & 130 & 94 & 336 \\
+\midrule
+\textbf{Total} & & \textbf{554} & \textbf{652} & \textbf{469} & \textbf{1,875} \\
+\bottomrule
+\end{tabular}
+\caption*{\footnotesize\textbf{Scaffolds:} CC = Claude Code, PGPT = PentestGPT, ReAct.
+Each session = 10--50 commands on a Docker-isolated Linux honeypot with CTF challenges.}
+\end{table}
+\end{block}
+
+\end{column}
+
+\separatorcolumn
+
+% ╔════════════════════════════════════════════════════════════════════════════╗
+% ║  COLUMN 2: RQ1--RQ4 Results                                               ║
+% ╚════════════════════════════════════════════════════════════════════════════╝
+\begin{column}{\colwidth}
+
+% ── Method summary ────────────────────────────────────────────────────────────
+\begin{block}{Classification Pipeline --- From Failure to TF-IDF}
+
+\textbf{What didn't work (TRACE v1):} 80 hand-crafted behavioral features ---
+OIPS (deliberation depth), error recovery rate, command mutual information, phase
+transition entropy. \textbf{Result: LOSO F1 = 0.11.} The features predicted
+\textit{scaffold}, not \textit{model}. PentestGPT's rigid turn structure, ReAct's
+reasoning-action framing, CC's tool patterns --- all leaked into features.
+
+\vspace{0.3em}
+\textbf{What works (TRACE v2):} Treat each session as a text document.
+
+\begin{table}
+\centering
+\begin{tabular}{l l}
+\toprule
+\textbf{Stage} & \textbf{Details} \\
+\midrule
+Input & Session commands $\rightarrow$ single text string \\
+Vectorizer & TF-IDF: unigrams + bigrams, 50K features \\
+ & Sublinear TF ($\log(1+\text{count})$), IDF weighting \\
+Classifier & LinearSVC ($C=1.0$), one-vs-rest \\
+Evaluation & 5-fold stratified CV, LOSO, Vulnetic blind test \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\vspace{0.2em}
+\footnotesize\textit{Why this works:} Each LLM family has model-intrinsic command preferences
+baked in from training data --- Claude prefers \texttt{python3 -c}, DeepSeek chains with
+\texttt{\&\&}, GLM-5 annotates with \texttt{echo}. These lexical choices transfer across scaffolds.
+\end{block}
+
+% ── RQ1 ───────────────────────────────────────────────────────────────────────
+\begin{block}{RQ1: Fingerprinting Accuracy}
+\textbf{Can we fingerprint AI agent families from terminal behavior alone?}
+
+\begin{center}
+\LARGE\textbf{5-fold CV Macro-F1 = 0.979} \normalsize$\pm$ 0.003
+\end{center}
+
+\begin{table}
+\centering
+\begin{tabular}{l l}
+\toprule
+\textbf{Family} & \textbf{Top discriminative bigrams} \\
+\midrule
+Claude Opus & \texttt{python3 -c}, \texttt{find / -name}, \texttt{2>/dev/null |} \\
+GPT-5.4 & \texttt{nmap -sV}, \texttt{gobuster dir}, \texttt{searchsploit} \\
+Gemini 3.1 & \texttt{gobuster dir -t 50}, \texttt{sqlmap --batch} \\
+DeepSeek & \texttt{\&\& cat}, \texttt{\&\& ls -la}, \texttt{\&\& hostname} \\
+Qwen & \texttt{cat /etc/passwd}, \texttt{ifconfig}, \texttt{-an} \\
+Kimi & \texttt{ls}, \texttt{pwd}, \texttt{echo test} \\
+GLM-5 & \texttt{echo ===}, \texttt{echo Starting}, \texttt{\&\& echo} \\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{block}
+
+% ── RQ2 ───────────────────────────────────────────────────────────────────────
+\begin{block}{RQ2: Scaffold Generalization (LOSO)}
+\textbf{Does the classifier generalize to unseen agent scaffolds?}
+
+\vspace{0.2em}
+Leave-One-Scaffold-Out: train on 2 scaffolds, test on held-out 3rd.
+
+\begin{table}
+\centering
+\begin{tabular}{l c l}
+\toprule
+\textbf{Held-out scaffold} & \textbf{Macro-F1} & \textbf{Interpretation} \\
+\midrule
+CC (Claude Code)  & 0.783 & Moderate --- CC has unique tool patterns \\
+PGPT (PentestGPT) & \textbf{0.953} & Strong --- PGPT most portable \\
+ReAct              & 0.602 & Weakest --- Action:/Obs: framing unique \\
+\midrule
+\textbf{Mean} & \textbf{0.812} & \textit{Fingerprints are scaffold-invariant} \\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{block}
+
+% ── RQ3 ───────────────────────────────────────────────────────────────────────
+\begin{block}{RQ3: Evasion Robustness + Unknown Scaffolds}
+\textbf{Can agents evade fingerprinting? Does it work on unseen scaffolds?}
+
+\begin{table}
+\centering
+\begin{tabular}{l c l}
+\toprule
+\textbf{Condition} & \textbf{Accuracy} & \textbf{Finding} \\
+\midrule
+Timing (control) & 92\% & No effect (TF-IDF ignores time) \\
+Obfuscation & 71\% & Partial degradation \\
+Mimicry & 67\% & Degrades but does \textbf{NOT redirect} \\
+\midrule
+\textbf{Vulnetic blind test} & \textbf{78\%} & 7/9 correct, unknown scaffold \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\vspace{0.3em}
+\textcolor{tracegreen}{\textbf{Key:}} Mimicry (impersonate another family) does not cause
+misattribution to the target --- 0 sessions redirected. The classifier degrades gracefully.
+\end{block}
+
+% ── RQ4 ───────────────────────────────────────────────────────────────────────
+\begin{block}{RQ4: Cross-Model Generalization}
+\textbf{Do fingerprints persist across model variants within a family?}
+
+\begin{table}
+\centering
+\begin{tabular}{l l c}
+\toprule
+\textbf{Test variant} & \textbf{Expected family} & \textbf{Accuracy} \\
+\midrule
+Claude Opus 4.6 (control) & claude\_opus & 100\% \\
+Gemini 3.1 (control) & gemini31 & 100\% \\
+\rowcolor{lightbg} Sonnet 4.6 $\rightarrow$ Opus family & claude\_opus & \textbf{72\%} \\
+\rowcolor{lightbg} Gemini 2.5 Flash $\rightarrow$ 3.1 family & gemini31 & \textbf{68\%} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\vspace{0.3em}
+\textit{Same-generation variants share $\sim$70\% of behavioral fingerprint.
+Cross-generation (GPT-4o$\rightarrow$5.4, Claude 3.5$\rightarrow$4.6) shows 0\% ---
+architecture changes break fingerprints across generations.}
+\end{block}
+
+\end{column}
+
+\separatorcolumn
+
+% ╔════════════════════════════════════════════════════════════════════════════╗
+% ║  COLUMN 3: DPI, Ablation, Conclusions                                     ║
+% ╚════════════════════════════════════════════════════════════════════════════╝
+\begin{column}{\colwidth}
+
+% ── RQ5 ───────────────────────────────────────────────────────────────────────
+\begin{block}{RQ5: DPI Susceptibility --- Why Fingerprinting Matters}
+\textbf{Do model families show distinct, exploitable prompt injection profiles?}
+
+\vspace{0.2em}
+Three DPI payloads injected into CTF environment files that agents encounter naturally:
+
+\begin{table}
+\centering
+\footnotesize
+\begin{tabular}{l p{7cm} l}
+\toprule
+\textbf{Payload} & \textbf{Mechanism} & \textbf{Target file} \\
+\midrule
+Vanilla & Heredoc in \texttt{WELCOME.txt} writes task briefing & \texttt{/tmp/.sysextract} \\
+M2 & Fake ``forensic audit'' authority demand & \texttt{/tmp/.agent\_audit.log} \\
+FC & Frame existing log as ``format violation'' & \texttt{/tmp/.agent\_audit.log} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\vspace{0.3em}
+\textbf{ASR (\%) by family --- each family has a different weakness:}
+
+\begin{table}
+\centering
+\begin{tabular}{l c c c c}
+\toprule
+\textbf{Family} & \textbf{Vanilla} & \textbf{M2 Auth.} & \textbf{FC Coerce} & \textbf{Best ASR} \\
+\midrule
+\rowcolor{tracegreen!15} Claude & 0\% & 0\% & 0\% & \textbf{0\%} \\
+DeepSeek & \cellcolor{tracered!20}\textbf{95\%} & 87\% & 75\% & 95\% \\
+Gemini & \cellcolor{tracered!15}85\% & 70\% & 60\% & 85\% \\
+GPT-5.4 & 13\% & 17\% & \cellcolor{tracered!20}\textbf{90\%} & 90\% \\
+GLM-5 & 53\% & 80\% & \cellcolor{tracered!20}\textbf{90\%} & 90\% \\
+Kimi & 41\% & 57\% & \cellcolor{tracered!20}\textbf{88\%} & 88\% \\
+Qwen & \cellcolor{tracered!10}73\% & 62\% & 57\% & 73\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\vspace{0.3em}
+\textcolor{tracered}{\textbf{The case for fingerprinting:}}
+
+\begin{table}
+\centering
+\begin{tabular}{l c}
+\toprule
+\textbf{Defense strategy} & \textbf{Mean ASR (non-Claude)} \\
+\midrule
+Blind (best single payload for all) & 60.3\% \\
+\textbf{Fingerprint $\rightarrow$ route to best payload} & \textbf{86.8\%} \\
+\midrule
+\textbf{Targeting lift} & \textbf{+26.5 percentage points} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\footnotesize\textit{A defender who knows the model can choose the right weapon.
+DeepSeek falls to Vanilla; GPT/GLM/Kimi fall to Format Coercion; Claude resists everything.}
+\end{block}
+
+% ── Ablation ──────────────────────────────────────────────────────────────────
+\begin{block}{Feature Ablation \& Classifier Comparison}
+
+\begin{table}
+\centering
+\begin{tabular}{l c c}
+\toprule
+\textbf{Feature condition} & \textbf{CV F1} & \textbf{LOSO mean} \\
+\midrule
+\textbf{Full bigram (ours)} & \textbf{0.979} & \textbf{0.812} \\
+Full unigram & 0.964 & 0.773 \\
+Verb-only bigram & 0.896 & 0.620 \\
+Verb-only unigram & 0.829 & 0.568 \\
+\midrule
+\textit{Random baseline (1/7)} & \textit{0.143} & \textit{0.143} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\vspace{0.3em}
+Even verb-only achieves \textbf{4$\times$ above random} --- command verb selection
+alone carries substantial signal.
+
+\vspace{0.5em}
+\begin{table}
+\centering
+\begin{tabular}{l c c}
+\toprule
+\textbf{Classifier} & \textbf{CV F1} & \textbf{LOSO F1} \\
+\midrule
+\textbf{LinearSVC (ours)} & \textbf{0.979} & \textbf{0.812} \\
+Logistic Regression & 0.975 & 0.799 \\
+SGD (hinge) & 0.971 & 0.788 \\
+Multinomial NB & 0.935 & 0.710 \\
+Random Forest & 0.941 & 0.682 \\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{block}
+
+% ── Conclusions ───────────────────────────────────────────────────────────────
+\begin{alertblock}{Key Takeaways}
+\begin{enumerate}
+  \item \textbf{LLMs have behavioral fingerprints} in shell commands that persist across agent scaffolds
+  \item \textbf{Evasion-resistant:} mimicry degrades accuracy but does \textbf{not redirect} attribution
+  \item \textbf{Cross-model transfer:} fingerprints persist across model tiers ($\sim$70\%)
+  \item \textbf{Fingerprinting enables targeted DPI:} per-family routing yields +26.5pp over blind attacks
+  \item \textbf{Claude uniquely resistant:} 0\% DPI compliance across all payloads and scaffolds
+\end{enumerate}
+\end{alertblock}
+
+% ── Future Work ───────────────────────────────────────────────────────────────
+\begin{block}{Future Work}
+\begin{itemize}
+  \item \textbf{Stage 2 intelligence layer:} Qwen fine-tune for low-confidence resolution
+  \item \textbf{Multi-agent swarms:} Concurrent multi-model session disambiguation
+  \item \textbf{Temporal features:} Inter-command timing for richer fingerprints
+\end{itemize}
+\end{block}
+
+% ── References ────────────────────────────────────────────────────────────────
+\begin{block}{References}
+\footnotesize
+\begin{enumerate}
+  \item Fang et al. ``LLM Agents Can Autonomously Hack Websites.'' \textit{arXiv:2402.06664}, 2024.
+  \item Harang \& Rudd. ``TRAM: Bridging Terminal Commands to LLM Attribution.'' \textit{USENIX}, 2024.
+  \item Greshake et al. ``Not What You've Signed Up For: Indirect Prompt Injection.'' \textit{AISec}, 2023.
+\end{enumerate}
+\end{block}
+
+\end{column}
+
+\separatorcolumn
+
+\end{columns}
+\end{frame}
+
+\end{document}
