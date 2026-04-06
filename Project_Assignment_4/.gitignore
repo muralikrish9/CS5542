@@ -1,0 +1,20 @@
+# Real data (never commit)
+data/real/
+data/*.parquet
+data/*.pkl
+*.parquet
+*.pkl
+
+# Model artifacts
+models/*.joblib
+models/*.pickle
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db
