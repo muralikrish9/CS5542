@@ -1,0 +1,1349 @@
+{
+  "summary": {
+    "n_images": 135,
+    "alignment_by_strategy": {
+      "A_naive": {
+        "mean": 0.31420184837447274,
+        "std": 0.018476624044428135
+      },
+      "B_structured": {
+        "mean": 0.3077037539747026,
+        "std": 0.016333820704957456
+      },
+      "C_negative": {
+        "mean": 0.3059876726733314,
+        "std": 0.020882966350490483
+      }
+    },
+    "consistency_by_strategy": {
+      "A_naive": {
+        "mean": 0.9068072292539806,
+        "std": 0.05042329633939082
+      },
+      "B_structured": {
+        "mean": 0.9315121385786269,
+        "std": 0.024331031159663192
+      },
+      "C_negative": {
+        "mean": 0.8809114535649617,
+        "std": 0.05447260346525114
+      }
+    },
+    "diversity_by_strategy": {
+      "A_naive": 0.34866657795930145,
+      "B_structured": 0.3320916971172949,
+      "C_negative": 0.30400301209001834
+    },
+    "n_failures": 0
+  },
+  "per_image": [
+    {
+      "product_id": "p01",
+      "strategy": "A_naive",
+      "seed": 1000,
+      "prompt": "Classic Leather Oxford Shoes",
+      "negative": "",
+      "file": "A_naive/p01_A_naive_0.png",
+      "clip_align": 0.3244791030883789
+    },
+    {
+      "product_id": "p01",
+      "strategy": "A_naive",
+      "seed": 1001,
+      "prompt": "Classic Leather Oxford Shoes",
+      "negative": "",
+      "file": "A_naive/p01_A_naive_1.png",
+      "clip_align": 0.3302389681339264
+    },
+    {
+      "product_id": "p01",
+      "strategy": "A_naive",
+      "seed": 1002,
+      "prompt": "Classic Leather Oxford Shoes",
+      "negative": "",
+      "file": "A_naive/p01_A_naive_2.png",
+      "clip_align": 0.32557061314582825
+    },
+    {
+      "product_id": "p01",
+      "strategy": "B_structured",
+      "seed": 1000,
+      "prompt": "Classic Leather Oxford Shoes, Brown, made of Genuine Leather, Formal style, Lace-up stitched sole polished finish, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "",
+      "file": "B_structured/p01_B_structured_0.png",
+      "clip_align": 0.30497774481773376
+    },
+    {
+      "product_id": "p01",
+      "strategy": "B_structured",
+      "seed": 1001,
+      "prompt": "Classic Leather Oxford Shoes, Brown, made of Genuine Leather, Formal style, Lace-up stitched sole polished finish, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "",
+      "file": "B_structured/p01_B_structured_1.png",
+      "clip_align": 0.3090432286262512
+    },
+    {
+      "product_id": "p01",
+      "strategy": "B_structured",
+      "seed": 1002,
+      "prompt": "Classic Leather Oxford Shoes, Brown, made of Genuine Leather, Formal style, Lace-up stitched sole polished finish, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "",
+      "file": "B_structured/p01_B_structured_2.png",
+      "clip_align": 0.30641376972198486
+    },
+    {
+      "product_id": "p02",
+      "strategy": "A_naive",
+      "seed": 1000,
+      "prompt": "Running Sneakers Mesh Upper",
+      "negative": "",
+      "file": "A_naive/p02_A_naive_0.png",
+      "clip_align": 0.2901047170162201
+    },
+    {
+      "product_id": "p02",
+      "strategy": "A_naive",
+      "seed": 1001,
+      "prompt": "Running Sneakers Mesh Upper",
+      "negative": "",
+      "file": "A_naive/p02_A_naive_1.png",
+      "clip_align": 0.28148704767227173
+    },
+    {
+      "product_id": "p02",
+      "strategy": "A_naive",
+      "seed": 1002,
+      "prompt": "Running Sneakers Mesh Upper",
+      "negative": "",
+      "file": "A_naive/p02_A_naive_2.png",
+      "clip_align": 0.2838491201400757
+    },
+    {
+      "product_id": "p02",
+      "strategy": "B_structured",
+      "seed": 1000,
+      "prompt": "Running Sneakers Mesh Upper, White, made of Mesh and rubber, Athletic style, Breathable cushioned sole lightweight, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "",
+      "file": "B_structured/p02_B_structured_0.png",
+      "clip_align": 0.32965418696403503
+    },
+    {
+      "product_id": "p02",
+      "strategy": "B_structured",
+      "seed": 1001,
+      "prompt": "Running Sneakers Mesh Upper, White, made of Mesh and rubber, Athletic style, Breathable cushioned sole lightweight, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "",
+      "file": "B_structured/p02_B_structured_1.png",
+      "clip_align": 0.32178863883018494
+    },
+    {
+      "product_id": "p02",
+      "strategy": "B_structured",
+      "seed": 1002,
+      "prompt": "Running Sneakers Mesh Upper, White, made of Mesh and rubber, Athletic style, Breathable cushioned sole lightweight, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "",
+      "file": "B_structured/p02_B_structured_2.png",
+      "clip_align": 0.3330853283405304
+    },
+    {
+      "product_id": "p03",
+      "strategy": "A_naive",
+      "seed": 1000,
+      "prompt": "Wireless Over-Ear Headphones",
+      "negative": "",
+      "file": "A_naive/p03_A_naive_0.png",
+      "clip_align": 0.2836599349975586
+    },
+    {
+      "product_id": "p03",
+      "strategy": "A_naive",
+      "seed": 1001,
+      "prompt": "Wireless Over-Ear Headphones",
+      "negative": "",
+      "file": "A_naive/p03_A_naive_1.png",
+      "clip_align": 0.2945217192173004
+    },
+    {
+      "product_id": "p03",
+      "strategy": "A_naive",
+      "seed": 1002,
+      "prompt": "Wireless Over-Ear Headphones",
+      "negative": "",
+      "file": "A_naive/p03_A_naive_2.png",
+      "clip_align": 0.2888965606689453
+    },
+    {
+      "product_id": "p03",
+      "strategy": "B_structured",
+      "seed": 1000,
+      "prompt": "Wireless Over-Ear Headphones, Matte Black, made of Plastic and foam, Modern style, Noise-cancelling padded ear cups foldable, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "",
+      "file": "B_structured/p03_B_structured_0.png",
+      "clip_align": 0.29242613911628723
+    },
+    {
+      "product_id": "p03",
+      "strategy": "B_structured",
+      "seed": 1001,
+      "prompt": "Wireless Over-Ear Headphones, Matte Black, made of Plastic and foam, Modern style, Noise-cancelling padded ear cups foldable, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "",
+      "file": "B_structured/p03_B_structured_1.png",
+      "clip_align": 0.29255932569503784
+    },
+    {
+      "product_id": "p03",
+      "strategy": "B_structured",
+      "seed": 1002,
+      "prompt": "Wireless Over-Ear Headphones, Matte Black, made of Plastic and foam, Modern style, Noise-cancelling padded ear cups foldable, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "",
+      "file": "B_structured/p03_B_structured_2.png",
+      "clip_align": 0.2791764438152313
+    },
+    {
+      "product_id": "p04",
+      "strategy": "A_naive",
+      "seed": 1000,
+      "prompt": "Stainless Steel Water Bottle",
+      "negative": "",
+      "file": "A_naive/p04_A_naive_0.png",
+      "clip_align": 0.33784186840057373
+    },
+    {
+      "product_id": "p04",
+      "strategy": "A_naive",
+      "seed": 1001,
+      "prompt": "Stainless Steel Water Bottle",
+      "negative": "",
+      "file": "A_naive/p04_A_naive_1.png",
+      "clip_align": 0.3541249632835388
+    },
+    {
+      "product_id": "p04",
+      "strategy": "A_naive",
+      "seed": 1002,
+      "prompt": "Stainless Steel Water Bottle",
+      "negative": "",
+      "file": "A_naive/p04_A_naive_2.png",
+      "clip_align": 0.34247684478759766
+    },
+    {
+      "product_id": "p04",
+      "strategy": "B_structured",
+      "seed": 1000,
+      "prompt": "Stainless Steel Water Bottle, Silver, made of Stainless steel, Minimalist style, Double-wall insulated screw cap 750ml, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "",
+      "file": "B_structured/p04_B_structured_0.png",
+      "clip_align": 0.335720419883728
+    },
+    {
+      "product_id": "p04",
+      "strategy": "B_structured",
+      "seed": 1001,
+      "prompt": "Stainless Steel Water Bottle, Silver, made of Stainless steel, Minimalist style, Double-wall insulated screw cap 750ml, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "",
+      "file": "B_structured/p04_B_structured_1.png",
+      "clip_align": 0.34132832288742065
+    },
+    {
+      "product_id": "p04",
+      "strategy": "B_structured",
+      "seed": 1002,
+      "prompt": "Stainless Steel Water Bottle, Silver, made of Stainless steel, Minimalist style, Double-wall insulated screw cap 750ml, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "",
+      "file": "B_structured/p04_B_structured_2.png",
+      "clip_align": 0.32826387882232666
+    },
+    {
+      "product_id": "p05",
+      "strategy": "A_naive",
+      "seed": 1000,
+      "prompt": "Scandinavian Wooden Chair",
+      "negative": "",
+      "file": "A_naive/p05_A_naive_0.png",
+      "clip_align": 0.3037121295928955
+    },
+    {
+      "product_id": "p05",
+      "strategy": "A_naive",
+      "seed": 1001,
+      "prompt": "Scandinavian Wooden Chair",
+      "negative": "",
+      "file": "A_naive/p05_A_naive_1.png",
+      "clip_align": 0.31673485040664673
+    },
+    {
+      "product_id": "p05",
+      "strategy": "A_naive",
+      "seed": 1002,
+      "prompt": "Scandinavian Wooden Chair",
+      "negative": "",
+      "file": "A_naive/p05_A_naive_2.png",
+      "clip_align": 0.3183431029319763
+    },
+    {
+      "product_id": "p05",
+      "strategy": "B_structured",
+      "seed": 1000,
+      "prompt": "Scandinavian Wooden Chair, Light Oak, made of Oak wood, Scandinavian style, Curved backrest tapered legs minimal, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "",
+      "file": "B_structured/p05_B_structured_0.png",
+      "clip_align": 0.30842268466949463
+    },
+    {
+      "product_id": "p05",
+      "strategy": "B_structured",
+      "seed": 1001,
+      "prompt": "Scandinavian Wooden Chair, Light Oak, made of Oak wood, Scandinavian style, Curved backrest tapered legs minimal, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "",
+      "file": "B_structured/p05_B_structured_1.png",
+      "clip_align": 0.2973001003265381
+    },
+    {
+      "product_id": "p05",
+      "strategy": "B_structured",
+      "seed": 1002,
+      "prompt": "Scandinavian Wooden Chair, Light Oak, made of Oak wood, Scandinavian style, Curved backrest tapered legs minimal, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "",
+      "file": "B_structured/p05_B_structured_2.png",
+      "clip_align": 0.2995373010635376
+    },
+    {
+      "product_id": "p06",
+      "strategy": "A_naive",
+      "seed": 1000,
+      "prompt": "Cotton Crew Neck T-Shirt",
+      "negative": "",
+      "file": "A_naive/p06_A_naive_0.png",
+      "clip_align": 0.29985755681991577
+    },
+    {
+      "product_id": "p06",
+      "strategy": "A_naive",
+      "seed": 1001,
+      "prompt": "Cotton Crew Neck T-Shirt",
+      "negative": "",
+      "file": "A_naive/p06_A_naive_1.png",
+      "clip_align": 0.29946932196617126
+    },
+    {
+      "product_id": "p06",
+      "strategy": "A_naive",
+      "seed": 1002,
+      "prompt": "Cotton Crew Neck T-Shirt",
+      "negative": "",
+      "file": "A_naive/p06_A_naive_2.png",
+      "clip_align": 0.2997637391090393
+    },
+    {
+      "product_id": "p06",
+      "strategy": "B_structured",
+      "seed": 1000,
+      "prompt": "Cotton Crew Neck T-Shirt, Navy Blue, made of 100% cotton, Casual style, Short sleeve ribbed collar relaxed fit, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "",
+      "file": "B_structured/p06_B_structured_0.png",
+      "clip_align": 0.307934045791626
+    },
+    {
+      "product_id": "p06",
+      "strategy": "B_structured",
+      "seed": 1001,
+      "prompt": "Cotton Crew Neck T-Shirt, Navy Blue, made of 100% cotton, Casual style, Short sleeve ribbed collar relaxed fit, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "",
+      "file": "B_structured/p06_B_structured_1.png",
+      "clip_align": 0.30839794874191284
+    },
+    {
+      "product_id": "p06",
+      "strategy": "B_structured",
+      "seed": 1002,
+      "prompt": "Cotton Crew Neck T-Shirt, Navy Blue, made of 100% cotton, Casual style, Short sleeve ribbed collar relaxed fit, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "",
+      "file": "B_structured/p06_B_structured_2.png",
+      "clip_align": 0.30778753757476807
+    },
+    {
+      "product_id": "p07",
+      "strategy": "A_naive",
+      "seed": 1000,
+      "prompt": "Leather Crossbody Handbag",
+      "negative": "",
+      "file": "A_naive/p07_A_naive_0.png",
+      "clip_align": 0.308999240398407
+    },
+    {
+      "product_id": "p07",
+      "strategy": "A_naive",
+      "seed": 1001,
+      "prompt": "Leather Crossbody Handbag",
+      "negative": "",
+      "file": "A_naive/p07_A_naive_1.png",
+      "clip_align": 0.31754910945892334
+    },
+    {
+      "product_id": "p07",
+      "strategy": "A_naive",
+      "seed": 1002,
+      "prompt": "Leather Crossbody Handbag",
+      "negative": "",
+      "file": "A_naive/p07_A_naive_2.png",
+      "clip_align": 0.3209623694419861
+    },
+    {
+      "product_id": "p07",
+      "strategy": "B_structured",
+      "seed": 1000,
+      "prompt": "Leather Crossbody Handbag, Tan, made of Pebbled leather, Fashion style, Gold hardware adjustable strap flap closure, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "",
+      "file": "B_structured/p07_B_structured_0.png",
+      "clip_align": 0.29475221037864685
+    },
+    {
+      "product_id": "p07",
+      "strategy": "B_structured",
+      "seed": 1001,
+      "prompt": "Leather Crossbody Handbag, Tan, made of Pebbled leather, Fashion style, Gold hardware adjustable strap flap closure, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "",
+      "file": "B_structured/p07_B_structured_1.png",
+      "clip_align": 0.30122143030166626
+    },
+    {
+      "product_id": "p07",
+      "strategy": "B_structured",
+      "seed": 1002,
+      "prompt": "Leather Crossbody Handbag, Tan, made of Pebbled leather, Fashion style, Gold hardware adjustable strap flap closure, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "",
+      "file": "B_structured/p07_B_structured_2.png",
+      "clip_align": 0.2904233932495117
+    },
+    {
+      "product_id": "p08",
+      "strategy": "A_naive",
+      "seed": 1000,
+      "prompt": "Ceramic Coffee Mug",
+      "negative": "",
+      "file": "A_naive/p08_A_naive_0.png",
+      "clip_align": 0.32656335830688477
+    },
+    {
+      "product_id": "p08",
+      "strategy": "A_naive",
+      "seed": 1001,
+      "prompt": "Ceramic Coffee Mug",
+      "negative": "",
+      "file": "A_naive/p08_A_naive_1.png",
+      "clip_align": 0.3255489766597748
+    },
+    {
+      "product_id": "p08",
+      "strategy": "A_naive",
+      "seed": 1002,
+      "prompt": "Ceramic Coffee Mug",
+      "negative": "",
+      "file": "A_naive/p08_A_naive_2.png",
+      "clip_align": 0.3307206630706787
+    },
+    {
+      "product_id": "p08",
+      "strategy": "B_structured",
+      "seed": 1000,
+      "prompt": "Ceramic Coffee Mug, White, made of Glazed ceramic, Contemporary style, 12oz C-handle microwave safe, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "",
+      "file": "B_structured/p08_B_structured_0.png",
+      "clip_align": 0.2824975848197937
+    },
+    {
+      "product_id": "p08",
+      "strategy": "B_structured",
+      "seed": 1001,
+      "prompt": "Ceramic Coffee Mug, White, made of Glazed ceramic, Contemporary style, 12oz C-handle microwave safe, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "",
+      "file": "B_structured/p08_B_structured_1.png",
+      "clip_align": 0.30027344822883606
+    },
+    {
+      "product_id": "p08",
+      "strategy": "B_structured",
+      "seed": 1002,
+      "prompt": "Ceramic Coffee Mug, White, made of Glazed ceramic, Contemporary style, 12oz C-handle microwave safe, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "",
+      "file": "B_structured/p08_B_structured_2.png",
+      "clip_align": 0.286537766456604
+    },
+    {
+      "product_id": "p09",
+      "strategy": "A_naive",
+      "seed": 1000,
+      "prompt": "Denim Slim-Fit Jeans",
+      "negative": "",
+      "file": "A_naive/p09_A_naive_0.png",
+      "clip_align": 0.2949523329734802
+    },
+    {
+      "product_id": "p09",
+      "strategy": "A_naive",
+      "seed": 1001,
+      "prompt": "Denim Slim-Fit Jeans",
+      "negative": "",
+      "file": "A_naive/p09_A_naive_1.png",
+      "clip_align": 0.32788604497909546
+    },
+    {
+      "product_id": "p09",
+      "strategy": "A_naive",
+      "seed": 1002,
+      "prompt": "Denim Slim-Fit Jeans",
+      "negative": "",
+      "file": "A_naive/p09_A_naive_2.png",
+      "clip_align": 0.30038774013519287
+    },
+    {
+      "product_id": "p09",
+      "strategy": "B_structured",
+      "seed": 1000,
+      "prompt": "Denim Slim-Fit Jeans, Indigo, made of Stretch denim, Casual style, Five pocket tapered leg mid rise, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "",
+      "file": "B_structured/p09_B_structured_0.png",
+      "clip_align": 0.3097621202468872
+    },
+    {
+      "product_id": "p09",
+      "strategy": "B_structured",
+      "seed": 1001,
+      "prompt": "Denim Slim-Fit Jeans, Indigo, made of Stretch denim, Casual style, Five pocket tapered leg mid rise, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "",
+      "file": "B_structured/p09_B_structured_1.png",
+      "clip_align": 0.30890896916389465
+    },
+    {
+      "product_id": "p09",
+      "strategy": "B_structured",
+      "seed": 1002,
+      "prompt": "Denim Slim-Fit Jeans, Indigo, made of Stretch denim, Casual style, Five pocket tapered leg mid rise, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "",
+      "file": "B_structured/p09_B_structured_2.png",
+      "clip_align": 0.3061422109603882
+    },
+    {
+      "product_id": "p10",
+      "strategy": "A_naive",
+      "seed": 1000,
+      "prompt": "Modern Desk Lamp",
+      "negative": "",
+      "file": "A_naive/p10_A_naive_0.png",
+      "clip_align": 0.34050285816192627
+    },
+    {
+      "product_id": "p10",
+      "strategy": "A_naive",
+      "seed": 1001,
+      "prompt": "Modern Desk Lamp",
+      "negative": "",
+      "file": "A_naive/p10_A_naive_1.png",
+      "clip_align": 0.35023820400238037
+    },
+    {
+      "product_id": "p10",
+      "strategy": "A_naive",
+      "seed": 1002,
+      "prompt": "Modern Desk Lamp",
+      "negative": "",
+      "file": "A_naive/p10_A_naive_2.png",
+      "clip_align": 0.3509814441204071
+    },
+    {
+      "product_id": "p10",
+      "strategy": "B_structured",
+      "seed": 1000,
+      "prompt": "Modern Desk Lamp, Black, made of Metal and aluminum, Industrial style, Adjustable arm LED bulb touch switch, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "",
+      "file": "B_structured/p10_B_structured_0.png",
+      "clip_align": 0.30934709310531616
+    },
+    {
+      "product_id": "p10",
+      "strategy": "B_structured",
+      "seed": 1001,
+      "prompt": "Modern Desk Lamp, Black, made of Metal and aluminum, Industrial style, Adjustable arm LED bulb touch switch, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "",
+      "file": "B_structured/p10_B_structured_1.png",
+      "clip_align": 0.32672858238220215
+    },
+    {
+      "product_id": "p10",
+      "strategy": "B_structured",
+      "seed": 1002,
+      "prompt": "Modern Desk Lamp, Black, made of Metal and aluminum, Industrial style, Adjustable arm LED bulb touch switch, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "",
+      "file": "B_structured/p10_B_structured_2.png",
+      "clip_align": 0.32374390959739685
+    },
+    {
+      "product_id": "p11",
+      "strategy": "A_naive",
+      "seed": 1000,
+      "prompt": "Aviator Sunglasses",
+      "negative": "",
+      "file": "A_naive/p11_A_naive_0.png",
+      "clip_align": 0.3169971704483032
+    },
+    {
+      "product_id": "p11",
+      "strategy": "A_naive",
+      "seed": 1001,
+      "prompt": "Aviator Sunglasses",
+      "negative": "",
+      "file": "A_naive/p11_A_naive_1.png",
+      "clip_align": 0.31188321113586426
+    },
+    {
+      "product_id": "p11",
+      "strategy": "A_naive",
+      "seed": 1002,
+      "prompt": "Aviator Sunglasses",
+      "negative": "",
+      "file": "A_naive/p11_A_naive_2.png",
+      "clip_align": 0.3202534317970276
+    },
+    {
+      "product_id": "p11",
+      "strategy": "B_structured",
+      "seed": 1000,
+      "prompt": "Aviator Sunglasses, Gold frame, made of Metal and polarized lens, Retro style, Teardrop lenses double bridge UV400, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "",
+      "file": "B_structured/p11_B_structured_0.png",
+      "clip_align": 0.2860172986984253
+    },
+    {
+      "product_id": "p11",
+      "strategy": "B_structured",
+      "seed": 1001,
+      "prompt": "Aviator Sunglasses, Gold frame, made of Metal and polarized lens, Retro style, Teardrop lenses double bridge UV400, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "",
+      "file": "B_structured/p11_B_structured_1.png",
+      "clip_align": 0.30416589975357056
+    },
+    {
+      "product_id": "p11",
+      "strategy": "B_structured",
+      "seed": 1002,
+      "prompt": "Aviator Sunglasses, Gold frame, made of Metal and polarized lens, Retro style, Teardrop lenses double bridge UV400, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "",
+      "file": "B_structured/p11_B_structured_2.png",
+      "clip_align": 0.3000775873661041
+    },
+    {
+      "product_id": "p12",
+      "strategy": "A_naive",
+      "seed": 1000,
+      "prompt": "Smart Fitness Watch",
+      "negative": "",
+      "file": "A_naive/p12_A_naive_0.png",
+      "clip_align": 0.328887939453125
+    },
+    {
+      "product_id": "p12",
+      "strategy": "A_naive",
+      "seed": 1001,
+      "prompt": "Smart Fitness Watch",
+      "negative": "",
+      "file": "A_naive/p12_A_naive_1.png",
+      "clip_align": 0.31365182995796204
+    },
+    {
+      "product_id": "p12",
+      "strategy": "A_naive",
+      "seed": 1002,
+      "prompt": "Smart Fitness Watch",
+      "negative": "",
+      "file": "A_naive/p12_A_naive_2.png",
+      "clip_align": 0.3194393515586853
+    },
+    {
+      "product_id": "p12",
+      "strategy": "B_structured",
+      "seed": 1000,
+      "prompt": "Smart Fitness Watch, Space Gray, made of Aluminum and silicone, Sporty style, Touchscreen heart-rate GPS rubber strap, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "",
+      "file": "B_structured/p12_B_structured_0.png",
+      "clip_align": 0.3035971224308014
+    },
+    {
+      "product_id": "p12",
+      "strategy": "B_structured",
+      "seed": 1001,
+      "prompt": "Smart Fitness Watch, Space Gray, made of Aluminum and silicone, Sporty style, Touchscreen heart-rate GPS rubber strap, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "",
+      "file": "B_structured/p12_B_structured_1.png",
+      "clip_align": 0.286298930644989
+    },
+    {
+      "product_id": "p12",
+      "strategy": "B_structured",
+      "seed": 1002,
+      "prompt": "Smart Fitness Watch, Space Gray, made of Aluminum and silicone, Sporty style, Touchscreen heart-rate GPS rubber strap, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "",
+      "file": "B_structured/p12_B_structured_2.png",
+      "clip_align": 0.2903539538383484
+    },
+    {
+      "product_id": "p13",
+      "strategy": "A_naive",
+      "seed": 1000,
+      "prompt": "Velvet Tufted Sofa",
+      "negative": "",
+      "file": "A_naive/p13_A_naive_0.png",
+      "clip_align": 0.2908576428890228
+    },
+    {
+      "product_id": "p13",
+      "strategy": "A_naive",
+      "seed": 1001,
+      "prompt": "Velvet Tufted Sofa",
+      "negative": "",
+      "file": "A_naive/p13_A_naive_1.png",
+      "clip_align": 0.28891029953956604
+    },
+    {
+      "product_id": "p13",
+      "strategy": "A_naive",
+      "seed": 1002,
+      "prompt": "Velvet Tufted Sofa",
+      "negative": "",
+      "file": "A_naive/p13_A_naive_2.png",
+      "clip_align": 0.3022613823413849
+    },
+    {
+      "product_id": "p13",
+      "strategy": "B_structured",
+      "seed": 1000,
+      "prompt": "Velvet Tufted Sofa, Emerald Green, made of Velvet upholstery, Luxury style, Tufted back rolled arms wooden legs, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "",
+      "file": "B_structured/p13_B_structured_0.png",
+      "clip_align": 0.3215259313583374
+    },
+    {
+      "product_id": "p13",
+      "strategy": "B_structured",
+      "seed": 1001,
+      "prompt": "Velvet Tufted Sofa, Emerald Green, made of Velvet upholstery, Luxury style, Tufted back rolled arms wooden legs, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "",
+      "file": "B_structured/p13_B_structured_1.png",
+      "clip_align": 0.34350934624671936
+    },
+    {
+      "product_id": "p13",
+      "strategy": "B_structured",
+      "seed": 1002,
+      "prompt": "Velvet Tufted Sofa, Emerald Green, made of Velvet upholstery, Luxury style, Tufted back rolled arms wooden legs, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "",
+      "file": "B_structured/p13_B_structured_2.png",
+      "clip_align": 0.30199652910232544
+    },
+    {
+      "product_id": "p14",
+      "strategy": "A_naive",
+      "seed": 1000,
+      "prompt": "Professional Chef Knife",
+      "negative": "",
+      "file": "A_naive/p14_A_naive_0.png",
+      "clip_align": 0.31725937128067017
+    },
+    {
+      "product_id": "p14",
+      "strategy": "A_naive",
+      "seed": 1001,
+      "prompt": "Professional Chef Knife",
+      "negative": "",
+      "file": "A_naive/p14_A_naive_1.png",
+      "clip_align": 0.3187567889690399
+    },
+    {
+      "product_id": "p14",
+      "strategy": "A_naive",
+      "seed": 1002,
+      "prompt": "Professional Chef Knife",
+      "negative": "",
+      "file": "A_naive/p14_A_naive_2.png",
+      "clip_align": 0.314620703458786
+    },
+    {
+      "product_id": "p14",
+      "strategy": "B_structured",
+      "seed": 1000,
+      "prompt": "Professional Chef Knife, Silver blade, made of High-carbon steel, Professional style, 8-inch blade ergonomic handle riveted, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "",
+      "file": "B_structured/p14_B_structured_0.png",
+      "clip_align": 0.335884153842926
+    },
+    {
+      "product_id": "p14",
+      "strategy": "B_structured",
+      "seed": 1001,
+      "prompt": "Professional Chef Knife, Silver blade, made of High-carbon steel, Professional style, 8-inch blade ergonomic handle riveted, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "",
+      "file": "B_structured/p14_B_structured_1.png",
+      "clip_align": 0.31791725754737854
+    },
+    {
+      "product_id": "p14",
+      "strategy": "B_structured",
+      "seed": 1002,
+      "prompt": "Professional Chef Knife, Silver blade, made of High-carbon steel, Professional style, 8-inch blade ergonomic handle riveted, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "",
+      "file": "B_structured/p14_B_structured_2.png",
+      "clip_align": 0.32549458742141724
+    },
+    {
+      "product_id": "p15",
+      "strategy": "A_naive",
+      "seed": 1000,
+      "prompt": "Linen Throw Pillow",
+      "negative": "",
+      "file": "A_naive/p15_A_naive_0.png",
+      "clip_align": 0.29984450340270996
+    },
+    {
+      "product_id": "p15",
+      "strategy": "A_naive",
+      "seed": 1001,
+      "prompt": "Linen Throw Pillow",
+      "negative": "",
+      "file": "A_naive/p15_A_naive_1.png",
+      "clip_align": 0.3162537217140198
+    },
+    {
+      "product_id": "p15",
+      "strategy": "A_naive",
+      "seed": 1002,
+      "prompt": "Linen Throw Pillow",
+      "negative": "",
+      "file": "A_naive/p15_A_naive_2.png",
+      "clip_align": 0.30878132581710815
+    },
+    {
+      "product_id": "p15",
+      "strategy": "B_structured",
+      "seed": 1000,
+      "prompt": "Linen Throw Pillow, Beige, made of Linen cotton blend, Bohemian style, 18x18 inch tassel corners removable cover, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "",
+      "file": "B_structured/p15_B_structured_0.png",
+      "clip_align": 0.29439210891723633
+    },
+    {
+      "product_id": "p15",
+      "strategy": "B_structured",
+      "seed": 1001,
+      "prompt": "Linen Throw Pillow, Beige, made of Linen cotton blend, Bohemian style, 18x18 inch tassel corners removable cover, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "",
+      "file": "B_structured/p15_B_structured_1.png",
+      "clip_align": 0.2886868715286255
+    },
+    {
+      "product_id": "p15",
+      "strategy": "B_structured",
+      "seed": 1002,
+      "prompt": "Linen Throw Pillow, Beige, made of Linen cotton blend, Bohemian style, 18x18 inch tassel corners removable cover, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "",
+      "file": "B_structured/p15_B_structured_2.png",
+      "clip_align": 0.3025955855846405
+    },
+    {
+      "product_id": "p01",
+      "strategy": "C_negative",
+      "seed": 1000,
+      "prompt": "Classic Leather Oxford Shoes, Brown, made of Genuine Leather, Formal style, Lace-up stitched sole polished finish, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "blurry, low quality, low resolution, distorted, deformed, jpeg artifacts, watermark, text, logo, cluttered background, extra limbs, bad anatomy, oversaturated, cartoon, sketch, unrealistic proportions",
+      "file": "C_negative/p01_C_negative_0.png",
+      "model": "stable-diffusion-v1-5",
+      "clip_align": 0.28199389576911926
+    },
+    {
+      "product_id": "p01",
+      "strategy": "C_negative",
+      "seed": 1001,
+      "prompt": "Classic Leather Oxford Shoes, Brown, made of Genuine Leather, Formal style, Lace-up stitched sole polished finish, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "blurry, low quality, low resolution, distorted, deformed, jpeg artifacts, watermark, text, logo, cluttered background, extra limbs, bad anatomy, oversaturated, cartoon, sketch, unrealistic proportions",
+      "file": "C_negative/p01_C_negative_1.png",
+      "model": "stable-diffusion-v1-5",
+      "clip_align": 0.313976913690567
+    },
+    {
+      "product_id": "p01",
+      "strategy": "C_negative",
+      "seed": 1002,
+      "prompt": "Classic Leather Oxford Shoes, Brown, made of Genuine Leather, Formal style, Lace-up stitched sole polished finish, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "blurry, low quality, low resolution, distorted, deformed, jpeg artifacts, watermark, text, logo, cluttered background, extra limbs, bad anatomy, oversaturated, cartoon, sketch, unrealistic proportions",
+      "file": "C_negative/p01_C_negative_2.png",
+      "model": "stable-diffusion-v1-5",
+      "clip_align": 0.3049944043159485
+    },
+    {
+      "product_id": "p02",
+      "strategy": "C_negative",
+      "seed": 1000,
+      "prompt": "Running Sneakers Mesh Upper, White, made of Mesh and rubber, Athletic style, Breathable cushioned sole lightweight, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "blurry, low quality, low resolution, distorted, deformed, jpeg artifacts, watermark, text, logo, cluttered background, extra limbs, bad anatomy, oversaturated, cartoon, sketch, unrealistic proportions",
+      "file": "C_negative/p02_C_negative_0.png",
+      "model": "stable-diffusion-v1-5",
+      "clip_align": 0.29204005002975464
+    },
+    {
+      "product_id": "p02",
+      "strategy": "C_negative",
+      "seed": 1001,
+      "prompt": "Running Sneakers Mesh Upper, White, made of Mesh and rubber, Athletic style, Breathable cushioned sole lightweight, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "blurry, low quality, low resolution, distorted, deformed, jpeg artifacts, watermark, text, logo, cluttered background, extra limbs, bad anatomy, oversaturated, cartoon, sketch, unrealistic proportions",
+      "file": "C_negative/p02_C_negative_1.png",
+      "model": "stable-diffusion-v1-5",
+      "clip_align": 0.27520060539245605
+    },
+    {
+      "product_id": "p02",
+      "strategy": "C_negative",
+      "seed": 1002,
+      "prompt": "Running Sneakers Mesh Upper, White, made of Mesh and rubber, Athletic style, Breathable cushioned sole lightweight, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "blurry, low quality, low resolution, distorted, deformed, jpeg artifacts, watermark, text, logo, cluttered background, extra limbs, bad anatomy, oversaturated, cartoon, sketch, unrealistic proportions",
+      "file": "C_negative/p02_C_negative_2.png",
+      "model": "stable-diffusion-v1-5",
+      "clip_align": 0.2665737569332123
+    },
+    {
+      "product_id": "p03",
+      "strategy": "C_negative",
+      "seed": 1000,
+      "prompt": "Wireless Over-Ear Headphones, Matte Black, made of Plastic and foam, Modern style, Noise-cancelling padded ear cups foldable, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "blurry, low quality, low resolution, distorted, deformed, jpeg artifacts, watermark, text, logo, cluttered background, extra limbs, bad anatomy, oversaturated, cartoon, sketch, unrealistic proportions",
+      "file": "C_negative/p03_C_negative_0.png",
+      "model": "stable-diffusion-v1-5",
+      "clip_align": 0.2870435416698456
+    },
+    {
+      "product_id": "p03",
+      "strategy": "C_negative",
+      "seed": 1001,
+      "prompt": "Wireless Over-Ear Headphones, Matte Black, made of Plastic and foam, Modern style, Noise-cancelling padded ear cups foldable, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "blurry, low quality, low resolution, distorted, deformed, jpeg artifacts, watermark, text, logo, cluttered background, extra limbs, bad anatomy, oversaturated, cartoon, sketch, unrealistic proportions",
+      "file": "C_negative/p03_C_negative_1.png",
+      "model": "stable-diffusion-v1-5",
+      "clip_align": 0.3045285642147064
+    },
+    {
+      "product_id": "p03",
+      "strategy": "C_negative",
+      "seed": 1002,
+      "prompt": "Wireless Over-Ear Headphones, Matte Black, made of Plastic and foam, Modern style, Noise-cancelling padded ear cups foldable, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "blurry, low quality, low resolution, distorted, deformed, jpeg artifacts, watermark, text, logo, cluttered background, extra limbs, bad anatomy, oversaturated, cartoon, sketch, unrealistic proportions",
+      "file": "C_negative/p03_C_negative_2.png",
+      "model": "stable-diffusion-v1-5",
+      "clip_align": 0.2921191155910492
+    },
+    {
+      "product_id": "p04",
+      "strategy": "C_negative",
+      "seed": 1000,
+      "prompt": "Stainless Steel Water Bottle, Silver, made of Stainless steel, Minimalist style, Double-wall insulated screw cap 750ml, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "blurry, low quality, low resolution, distorted, deformed, jpeg artifacts, watermark, text, logo, cluttered background, extra limbs, bad anatomy, oversaturated, cartoon, sketch, unrealistic proportions",
+      "file": "C_negative/p04_C_negative_0.png",
+      "model": "stable-diffusion-v1-5",
+      "clip_align": 0.3490802049636841
+    },
+    {
+      "product_id": "p04",
+      "strategy": "C_negative",
+      "seed": 1001,
+      "prompt": "Stainless Steel Water Bottle, Silver, made of Stainless steel, Minimalist style, Double-wall insulated screw cap 750ml, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "blurry, low quality, low resolution, distorted, deformed, jpeg artifacts, watermark, text, logo, cluttered background, extra limbs, bad anatomy, oversaturated, cartoon, sketch, unrealistic proportions",
+      "file": "C_negative/p04_C_negative_1.png",
+      "model": "stable-diffusion-v1-5",
+      "clip_align": 0.32008790969848633
+    },
+    {
+      "product_id": "p04",
+      "strategy": "C_negative",
+      "seed": 1002,
+      "prompt": "Stainless Steel Water Bottle, Silver, made of Stainless steel, Minimalist style, Double-wall insulated screw cap 750ml, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "blurry, low quality, low resolution, distorted, deformed, jpeg artifacts, watermark, text, logo, cluttered background, extra limbs, bad anatomy, oversaturated, cartoon, sketch, unrealistic proportions",
+      "file": "C_negative/p04_C_negative_2.png",
+      "model": "stable-diffusion-v1-5",
+      "clip_align": 0.3440098762512207
+    },
+    {
+      "product_id": "p05",
+      "strategy": "C_negative",
+      "seed": 1000,
+      "prompt": "Scandinavian Wooden Chair, Light Oak, made of Oak wood, Scandinavian style, Curved backrest tapered legs minimal, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "blurry, low quality, low resolution, distorted, deformed, jpeg artifacts, watermark, text, logo, cluttered background, extra limbs, bad anatomy, oversaturated, cartoon, sketch, unrealistic proportions",
+      "file": "C_negative/p05_C_negative_0.png",
+      "model": "stable-diffusion-v1-5",
+      "clip_align": 0.31269991397857666
+    },
+    {
+      "product_id": "p05",
+      "strategy": "C_negative",
+      "seed": 1001,
+      "prompt": "Scandinavian Wooden Chair, Light Oak, made of Oak wood, Scandinavian style, Curved backrest tapered legs minimal, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "blurry, low quality, low resolution, distorted, deformed, jpeg artifacts, watermark, text, logo, cluttered background, extra limbs, bad anatomy, oversaturated, cartoon, sketch, unrealistic proportions",
+      "file": "C_negative/p05_C_negative_1.png",
+      "model": "stable-diffusion-v1-5",
+      "clip_align": 0.3140745460987091
+    },
+    {
+      "product_id": "p05",
+      "strategy": "C_negative",
+      "seed": 1002,
+      "prompt": "Scandinavian Wooden Chair, Light Oak, made of Oak wood, Scandinavian style, Curved backrest tapered legs minimal, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "blurry, low quality, low resolution, distorted, deformed, jpeg artifacts, watermark, text, logo, cluttered background, extra limbs, bad anatomy, oversaturated, cartoon, sketch, unrealistic proportions",
+      "file": "C_negative/p05_C_negative_2.png",
+      "model": "stable-diffusion-v1-5",
+      "clip_align": 0.2939606308937073
+    },
+    {
+      "product_id": "p06",
+      "strategy": "C_negative",
+      "seed": 1000,
+      "prompt": "Cotton Crew Neck T-Shirt, Navy Blue, made of 100% cotton, Casual style, Short sleeve ribbed collar relaxed fit, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "blurry, low quality, low resolution, distorted, deformed, jpeg artifacts, watermark, text, logo, cluttered background, extra limbs, bad anatomy, oversaturated, cartoon, sketch, unrealistic proportions",
+      "file": "C_negative/p06_C_negative_0.png",
+      "model": "stable-diffusion-v1-5",
+      "clip_align": 0.2885703146457672
+    },
+    {
+      "product_id": "p06",
+      "strategy": "C_negative",
+      "seed": 1001,
+      "prompt": "Cotton Crew Neck T-Shirt, Navy Blue, made of 100% cotton, Casual style, Short sleeve ribbed collar relaxed fit, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "blurry, low quality, low resolution, distorted, deformed, jpeg artifacts, watermark, text, logo, cluttered background, extra limbs, bad anatomy, oversaturated, cartoon, sketch, unrealistic proportions",
+      "file": "C_negative/p06_C_negative_1.png",
+      "model": "stable-diffusion-v1-5",
+      "clip_align": 0.32934829592704773
+    },
+    {
+      "product_id": "p06",
+      "strategy": "C_negative",
+      "seed": 1002,
+      "prompt": "Cotton Crew Neck T-Shirt, Navy Blue, made of 100% cotton, Casual style, Short sleeve ribbed collar relaxed fit, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "blurry, low quality, low resolution, distorted, deformed, jpeg artifacts, watermark, text, logo, cluttered background, extra limbs, bad anatomy, oversaturated, cartoon, sketch, unrealistic proportions",
+      "file": "C_negative/p06_C_negative_2.png",
+      "model": "stable-diffusion-v1-5",
+      "clip_align": 0.334035187959671
+    },
+    {
+      "product_id": "p07",
+      "strategy": "C_negative",
+      "seed": 1000,
+      "prompt": "Leather Crossbody Handbag, Tan, made of Pebbled leather, Fashion style, Gold hardware adjustable strap flap closure, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "blurry, low quality, low resolution, distorted, deformed, jpeg artifacts, watermark, text, logo, cluttered background, extra limbs, bad anatomy, oversaturated, cartoon, sketch, unrealistic proportions",
+      "file": "C_negative/p07_C_negative_0.png",
+      "model": "stable-diffusion-v1-5",
+      "clip_align": 0.2850390672683716
+    },
+    {
+      "product_id": "p07",
+      "strategy": "C_negative",
+      "seed": 1001,
+      "prompt": "Leather Crossbody Handbag, Tan, made of Pebbled leather, Fashion style, Gold hardware adjustable strap flap closure, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "blurry, low quality, low resolution, distorted, deformed, jpeg artifacts, watermark, text, logo, cluttered background, extra limbs, bad anatomy, oversaturated, cartoon, sketch, unrealistic proportions",
+      "file": "C_negative/p07_C_negative_1.png",
+      "model": "stable-diffusion-v1-5",
+      "clip_align": 0.28905993700027466
+    },
+    {
+      "product_id": "p07",
+      "strategy": "C_negative",
+      "seed": 1002,
+      "prompt": "Leather Crossbody Handbag, Tan, made of Pebbled leather, Fashion style, Gold hardware adjustable strap flap closure, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "blurry, low quality, low resolution, distorted, deformed, jpeg artifacts, watermark, text, logo, cluttered background, extra limbs, bad anatomy, oversaturated, cartoon, sketch, unrealistic proportions",
+      "file": "C_negative/p07_C_negative_2.png",
+      "model": "stable-diffusion-v1-5",
+      "clip_align": 0.30325376987457275
+    },
+    {
+      "product_id": "p08",
+      "strategy": "C_negative",
+      "seed": 1000,
+      "prompt": "Ceramic Coffee Mug, White, made of Glazed ceramic, Contemporary style, 12oz C-handle microwave safe, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "blurry, low quality, low resolution, distorted, deformed, jpeg artifacts, watermark, text, logo, cluttered background, extra limbs, bad anatomy, oversaturated, cartoon, sketch, unrealistic proportions",
+      "file": "C_negative/p08_C_negative_0.png",
+      "model": "stable-diffusion-v1-5",
+      "clip_align": 0.31124722957611084
+    },
+    {
+      "product_id": "p08",
+      "strategy": "C_negative",
+      "seed": 1001,
+      "prompt": "Ceramic Coffee Mug, White, made of Glazed ceramic, Contemporary style, 12oz C-handle microwave safe, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "blurry, low quality, low resolution, distorted, deformed, jpeg artifacts, watermark, text, logo, cluttered background, extra limbs, bad anatomy, oversaturated, cartoon, sketch, unrealistic proportions",
+      "file": "C_negative/p08_C_negative_1.png",
+      "model": "stable-diffusion-v1-5",
+      "clip_align": 0.32451850175857544
+    },
+    {
+      "product_id": "p08",
+      "strategy": "C_negative",
+      "seed": 1002,
+      "prompt": "Ceramic Coffee Mug, White, made of Glazed ceramic, Contemporary style, 12oz C-handle microwave safe, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "blurry, low quality, low resolution, distorted, deformed, jpeg artifacts, watermark, text, logo, cluttered background, extra limbs, bad anatomy, oversaturated, cartoon, sketch, unrealistic proportions",
+      "file": "C_negative/p08_C_negative_2.png",
+      "model": "stable-diffusion-v1-5",
+      "clip_align": 0.3293442130088806
+    },
+    {
+      "product_id": "p09",
+      "strategy": "C_negative",
+      "seed": 1000,
+      "prompt": "Denim Slim-Fit Jeans, Indigo, made of Stretch denim, Casual style, Five pocket tapered leg mid rise, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "blurry, low quality, low resolution, distorted, deformed, jpeg artifacts, watermark, text, logo, cluttered background, extra limbs, bad anatomy, oversaturated, cartoon, sketch, unrealistic proportions",
+      "file": "C_negative/p09_C_negative_0.png",
+      "model": "stable-diffusion-v1-5",
+      "clip_align": 0.2767564654350281
+    },
+    {
+      "product_id": "p09",
+      "strategy": "C_negative",
+      "seed": 1001,
+      "prompt": "Denim Slim-Fit Jeans, Indigo, made of Stretch denim, Casual style, Five pocket tapered leg mid rise, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "blurry, low quality, low resolution, distorted, deformed, jpeg artifacts, watermark, text, logo, cluttered background, extra limbs, bad anatomy, oversaturated, cartoon, sketch, unrealistic proportions",
+      "file": "C_negative/p09_C_negative_1.png",
+      "model": "stable-diffusion-v1-5",
+      "clip_align": 0.28496071696281433
+    },
+    {
+      "product_id": "p09",
+      "strategy": "C_negative",
+      "seed": 1002,
+      "prompt": "Denim Slim-Fit Jeans, Indigo, made of Stretch denim, Casual style, Five pocket tapered leg mid rise, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "blurry, low quality, low resolution, distorted, deformed, jpeg artifacts, watermark, text, logo, cluttered background, extra limbs, bad anatomy, oversaturated, cartoon, sketch, unrealistic proportions",
+      "file": "C_negative/p09_C_negative_2.png",
+      "model": "stable-diffusion-v1-5",
+      "clip_align": 0.2793760895729065
+    },
+    {
+      "product_id": "p10",
+      "strategy": "C_negative",
+      "seed": 1000,
+      "prompt": "Modern Desk Lamp, Black, made of Metal and aluminum, Industrial style, Adjustable arm LED bulb touch switch, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "blurry, low quality, low resolution, distorted, deformed, jpeg artifacts, watermark, text, logo, cluttered background, extra limbs, bad anatomy, oversaturated, cartoon, sketch, unrealistic proportions",
+      "file": "C_negative/p10_C_negative_0.png",
+      "model": "stable-diffusion-v1-5",
+      "clip_align": 0.30971431732177734
+    },
+    {
+      "product_id": "p10",
+      "strategy": "C_negative",
+      "seed": 1001,
+      "prompt": "Modern Desk Lamp, Black, made of Metal and aluminum, Industrial style, Adjustable arm LED bulb touch switch, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "blurry, low quality, low resolution, distorted, deformed, jpeg artifacts, watermark, text, logo, cluttered background, extra limbs, bad anatomy, oversaturated, cartoon, sketch, unrealistic proportions",
+      "file": "C_negative/p10_C_negative_1.png",
+      "model": "stable-diffusion-v1-5",
+      "clip_align": 0.31712085008621216
+    },
+    {
+      "product_id": "p10",
+      "strategy": "C_negative",
+      "seed": 1002,
+      "prompt": "Modern Desk Lamp, Black, made of Metal and aluminum, Industrial style, Adjustable arm LED bulb touch switch, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "blurry, low quality, low resolution, distorted, deformed, jpeg artifacts, watermark, text, logo, cluttered background, extra limbs, bad anatomy, oversaturated, cartoon, sketch, unrealistic proportions",
+      "file": "C_negative/p10_C_negative_2.png",
+      "model": "stable-diffusion-v1-5",
+      "clip_align": 0.3166365623474121
+    },
+    {
+      "product_id": "p11",
+      "strategy": "C_negative",
+      "seed": 1000,
+      "prompt": "Aviator Sunglasses, Gold frame, made of Metal and polarized lens, Retro style, Teardrop lenses double bridge UV400, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "blurry, low quality, low resolution, distorted, deformed, jpeg artifacts, watermark, text, logo, cluttered background, extra limbs, bad anatomy, oversaturated, cartoon, sketch, unrealistic proportions",
+      "file": "C_negative/p11_C_negative_0.png",
+      "model": "stable-diffusion-v1-5",
+      "clip_align": 0.290896475315094
+    },
+    {
+      "product_id": "p11",
+      "strategy": "C_negative",
+      "seed": 1001,
+      "prompt": "Aviator Sunglasses, Gold frame, made of Metal and polarized lens, Retro style, Teardrop lenses double bridge UV400, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "blurry, low quality, low resolution, distorted, deformed, jpeg artifacts, watermark, text, logo, cluttered background, extra limbs, bad anatomy, oversaturated, cartoon, sketch, unrealistic proportions",
+      "file": "C_negative/p11_C_negative_1.png",
+      "model": "stable-diffusion-v1-5",
+      "clip_align": 0.30371105670928955
+    },
+    {
+      "product_id": "p11",
+      "strategy": "C_negative",
+      "seed": 1002,
+      "prompt": "Aviator Sunglasses, Gold frame, made of Metal and polarized lens, Retro style, Teardrop lenses double bridge UV400, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "blurry, low quality, low resolution, distorted, deformed, jpeg artifacts, watermark, text, logo, cluttered background, extra limbs, bad anatomy, oversaturated, cartoon, sketch, unrealistic proportions",
+      "file": "C_negative/p11_C_negative_2.png",
+      "model": "stable-diffusion-v1-5",
+      "clip_align": 0.2932853400707245
+    },
+    {
+      "product_id": "p12",
+      "strategy": "C_negative",
+      "seed": 1000,
+      "prompt": "Smart Fitness Watch, Space Gray, made of Aluminum and silicone, Sporty style, Touchscreen heart-rate GPS rubber strap, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "blurry, low quality, low resolution, distorted, deformed, jpeg artifacts, watermark, text, logo, cluttered background, extra limbs, bad anatomy, oversaturated, cartoon, sketch, unrealistic proportions",
+      "file": "C_negative/p12_C_negative_0.png",
+      "model": "stable-diffusion-v1-5",
+      "clip_align": 0.28750863671302795
+    },
+    {
+      "product_id": "p12",
+      "strategy": "C_negative",
+      "seed": 1001,
+      "prompt": "Smart Fitness Watch, Space Gray, made of Aluminum and silicone, Sporty style, Touchscreen heart-rate GPS rubber strap, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "blurry, low quality, low resolution, distorted, deformed, jpeg artifacts, watermark, text, logo, cluttered background, extra limbs, bad anatomy, oversaturated, cartoon, sketch, unrealistic proportions",
+      "file": "C_negative/p12_C_negative_1.png",
+      "model": "stable-diffusion-v1-5",
+      "clip_align": 0.2671290636062622
+    },
+    {
+      "product_id": "p12",
+      "strategy": "C_negative",
+      "seed": 1002,
+      "prompt": "Smart Fitness Watch, Space Gray, made of Aluminum and silicone, Sporty style, Touchscreen heart-rate GPS rubber strap, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "blurry, low quality, low resolution, distorted, deformed, jpeg artifacts, watermark, text, logo, cluttered background, extra limbs, bad anatomy, oversaturated, cartoon, sketch, unrealistic proportions",
+      "file": "C_negative/p12_C_negative_2.png",
+      "model": "stable-diffusion-v1-5",
+      "clip_align": 0.3032596707344055
+    },
+    {
+      "product_id": "p13",
+      "strategy": "C_negative",
+      "seed": 1000,
+      "prompt": "Velvet Tufted Sofa, Emerald Green, made of Velvet upholstery, Luxury style, Tufted back rolled arms wooden legs, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "blurry, low quality, low resolution, distorted, deformed, jpeg artifacts, watermark, text, logo, cluttered background, extra limbs, bad anatomy, oversaturated, cartoon, sketch, unrealistic proportions",
+      "file": "C_negative/p13_C_negative_0.png",
+      "model": "stable-diffusion-v1-5",
+      "clip_align": 0.34427177906036377
+    },
+    {
+      "product_id": "p13",
+      "strategy": "C_negative",
+      "seed": 1001,
+      "prompt": "Velvet Tufted Sofa, Emerald Green, made of Velvet upholstery, Luxury style, Tufted back rolled arms wooden legs, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "blurry, low quality, low resolution, distorted, deformed, jpeg artifacts, watermark, text, logo, cluttered background, extra limbs, bad anatomy, oversaturated, cartoon, sketch, unrealistic proportions",
+      "file": "C_negative/p13_C_negative_1.png",
+      "model": "stable-diffusion-v1-5",
+      "clip_align": 0.3271061182022095
+    },
+    {
+      "product_id": "p13",
+      "strategy": "C_negative",
+      "seed": 1002,
+      "prompt": "Velvet Tufted Sofa, Emerald Green, made of Velvet upholstery, Luxury style, Tufted back rolled arms wooden legs, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "blurry, low quality, low resolution, distorted, deformed, jpeg artifacts, watermark, text, logo, cluttered background, extra limbs, bad anatomy, oversaturated, cartoon, sketch, unrealistic proportions",
+      "file": "C_negative/p13_C_negative_2.png",
+      "model": "stable-diffusion-v1-5",
+      "clip_align": 0.34715735912323
+    },
+    {
+      "product_id": "p14",
+      "strategy": "C_negative",
+      "seed": 1000,
+      "prompt": "Professional Chef Knife, Silver blade, made of High-carbon steel, Professional style, 8-inch blade ergonomic handle riveted, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "blurry, low quality, low resolution, distorted, deformed, jpeg artifacts, watermark, text, logo, cluttered background, extra limbs, bad anatomy, oversaturated, cartoon, sketch, unrealistic proportions",
+      "file": "C_negative/p14_C_negative_0.png",
+      "model": "stable-diffusion-v1-5",
+      "clip_align": 0.3166126012802124
+    },
+    {
+      "product_id": "p14",
+      "strategy": "C_negative",
+      "seed": 1001,
+      "prompt": "Professional Chef Knife, Silver blade, made of High-carbon steel, Professional style, 8-inch blade ergonomic handle riveted, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "blurry, low quality, low resolution, distorted, deformed, jpeg artifacts, watermark, text, logo, cluttered background, extra limbs, bad anatomy, oversaturated, cartoon, sketch, unrealistic proportions",
+      "file": "C_negative/p14_C_negative_1.png",
+      "model": "stable-diffusion-v1-5",
+      "clip_align": 0.3015076518058777
+    },
+    {
+      "product_id": "p14",
+      "strategy": "C_negative",
+      "seed": 1002,
+      "prompt": "Professional Chef Knife, Silver blade, made of High-carbon steel, Professional style, 8-inch blade ergonomic handle riveted, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "blurry, low quality, low resolution, distorted, deformed, jpeg artifacts, watermark, text, logo, cluttered background, extra limbs, bad anatomy, oversaturated, cartoon, sketch, unrealistic proportions",
+      "file": "C_negative/p14_C_negative_2.png",
+      "model": "stable-diffusion-v1-5",
+      "clip_align": 0.30893588066101074
+    },
+    {
+      "product_id": "p15",
+      "strategy": "C_negative",
+      "seed": 1000,
+      "prompt": "Linen Throw Pillow, Beige, made of Linen cotton blend, Bohemian style, 18x18 inch tassel corners removable cover, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "blurry, low quality, low resolution, distorted, deformed, jpeg artifacts, watermark, text, logo, cluttered background, extra limbs, bad anatomy, oversaturated, cartoon, sketch, unrealistic proportions",
+      "file": "C_negative/p15_C_negative_0.png",
+      "model": "stable-diffusion-v1-5",
+      "clip_align": 0.30916082859039307
+    },
+    {
+      "product_id": "p15",
+      "strategy": "C_negative",
+      "seed": 1001,
+      "prompt": "Linen Throw Pillow, Beige, made of Linen cotton blend, Bohemian style, 18x18 inch tassel corners removable cover, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "blurry, low quality, low resolution, distorted, deformed, jpeg artifacts, watermark, text, logo, cluttered background, extra limbs, bad anatomy, oversaturated, cartoon, sketch, unrealistic proportions",
+      "file": "C_negative/p15_C_negative_1.png",
+      "model": "stable-diffusion-v1-5",
+      "clip_align": 0.3257947564125061
+    },
+    {
+      "product_id": "p15",
+      "strategy": "C_negative",
+      "seed": 1002,
+      "prompt": "Linen Throw Pillow, Beige, made of Linen cotton blend, Bohemian style, 18x18 inch tassel corners removable cover, studio lighting, clean white background, centered product shot, 4k, photorealistic, commercial photography",
+      "negative": "blurry, low quality, low resolution, distorted, deformed, jpeg artifacts, watermark, text, logo, cluttered background, extra limbs, bad anatomy, oversaturated, cartoon, sketch, unrealistic proportions",
+      "file": "C_negative/p15_C_negative_2.png",
+      "model": "stable-diffusion-v1-5",
+      "clip_align": 0.3117426037788391
+    }
+  ],
+  "failures": [],
+  "consistency_per_group": {
+    "p01|A_naive": 0.9554546276728312,
+    "p01|B_structured": 0.9677209456761678,
+    "p02|A_naive": 0.831933836142222,
+    "p02|B_structured": 0.9011542201042175,
+    "p03|A_naive": 0.7904609441757202,
+    "p03|B_structured": 0.9382590254147848,
+    "p04|A_naive": 0.8623419404029846,
+    "p04|B_structured": 0.9126424590746561,
+    "p05|A_naive": 0.9513112902641296,
+    "p05|B_structured": 0.9338568051656088,
+    "p06|A_naive": 0.8996405601501465,
+    "p06|B_structured": 0.8960608045260111,
+    "p07|A_naive": 0.965035637219747,
+    "p07|B_structured": 0.9112903078397115,
+    "p08|A_naive": 0.8974841038386027,
+    "p08|B_structured": 0.9296313126881918,
+    "p09|A_naive": 0.8939923048019409,
+    "p09|B_structured": 0.9752429723739624,
+    "p10|A_naive": 0.9228010574976603,
+    "p10|B_structured": 0.9218193689982096,
+    "p11|A_naive": 0.938100278377533,
+    "p11|B_structured": 0.9606581330299377,
+    "p12|A_naive": 0.8583144942919413,
+    "p12|B_structured": 0.912314256032308,
+    "p13|A_naive": 0.9584838350613912,
+    "p13|B_structured": 0.9124102592468262,
+    "p14|A_naive": 0.9193057219187418,
+    "p14|B_structured": 0.9373199542363485,
+    "p15|A_naive": 0.9574478069941202,
+    "p15|B_structured": 0.9623012542724609,
+    "p01|C_negative": 0.950132409731547,
+    "p02|C_negative": 0.8658971587816874,
+    "p03|C_negative": 0.9202980001767477,
+    "p04|C_negative": 0.8709774812062582,
+    "p05|C_negative": 0.9058998028437296,
+    "p06|C_negative": 0.8277761737505595,
+    "p07|C_negative": 0.8817076683044434,
+    "p08|C_negative": 0.9253244400024414,
+    "p09|C_negative": 0.7671240170796713,
+    "p10|C_negative": 0.9440193970998129,
+    "p11|C_negative": 0.9220248063405355,
+    "p12|C_negative": 0.7913414637247721,
+    "p13|C_negative": 0.9312008619308472,
+    "p14|C_negative": 0.824125349521637,
+    "p15|C_negative": 0.8858227729797363
+  }
+}
