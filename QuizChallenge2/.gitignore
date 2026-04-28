@@ -4,3 +4,4 @@ __pycache__/
 .venv/
 .env
 gradio_cached_examples/
+slides/_png/
