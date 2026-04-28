@@ -1,0 +1,23 @@
+# Foundation models
+transformers>=5.3.0
+torch>=2.1
+torchaudio
+sentencepiece
+datasets
+
+# Audio I/O + DSP
+soundfile
+librosa
+scipy
+numpy
+
+# ASR + metrics
+openai-whisper
+jiwer
+
+# Demo UI
+gradio
+
+# Plotting
+matplotlib
+pandas

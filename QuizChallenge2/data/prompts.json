@@ -1,0 +1,22 @@
+[
+  {
+    "bits": "00",
+    "label": "happy_fast",
+    "prompt": "happy upbeat acoustic guitar pop, fast tempo, 140 bpm, major key, cheerful"
+  },
+  {
+    "bits": "01",
+    "label": "happy_slow",
+    "prompt": "happy warm soft acoustic guitar, slow tempo, 60 bpm, major key, gentle"
+  },
+  {
+    "bits": "10",
+    "label": "sad_fast",
+    "prompt": "sad melancholic piano, fast tempo, 140 bpm, minor key, anxious"
+  },
+  {
+    "bits": "11",
+    "label": "sad_slow",
+    "prompt": "sad melancholic piano, slow tempo, 60 bpm, minor key, somber"
+  }
+]
