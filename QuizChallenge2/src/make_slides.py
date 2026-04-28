@@ -334,6 +334,25 @@ def slide_9(prs):
     )
 
 
+def slide_listening(prs):
+    return slide_plot(
+        prs,
+        "Listening test — Vector A is not perceptually covert",
+        "05_listening_mos.png",
+        [
+            {"text": "Setup", "size": 18, "bold": True, "color": ACCENT},
+            {"text": "n=1 self-rated, not formally blinded. Listener had not memorized the secret texts before listening.", "size": 12, "color": NAVY},
+            {"text": "Headline result", "size": 18, "bold": True, "color": ACCENT},
+            {"text": "Listener recovered 'the quick brown fox jumps over the lazy dog' VERBATIM from clips at α=-6, -18, -30 dB and the bandpass variant — without prior memorisation.", "size": 12, "color": NAVY, "bold": True},
+            {"text": "Vector A is not covert at any tested setting.", "size": 14, "color": ACCENT, "bold": True},
+            {"text": "Music vs speech", "size": 18, "bold": True, "color": ACCENT},
+            {"text": "Music quality drops 5 → 1 with vocals at α=-6; recovers to 3 at α=-30 (loud vocals destroy the cover).", "size": 12, "color": NAVY},
+            {"text": "Vector B sanity check", "size": 18, "bold": True, "color": ACCENT},
+            {"text": "Clean carriers rated 5/5 music, 1/5 speech — confirms B has no leaked speech.", "size": 12, "color": NAVY},
+        ],
+    )
+
+
 def slide_10(prs):
     s = prs.slides.add_slide(BLANK)
     header(s, "Limitations  ·  Ethics  ·  Future work  ·  AI disclosure")
@@ -344,7 +363,7 @@ def slide_10(prs):
     add_textbox(
         s, Inches(0.7), Inches(1.85), Inches(6), Inches(2.4),
         [
-            {"text": "•  No human listening test (n=0) — flagged as next-step", "size": 13},
+            {"text": "•  Listening test n=1 self-rated, not formally blinded", "size": 13},
             {"text": "•  English-only secrets, single TTS speaker (CMU Arctic xvector idx 7306)", "size": 13},
             {"text": "•  Single carrier model (MusicGen-small)", "size": 13},
             {"text": "•  No active steganalysis tested", "size": 13},
@@ -405,6 +424,7 @@ def main():
     slide_7(prs)
     slide_8(prs)
     slide_9(prs)
+    slide_listening(prs)
     slide_10(prs)
     prs.save(OUT)
     print(f"saved {OUT} ({len(prs.slides)} slides)")

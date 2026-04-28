@@ -1,1 +1,7 @@
-clip,listener,music_quality,speech_audibility
+clip,listener,music_quality,speech_audibility,note
+1,self,1,5,"alpha=-6 dB lo-fi flat — recognized 'the quick brown fox jumps over the lazy dog' verbatim, no prior exposure to secret list"
+2,self,2,5,"alpha=-18 dB lo-fi flat — recognized 'quick brown fox' verbatim"
+3,self,3,3,"alpha=-30 dB lo-fi flat — could pick out 'quick brown fox' partially"
+4,self,3,4,"alpha=-18 dB lo-fi bandpass — recognized 'quick brown fox', music slightly cleaner than clip2"
+5,self,5,1,"Vector B 'happy fast' — sounds like real music, no hidden speech detected"
+6,self,5,1,"Vector B 'sad slow' — sounds like real music, no hidden speech detected"

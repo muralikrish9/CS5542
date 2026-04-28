@@ -111,31 +111,46 @@ def plot_cross_eval(df_a: pd.DataFrame, df_b: pd.DataFrame):
     _save(fig, "04_cross_eval_scatter.png")
 
 
+CLIP_LABELS = {
+    1: "A flat\nα=-6",
+    2: "A flat\nα=-18",
+    3: "A flat\nα=-30",
+    4: "A BP\nα=-18",
+    5: "B (00)\nhappy fast",
+    6: "B (11)\nsad slow",
+}
+
+
 def plot_listening_mos(path: Path | None = None):
-    """Plot 5: listening-test MOS table. Reads listening_test/results.csv if present."""
+    """Plot 5: listening-test MOS bars (music quality + speech audibility per clip)."""
     fpath = path or (ROOT / "listening_test" / "results.csv")
     if not fpath.exists():
         print(f"[plot] skipping listening-test plot — no file at {fpath}")
         return
     df = pd.read_csv(fpath)
-    # expected columns: clip, listener, music_quality, speech_audibility
+    if df.empty:
+        print(f"[plot] skipping listening-test plot — empty results.csv")
+        return
     g = df.groupby("clip").agg(
         music_q_mean=("music_quality", "mean"),
         music_q_std=("music_quality", "std"),
         speech_aud_mean=("speech_audibility", "mean"),
         speech_aud_std=("speech_audibility", "std"),
-    ).reset_index()
-    fig, ax = plt.subplots(figsize=(7.5, 4.5))
+    ).reset_index().sort_values("clip")
+    fig, ax = plt.subplots(figsize=(8.5, 4.8))
     x = np.arange(len(g))
     width = 0.4
-    ax.bar(x - width / 2, g["music_q_mean"], width, yerr=g["music_q_std"].fillna(0), label="music quality", color="#984ea3", capsize=3)
-    ax.bar(x + width / 2, g["speech_aud_mean"], width, yerr=g["speech_aud_std"].fillna(0), label="speech audibility", color="#ff7f00", capsize=3)
+    ax.bar(x - width / 2, g["music_q_mean"], width,
+           yerr=g["music_q_std"].fillna(0), label="music quality", color="#984ea3", capsize=3)
+    ax.bar(x + width / 2, g["speech_aud_mean"], width,
+           yerr=g["speech_aud_std"].fillna(0), label="speech audibility (lower = more covert)", color="#ff7f00", capsize=3)
     ax.set_xticks(x)
-    ax.set_xticklabels(g["clip"], rotation=20)
+    ax.set_xticklabels([CLIP_LABELS.get(int(c), str(c)) for c in g["clip"]], fontsize=10)
     ax.set_ylabel("MOS (1-5 scale)")
-    ax.set_title(f"Listening-test MOS (n={df['listener'].nunique()})")
-    ax.set_ylim(0, 5.5)
-    ax.legend()
+    ax.set_title(f"Listening test  —  n={df['listener'].nunique()} (self-rated, not formally blinded)")
+    ax.set_ylim(0, 5.6)
+    ax.axhline(3.0, color="gray", linestyle=":", alpha=0.4)
+    ax.legend(loc="upper right", fontsize=9)
     ax.grid(axis="y", alpha=0.3)
     _save(fig, "05_listening_mos.png")
 
