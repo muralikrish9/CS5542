@@ -5,3 +5,4 @@ __pycache__/
 .env
 gradio_cached_examples/
 slides/_png/
+src/canvas_submit.py
